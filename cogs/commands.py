@@ -2,6 +2,7 @@ import discord
 import random
 import json
 import random
+import praw
 from discord.ext import commands
 
 numbers = ("1️⃣", "2⃣", "3⃣", "4⃣", "5⃣",
@@ -11,6 +12,30 @@ class Commands(commands.Cog):
     
     def __init__(self, client):
         self.client = client
+        self.reddit = None
+        if '47_tBA3IUZ9EGw' and 'dOzrCyoH5HuFkbGHiIfD_lhpk8c':
+            self.reddit = praw.Reddit(client_id='47_tBA3IUZ9EGw',
+            client_secret='dOzrCyoH5HuFkbGHiIfD_lhpk8c', user_agent='DONUT_BOT:%s:1.0' %
+            '47_tBA3IUZ9EGw')
+
+    @commands.command(aliases=['reddit'])
+    async def memes(self, ctx):
+        async with ctx.channel.typing():
+            if self.reddit:
+                # start working
+                submissions = self.reddit.subreddit('memes').hot()
+
+                post_to_pick = random.randint(1,10)
+                for i in range(0, post_to_pick):
+                    submission = next(x for x in submissions if not x.sticked)
+                embed = discord.Embed(color=discord.Colour.from_rgb(255, 158, 253), title='Here are all the discord shortcuts!', timestamp=ctx.message.created_at)
+                embed.set_image(url=submission.url)
+                print('meme number ' + i + ' has been sent')
+
+                await ctx.send(embed=embed)
+
+            else:
+                await ctx.send(":warning: Something's wrong. Contact the Developer.")
 
     @commands.command(aliases=['shortcuts'])
     async def keyboard(self, ctx):
