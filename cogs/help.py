@@ -43,7 +43,7 @@ class Help(commands.Cog):
             embed = discord.Embed(
                 colour=discord.Colour.from_rgb(255, 158, 253),
                 title=":tools: tools",
-                description="This is the list of all commands from this category, use ``.help <command>`` to get some more detailed help on a command!\n\n``changeprefix``, ``invite``, ``credits``, ``avatar``, ``userinfo``, ``poll``, ``keyboard``",
+                description="This is the list of all commands from this category, use ``.help <command>`` to get some more detailed help on a command!\n\n``changeprefix``, ``support``, ``credits``, ``avatar``, ``userinfo``, ``poll``, ``keyboard``",
                 timestamp=ctx.message.created_at
                 )
             embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')
@@ -147,11 +147,11 @@ class Help(commands.Cog):
                 )
             embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')
 
-        elif category == 'invite':
+        elif category == 'support':
             embed = discord.Embed(
                 colour=discord.Colour.from_rgb(255, 158, 253),
-                title="invite command",
-                description="Send the invite to our support server, required arguments: ``.invite``.",
+                title="support command",
+                description="Sends the invite to our support server, required arguments: ``.invite``.",
                 timestamp=ctx.message.created_at
                 )
             embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')

@@ -15,16 +15,6 @@ class Events(commands.Cog):
     @commands.Cog.listener()
     async def on_member_remove(self, member):
         print(f'{member} has left a server')
-
-    @commands.Cog.listener()
-    async def on_command_error1(self, ctx, error):
-        if isinstance(error, commands.errors.MissingRequiredArgument):
-            await ctx.send('Please pass in all required arguments.')
-
-    @commands.Cog.listener()
-    async def on_command_error2(self, ctx, error):
-        if isinstance(error, commands.errors.CommandNotFound):
-            await ctx.send('Please used a valid command.')
     
     @commands.Cog.listener()
     async def on_guild_join(self, guild):

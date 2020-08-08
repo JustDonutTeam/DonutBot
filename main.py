@@ -1,6 +1,7 @@
 import discord
 import json
 import os
+import asyncio
 from discord.ext import commands, tasks
 from itertools import cycle
 
@@ -16,6 +17,21 @@ client.remove_command('help')
 
 #status = cycle(['status1, status2'])
 
+@client.event
+async def on_command_error(ctx, error):
+        if isinstance(error, commands.errors.MissingRequiredArgument):
+            await ctx.send(':warning: Please pass in all required arguments.')
+        if isinstance(error, commands.errors.CommandNotFound):
+            await ctx.send(':warning: Please use a valid command.')
+    
+
+@client.event
+async def on_guild_join(guild):
+    await client.change_presence(status=discord.Status.idle, activity=discord.Game(f'.help | Being a bot in {len(client.guilds)} guilds.'))
+
+@client.event
+async def on_guild_remove(guild):
+    await client.change_presence(status=discord.Status.idle, activity=discord.Game(f'.help | Being a bot in {len(client.guilds)} guilds.'))
 
 @client.event
 async def on_ready():
