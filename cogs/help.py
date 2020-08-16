@@ -52,7 +52,7 @@ class Help(commands.Cog):
             embed = discord.Embed(
                 colour=discord.Colour.from_rgb(255, 158, 253),
                 title=":video_game: fun",
-                description="This is the list of all commands from this category, use ``.help <command>`` to get some more detailed help on a command!\n\n``8ball``, ``vbucks``",
+                description="This is the list of all commands from this category, use ``.help <command>`` to get some more detailed help on a command!\n\n``8ball``, ``vbucks``, ``tf``",
                 timestamp=ctx.message.created_at
                 )
             embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')
@@ -241,7 +241,14 @@ class Help(commands.Cog):
                 timestamp=ctx.message.created_at
             )
             embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')
-
+        elif category == 'tf':
+            embed = discord.Embed(
+                colour=discord.Colour.from_rgb(255, 158, 253),
+                title="team fortress 2 command",
+                description='Shows some info on each of the classes, required arguments: ``.tf <class>`` (class is optional)\n\nPossible classes: ``deomoman``, ``engineer``, ``heavy``, ``medic``, ``pyro``, ``spy``, ``sniper``, ``soldier``, ``scout``',
+                timestamp=ctx.message.created_at
+            )
+            embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')
 
         await ctx.send(embed=embed)
 

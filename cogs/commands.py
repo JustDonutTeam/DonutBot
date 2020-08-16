@@ -12,11 +12,6 @@ class Commands(commands.Cog):
     
     def __init__(self, client):
         self.client = client
-        self.reddit = None
-        if '47_tBA3IUZ9EGw' and 'dOzrCyoH5HuFkbGHiIfD_lhpk8c':
-            self.reddit = praw.Reddit(client_id='47_tBA3IUZ9EGw',
-            client_secret='dOzrCyoH5HuFkbGHiIfD_lhpk8c', user_agent='DONUT_BOT:%s:1.0' %
-            '47_tBA3IUZ9EGw')
 
     @commands.command(aliases=['shortcuts'])
     async def keyboard(self, ctx):
@@ -104,7 +99,7 @@ class Commands(commands.Cog):
 
         await ctx.send(embed=embed)
 
-    @commands.command()
+    @commands.command(aliases=['bucks', 'fortnite'])
     async def vbucks(self, ctx):
         embed = discord.Embed(
             colour=discord.Colour.from_rgb(255, 158, 253),
@@ -315,6 +310,59 @@ class Commands(commands.Cog):
             overwrites.send_messages = True
             await channel.set_permissions(ctx.guild.default_role, overwrite=overwrites)
             await ctx.send(f'I have removed `{channel.name}` from lockdown.')
+
+    @commands.command(aliases=['teamfortress'])
+    async def tf(self, ctx, classes=None):
+        if classes == 'demoman':
+            embed = discord.Embed(color=discord.Colour.from_rgb(255, 158, 253), title='Demoman', timestamp=ctx.message.created_at,
+            description='The Demoman is a scrumpy-swilling demolitions expert from the Scottish town of Ullapool, and is one of the most versatile members of the team. A master of explosives, the Demoman strategically deals massive amounts of indirect and mid-range splash damage. Armed with his Grenade Launcher and Stickybomb Launcher, the Demoman uses his one good eye and the knowledge of his surrounding environment for well-timed sticky bomb detonations that send enemies skyward, often in many pieces. Should anyone get past his explosive ordinance, however, they will be shocked to learn the Demoman is extremely proficient at melee combat, being one of the deadliest melee users in the game, with a variety of powerful melee unlocks in his arsenal.\n\n``One crossed wire, one wayward pinch of potassium chlorate, one errant twitch...and kablooie!`` — The Demoman on occupational hazards')
+            embed.set_thumbnail(url='https://prod.wiki.tf/w/images/thumb/0/06/DemomanVidSplash.png/300px-DemomanVidSplash.png')
+            await ctx.send(embed=embed)
+        elif classes == 'engineer':
+            embed = discord.Embed(color=discord.Colour.from_rgb(255, 158, 253), title='Engineer', timestamp=ctx.message.created_at,
+            description="The Engineer is a soft-spoken, amiable Texan from Bee Cave, Texas, USA with an interest in all mechanical things. He specializes in constructing and maintaining Buildings that provide support to his team, rather than fighting at the front lines, making him the most suitable for defense. The Engineer's various gadgets include the Sentry Gun, an automated turret that fires at any enemy in range, the Dispenser, a device that restores the health and ammunition of nearby teammates, and Teleporters that quickly transport players from point A to point B.\n\n``Hey look, buddy. I'm an engineer — that means I solve problems. Not problems like 'What is beauty?' because that would fall within the purview of your conundrums of philosophy. I solve practical problems.`` — The Engineer on his profession")
+            embed.set_thumbnail(url='https://wiki.teamfortress.com/w/images/2/21/EngineerVidSplash.png')
+            await ctx.send(embed=embed)
+        elif classes == 'heavy':
+            embed = discord.Embed(color=discord.Colour.from_rgb(255, 158, 253), title='Heavy', timestamp=ctx.message.created_at,
+            description="The Heavy Weapons Guy, more commonly known as the Heavy, is a towering hulk of a man hailing from the USSR. He is the largest and possibly most dangerous class in Team Fortress 2. Boasting the most default health and devastating firepower from his trusty Minigun, the Heavy is no pushover. The Heavy's Minigun can inflict heavy damage at a high rate of fire, allowing him to mow down opposing babies, cowards, and teeny-men in seconds. The Heavy's movement speed is his main weakness. Upon revving up or firing his Minigun, his already unimpressive speed drops down to an even lower amount, making him a very easy target for Snipers and Spies. His slow speed makes him more dependent on support from Medics and Engineers to keep him in the fight. Aside from decimating entire teams, the Heavy is able to provide further support for his comrades with an often required health boost via his Sandvich, which, when consumed, is capable of healing him to full health. It can also be dropped to provide an instant 50% health boost to his teammates, systematically equal to a Medium Health kit. However, if the Heavy isn't careful, an enemy may pick up the dropped Sandvich for a health boost of their own.\n\n``Some people think they can outsmart me. Maybe... maybe. I have yet to meet one that can outsmart bullet.`` — The Heavy on intelligence")
+            embed.set_thumbnail(url='https://wiki.teamfortress.com/w/images/thumb/6/6c/HeavyVidSplash.png/300px-HeavyVidSplash.png')
+            await ctx.send(embed=embed)
+        elif classes == 'medic':
+            embed = discord.Embed(color=discord.Colour.from_rgb(255, 158, 253), title='Medic', timestamp=ctx.message.created_at,
+            description="The Medic is a Teutonic man of medicine from Stuttgart, Germany. While he may have a tenuous adherence to medical ethics, he is nonetheless the primary healing class of the team. Although the Medic's Syringe Gun and Bonesaw aren't the most excellent weapons for direct combat, he can typically still be found near the front lines, healing wounded teammates while trying to stay out of enemy fire.\n\n``... Let's go practice medicine.`` — The Medic")
+            embed.set_thumbnail(url='https://wiki.teamfortress.com/w/images/thumb/9/93/MedicVidSplash.png/300px-MedicVidSplash.png')
+            await ctx.send(embed=embed)
+        elif classes == 'pyro':
+            embed = discord.Embed(color=discord.Colour.from_rgb(255, 158, 253), title='Pyro', timestamp=ctx.message.created_at,
+            description="The Pyro is a mumbling pyromaniac of indeterminate origin who has a burning passion for all things fire related. As shown in Meet the Pyro, the Pyro appears to be insane and delusional, living in a utopian fantasy world known as Pyroland.\n\n``I fear no man. But that... thing... It scares me.`` — The Heavy on the Pyro")
+            embed.set_thumbnail(url='https://wiki.teamfortress.com/w/images/thumb/7/75/PyroVidSplash.png/300px-PyroVidSplash.png')
+            await ctx.send(embed=embed)
+        elif classes == 'spy':
+            embed = discord.Embed(color=discord.Colour.from_rgb(255, 158, 253), title='Spy', timestamp=ctx.message.created_at,
+            description="Hailing from an indeterminate region of France, the Spy is an enthusiast of sharp suits and even sharper knives. Using a unique array of cloaking watches, he can render himself invisible or even fake his own death, leaving unaware opponents off-guard. His Disguise Kit lets him take on the form of any class on either team, allowing him to blend in while behind enemy lines before stabbing his unsuspecting" + ' "teammates" ' + "in the back. In fact, a swift backstab with any of the Spy's knives will kill most foes in a single hit - provided they aren't under the effects of any type of invulnerability, or some other form of immense damage reduction.\n\n``This Spy has already breached our defenses... You've seen what he's done to our colleagues! And worst of all: He could be any one of us.`` — The BLU Spy on the RED Spy")
+            embed.set_thumbnail(url='https://wiki.teamfortress.com/w/images/thumb/9/9a/SpyVidSplash.png/300px-SpyVidSplash.png')
+            await ctx.send(embed=embed)
+        elif classes == 'sniper':
+            embed = discord.Embed(color=discord.Colour.from_rgb(255, 158, 253), title='Sniper', timestamp=ctx.message.created_at,
+            description="Hailing from the lost country of New Zealand and raised in the unforgiving Australian outback, the Sniper is a tough and ready crack shot. The Sniper's main role on the battlefield is to pick off important enemy targets from afar using his Sniper Rifle and its ability to deal guaranteed critical hits with a headshot (with some exceptions). He is effective at long range, but weakens with proximity, where he is forced to use his Submachine Gun or his Kukri. As a result, the Sniper tends to perch on higher grounds or in hard-to-see places, where he can easily pin down enemies at chokepoints.\n\n``Snipin's a good job, mate! It's challengin' work, outta doors. I guarantee you'll not go hungry. 'Cause at the end of the day, long as there's two people left on the planet, someone is gonna want someone dead.`` — The Sniper on his profession")
+            embed.set_thumbnail(url='https://wiki.teamfortress.com/w/images/thumb/e/ea/SniperVidSplash.png/300px-SniperVidSplash.png')
+            await ctx.send(embed=embed)
+        elif classes == 'soldier':
+            embed = discord.Embed(color=discord.Colour.from_rgb(255, 158, 253), title='Soldier', timestamp=ctx.message.created_at,
+            description="The Soldier is a crazed, jingoistic patriot from Midwest, USA. Tough and well-armed, he is versatile, capable of both offense and defense, and a great starter class to get familiar with the game.\n\n``If fighting is sure to result in victory, then you must fight!`` — The Soldier on the art of war")
+            embed.set_thumbnail(url='https://wiki.teamfortress.com/w/images/thumb/c/c9/SoldierVidSplash.png/300px-SoldierVidSplash.png')
+            await ctx.send(embed=embed)
+        elif classes == 'scout':
+            embed = discord.Embed(color=discord.Colour.from_rgb(255, 158, 253), title='Scout', timestamp=ctx.message.created_at,
+            description="Born and raised in Boston, Massachusetts, USA, the Scout is a fast-running scrapper with a baseball bat and a snarky " + '"in-your-face"' + " attitude. He is the fastest and most mobile mercenary on the battlefield unassisted. His Double Jump leaves slower opponents such as the Heavy struggling to keep up and helps him navigate the terrain while dodging oncoming bullets and projectiles. Carrying a Scattergun, a Pistol, and a Bat, the Scout is an ideal class for aggressive fighting and flanking. The Scout is a great class for quick" + '" hit-and-run "' + "tactics that can either sap away enemies' health or kill them outright due to his ability to get in, do damage, and dash away before even being noticed. However, the Scout is tied with the Engineer, Sniper, and Spy for having the lowest health of any class, leaving him vulnerable when he is on the front line; a fair trade-off for his ability to run in and out of a contested hot-spot very quickly, letting him lead the team to victory without the other team even noticing in time.\n\n``Grass grows, birds fly, sun shines, and brother, I hurt people.`` — The Scout on the facts of life")
+            embed.set_thumbnail(url='https://wiki.teamfortress.com/w/images/thumb/a/aa/ScoutVidSplash.png/300px-ScoutVidSplash.png')
+            await ctx.send(embed=embed)
+        elif classes == None:
+            embed = discord.Embed(color=discord.Colour.from_rgb(255, 158, 253), title='Team Fortress 2', timestamp=ctx.message.created_at,
+            description="Team Fortress 2, the successor to Team Fortress and Team Fortress Classic, was developed by Valve as part of the game compilation The Orange Box and released in 2007 for game consoles and for computers via Steam. It sports a cartoon-like visual style and greatly expands on the gameplay found in its predecessors. Although the abilities of a number of classes have changed from earlier Team Fortress incarnations, the basic elements of each class have remained unchanged. The Steam release of Team Fortress 2 adopted a free to play model in June 2011, with all revenue originating either from microtransaction payments of items in the Mann Co. Store or fees charged for buying items in the Steam Community Market, which opened in beta December 12, 2012.")
+            embed.set_thumbnail(url='https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/7ad21446-0af2-4334-ac21-c5a0b6308d04/d78kp9s-07d61235-7c6a-4faf-a76f-1b0b1bf8dfc4.png')
+            await ctx.send(embed=embed)
 
 def setup(client):
     client.add_cog(Commands(client))
