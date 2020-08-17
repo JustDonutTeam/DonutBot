@@ -2,7 +2,6 @@ import discord
 import random
 import json
 import random
-import praw
 from discord.ext import commands
 
 numbers = ("1️⃣", "2⃣", "3⃣", "4⃣", "5⃣",
@@ -12,6 +11,16 @@ class Commands(commands.Cog):
     
     def __init__(self, client):
         self.client = client
+
+    @commands.command()
+    async def invite(self, ctx):
+        embed = discord.Embed(
+            colour=discord.Colour.from_rgb(255, 158, 253),
+            title="Invite Donut to your server!",
+            description="Invite the bot [here](https://discord.com/api/oauth2/authorize?client_id=738788356506386462&permissions=8&scope=bot).",
+            timestamp=ctx.message.created_at
+        )
+        await ctx.send(embed=embed)
 
     @commands.command(aliases=['shortcuts'])
     async def keyboard(self, ctx):
@@ -136,25 +145,6 @@ class Commands(commands.Cog):
             else:
                 result = result + letter.lower()
         await ctx.send(result)
-
-    @commands.command(aliases=['prefix'])
-    async def changeprefix(self, ctx, prefix):
-        with open('prefixes.json', 'r') as f:
-            prefixes = json.load(f)
-
-        prefixes[ctx.guild.id] = prefix
-
-        with open('prefixes.json', 'w') as f:
-            json.dump(prefixes, f, indent=4)
-
-        embed = discord.Embed(
-            colour=discord.Colour.from_rgb(255, 158, 253),
-            title=f'Prefix has been changed to: "{prefix}"!',
-            description='You can now use the new prefix.'
-        )
-        embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')
-
-        await ctx.send(embed=embed)
 
     @commands.command(aliases=['8ball', 'predict'])
     async def _8ball(self, ctx, *, question):
@@ -311,7 +301,7 @@ class Commands(commands.Cog):
             await channel.set_permissions(ctx.guild.default_role, overwrite=overwrites)
             await ctx.send(f'I have removed `{channel.name}` from lockdown.')
 
-    @commands.command(aliases=['teamfortress'])
+    @commands.command(aliases=['teamfortress', 'tf2', 'teamfortress2'])
     async def tf(self, ctx, classes=None):
         if classes == 'demoman':
             embed = discord.Embed(color=discord.Colour.from_rgb(255, 158, 253), title='Demoman', timestamp=ctx.message.created_at,
@@ -355,7 +345,7 @@ class Commands(commands.Cog):
             await ctx.send(embed=embed)
         elif classes == 'scout':
             embed = discord.Embed(color=discord.Colour.from_rgb(255, 158, 253), title='Scout', timestamp=ctx.message.created_at,
-            description="Born and raised in Boston, Massachusetts, USA, the Scout is a fast-running scrapper with a baseball bat and a snarky " + '"in-your-face"' + " attitude. He is the fastest and most mobile mercenary on the battlefield unassisted. His Double Jump leaves slower opponents such as the Heavy struggling to keep up and helps him navigate the terrain while dodging oncoming bullets and projectiles. Carrying a Scattergun, a Pistol, and a Bat, the Scout is an ideal class for aggressive fighting and flanking. The Scout is a great class for quick" + '" hit-and-run "' + "tactics that can either sap away enemies' health or kill them outright due to his ability to get in, do damage, and dash away before even being noticed. However, the Scout is tied with the Engineer, Sniper, and Spy for having the lowest health of any class, leaving him vulnerable when he is on the front line; a fair trade-off for his ability to run in and out of a contested hot-spot very quickly, letting him lead the team to victory without the other team even noticing in time.\n\n``Grass grows, birds fly, sun shines, and brother, I hurt people.`` — The Scout on the facts of life")
+            description="Born and raised in Boston, Massachusetts, USA, the Scout is a fast-running scrapper with a baseball bat and a snarky " + '"in-your-face"' + " attitude. He is the fastest and most mobile mercenary on the battlefield unassisted. His Double Jump leaves slower opponents such as the Heavy struggling to keep up and helps him navigate the terrain while dodging oncoming bullets and projectiles. Carrying a Scattergun, a Pistol, and a Bat, the Scout is an ideal class for aggressive fighting and flanking. The Scout is a great class for quick " + '"hit-and-run"' + " tactics that can either sap away enemies' health or kill them outright due to his ability to get in, do damage, and dash away before even being noticed. However, the Scout is tied with the Engineer, Sniper, and Spy for having the lowest health of any class, leaving him vulnerable when he is on the front line; a fair trade-off for his ability to run in and out of a contested hot-spot very quickly, letting him lead the team to victory without the other team even noticing in time.\n\n``Grass grows, birds fly, sun shines, and brother, I hurt people.`` — The Scout on the facts of life")
             embed.set_thumbnail(url='https://wiki.teamfortress.com/w/images/thumb/a/aa/ScoutVidSplash.png/300px-ScoutVidSplash.png')
             await ctx.send(embed=embed)
         elif classes == None:
@@ -363,6 +353,37 @@ class Commands(commands.Cog):
             description="Team Fortress 2, the successor to Team Fortress and Team Fortress Classic, was developed by Valve as part of the game compilation The Orange Box and released in 2007 for game consoles and for computers via Steam. It sports a cartoon-like visual style and greatly expands on the gameplay found in its predecessors. Although the abilities of a number of classes have changed from earlier Team Fortress incarnations, the basic elements of each class have remained unchanged. The Steam release of Team Fortress 2 adopted a free to play model in June 2011, with all revenue originating either from microtransaction payments of items in the Mann Co. Store or fees charged for buying items in the Steam Community Market, which opened in beta December 12, 2012.")
             embed.set_thumbnail(url='https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/7ad21446-0af2-4334-ac21-c5a0b6308d04/d78kp9s-07d61235-7c6a-4faf-a76f-1b0b1bf8dfc4.png')
             await ctx.send(embed=embed)
+
+    @commands.command(aliases=['announce'])
+    @commands.has_permissions(manage_guild=True)
+    async def announcement(self, ctx, *, message):
+        await ctx.channel.purge(limit=1)
+        embed = discord.Embed(color=discord.Colour.from_rgb(255, 158, 253), title='Announcement', timestamp=ctx.message.created_at, description=message)
+        embed.set_footer(text=f'Announced by {ctx.author}', icon_url=ctx.author.avatar_url)
+        await ctx.send(embed=embed)
+
+    @commands.command()
+    async def changeprefix(self, ctx):
+        await ctx.send(':warning: this command is currently unavailable due to some problems. Im gonna try to fix it as soon as possible.')
+
+    '''@commands.command(aliases=['prefix'])
+    async def changeprefix(self, ctx, prefix):
+        with open('prefixes.json', 'r') as f:
+            prefixes = json.load(f)
+
+        prefixes[ctx.guild.id] = prefix
+
+        with open('prefixes.json', 'w') as f:
+            json.dump(prefixes, f, indent=4)
+
+        embed = discord.Embed(
+            colour=discord.Colour.from_rgb(255, 158, 253),
+            title=f'Prefix has been changed to: "{prefix}"!',
+            description='You can now use the new prefix.'
+        )
+        embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')
+
+        await ctx.send(embed=embed)'''
 
 def setup(client):
     client.add_cog(Commands(client))

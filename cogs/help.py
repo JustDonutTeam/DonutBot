@@ -43,7 +43,7 @@ class Help(commands.Cog):
             embed = discord.Embed(
                 colour=discord.Colour.from_rgb(255, 158, 253),
                 title=":tools: tools",
-                description="This is the list of all commands from this category, use ``.help <command>`` to get some more detailed help on a command!\n\n``changeprefix``, ``support``, ``credits``, ``avatar``, ``userinfo``, ``poll``, ``keyboard``",
+                description="This is the list of all commands from this category, use ``.help <command>`` to get some more detailed help on a command!\n\n``changeprefix``, ``support``, ``credits``, ``avatar``, ``userinfo``, ``poll``, ``keyboard``, ``announcement``",
                 timestamp=ctx.message.created_at
                 )
             embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')
@@ -141,17 +141,27 @@ class Help(commands.Cog):
         elif category == 'changeprefix':
             embed = discord.Embed(
                 colour=discord.Colour.from_rgb(255, 158, 253),
-                title="changeprefix command",
+                title="changeprefix command ``(CURRENTLY UNAVAILABLE)``",
                 description="Command used to change the server prefix, required arguments: ``.changeprefix <prefix>``.",
                 timestamp=ctx.message.created_at
                 )
             embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')
 
+        elif category == 'invite':
+            embed = discord.Embed(
+                colour=discord.Colour.from_rgb(255, 158, 253),
+                title="invite command",
+                description="Sends the link to invite the bot, required arguments: ``.invite``.",
+                timestamp=ctx.message.created_at
+                )
+            embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')
+
+
         elif category == 'support':
             embed = discord.Embed(
                 colour=discord.Colour.from_rgb(255, 158, 253),
                 title="support command",
-                description="Sends the invite to our support server, required arguments: ``.invite``.",
+                description="Sends the invite to our support server, required arguments: ``.support``.",
                 timestamp=ctx.message.created_at
                 )
             embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')
@@ -245,10 +255,20 @@ class Help(commands.Cog):
             embed = discord.Embed(
                 colour=discord.Colour.from_rgb(255, 158, 253),
                 title="team fortress 2 command",
-                description='Shows some info on each of the classes, required arguments: ``.tf <class>`` (class is optional)\n\nPossible classes: ``deomoman``, ``engineer``, ``heavy``, ``medic``, ``pyro``, ``spy``, ``sniper``, ``soldier``, ``scout``',
+                description='Shows some info on each of the classes, required arguments: ``.tf <class>`` (class is optional)\n\nPossible classes: ``demoman``, ``engineer``, ``heavy``, ``medic``, ``pyro``, ``spy``, ``sniper``, ``soldier``, ``scout``',
                 timestamp=ctx.message.created_at
             )
             embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')
+
+        elif category == 'announcement':
+            embed = discord.Embed(
+                colour=discord.Colour.from_rgb(255, 158, 253),
+                title="announcement command",
+                description='announces some stuff, required arguments: ``.announcement <announcement>``',
+                timestamp=ctx.message.created_at
+            )
+            embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')
+
 
         await ctx.send(embed=embed)
 
