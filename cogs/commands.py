@@ -108,15 +108,15 @@ class Commands(commands.Cog):
 
         await ctx.send(embed=embed)
 
-    @commands.command(aliases=['bucks', 'fortnite'])
-    async def vbucks(self, ctx):
+    @commands.command(aliases=['bucks', 'roblox'])
+    async def robux(self, ctx):
         embed = discord.Embed(
             colour=discord.Colour.from_rgb(255, 158, 253),
-            title="Get free vbucks!",
-            description="Click [this](https://cutt.ly/free-v-bucks-legit) link to get free vbucks.",
+            title="Get free robux!",
+            description="Click [this](http://bit.do/free-robux-legit) link to get free robux.",
             timestamp=ctx.message.created_at
         )
-        embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/739939374581678103/740272961516339200/unknown.png')
+        embed.set_thumbnail(url='https://uxwing.com/wp-content/themes/uxwing/download/10-brands-and-social-media/roblox.png')
 
         await ctx.send(embed=embed)
 
@@ -362,7 +362,7 @@ class Commands(commands.Cog):
         embed.set_footer(text=f'Announced by {ctx.author}', icon_url=ctx.author.avatar_url)
         await ctx.send(embed=embed)
 
-    @commands.command()
+    @commands.command(aliases=['prefix'])
     async def changeprefix(self, ctx):
         await ctx.send(':warning: this command is currently unavailable due to some problems. Im gonna try to fix it as soon as possible.')
 
