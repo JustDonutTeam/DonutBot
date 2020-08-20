@@ -1,7 +1,6 @@
 import discord
 import random
 import json
-import random
 from discord.ext import commands
 
 numbers = ("1️⃣", "2⃣", "3⃣", "4⃣", "5⃣",
