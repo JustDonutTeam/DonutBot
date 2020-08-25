@@ -21,8 +21,8 @@ client.remove_command('help')
 async def on_command_error(ctx, error):
         if isinstance(error, commands.errors.MissingRequiredArgument):
             await ctx.send(':warning: Please pass in all required arguments.')
-        if isinstance(error, commands.errors.CommandNotFound):
-            await ctx.send(':warning: Please use a valid command.')
+        #if isinstance(error, commands.errors.CommandNotFound):
+            #await ctx.send(':warning: Please use a valid command.')
         if isinstance(error, commands.errors.MissingPermissions):
             await ctx.send(":warning: You don't have enough permissions to run this command.")
         if isinstance(error, commands.errors.BotMissingPermissions):
