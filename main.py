@@ -79,6 +79,12 @@ for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
         client.load_extension(f'cogs.{filename[:-3]}')
 
+@client.command(aliases=['echo', 'repeat'])
+@commands.check(is_it_me)
+async def talk(ctx, *, message):
+    await ctx.channel.purge(limit=1)
+    await ctx.send(message)
+
 @client.command()
 @commands.check(is_it_me)
 async def rules(ctx):
