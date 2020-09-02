@@ -14,7 +14,7 @@ class Commands(commands.Cog):
     @commands.command()
     async def nuke(self, ctx, *, destination):
         embed = discord.Embed(
-            colour=discord.Colour.from_rgb(255, 158, 253), title=f'Nuke has been sent!', description=f'{ctx.author} has nuked {destination}')
+            colour=discord.Colour.from_rgb(255, 158, 253), title=f'Nuke has been sent!', description=f'**{ctx.author}** has nuked **{destination}**!')
         embed.set_image(url='https://i.pinimg.com/originals/6c/48/5e/6c485efad8b910e5289fc7968ea1d22f.gif')
         await ctx.send(embed=embed)
 
