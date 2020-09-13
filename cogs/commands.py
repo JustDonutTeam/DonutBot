@@ -188,6 +188,34 @@ class Commands(commands.Cog):
         
         await ctx.send(embed=embed)
 
+    @commands.command(aliases=['discord','tip', 'tips'])
+    async def _discord(self, ctx):
+        responses = [
+            'https://cdn.discordapp.com/attachments/740278672489054279/752113724105425017/unknown.png',
+            'https://cdn.discordapp.com/attachments/740278672489054279/752914952582463598/unknown.png',
+            'https://cdn.discordapp.com/attachments/740278672489054279/753302724304437401/unknown.png',
+            'https://cdn.discordapp.com/attachments/740278672489054279/753304808580186272/unknown.png',
+            'https://cdn.discordapp.com/attachments/740278672489054279/753598979572498451/unknown.png',
+            'https://cdn.discordapp.com/attachments/740278672489054279/754036930940764281/unknown.png',
+            'https://cdn.discordapp.com/attachments/740278672489054279/754314318605975614/unknown.png',
+            'https://cdn.discordapp.com/attachments/740278672489054279/754666790872940615/unknown.png',
+            'https://cdn.discordapp.com/attachments/740278672489054279/754666840617123930/unknown.png',
+            'https://cdn.discordapp.com/attachments/740278672489054279/754666923114889226/unknown.png',
+            'https://cdn.discordapp.com/attachments/740278672489054279/754667002643087564/unknown.png',
+            'https://cdn.discordapp.com/attachments/740278672489054279/754667068434939935/unknown.png',
+            'https://cdn.discordapp.com/attachments/740278672489054279/754667141310971955/unknown.png',
+            'https://cdn.discordapp.com/attachments/740278672489054279/754667178460053534/unknown.png', ]
+
+        embed = discord.Embed(
+            colour=discord.Colour.from_rgb(255, 158, 253),
+            title='Random tip:',
+            timestamp=ctx.message.created_at
+        )
+        embed.set_image(url=f'{random.choice(responses)}')
+        embed.set_thumbnail(url='https://i.pinimg.com/originals/1a/9a/f1/1a9af177bdcd0bd93568e59bb7600cbe.png')
+        
+        await ctx.send(embed=embed)
+
     @commands.command(aliases=['purge'])
     @commands.has_permissions(manage_messages=True)
     async def clear(self, ctx, amount : int=5):
