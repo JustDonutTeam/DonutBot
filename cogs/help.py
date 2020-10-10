@@ -43,7 +43,7 @@ class Help(commands.Cog):
             embed = discord.Embed(
                 colour=discord.Colour.from_rgb(255, 158, 253),
                 title=":tools: tools",
-                description="This is the list of all commands from this category, use ``.help <command>`` to get some more detailed help on a command!\n\n``changeprefix``, ``support``, ``credits``, ``avatar``, ``userinfo``, ``poll``, ``keyboard``, ``announcement``",
+                description="This is the list of all commands from this category, use ``.help <command>`` to get some more detailed help on a command!\n\n``changeprefix``, ``icon``, ``support``, ``credits``, ``avatar``, ``userinfo``, ``poll``, ``keyboard``, ``announcement``",
                 timestamp=ctx.message.created_at
                 )
             embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')
@@ -272,8 +272,17 @@ class Help(commands.Cog):
         elif category == 'nuke':
             embed = discord.Embed(
                 colour=discord.Colour.from_rgb(255, 158, 253),
-                title="announcement command",
+                title="nuke command",
                 description='nukes a chosen place. Be careful with this command! Required arguments: ``.nuke <destination>``',
+                timestamp=ctx.message.created_at
+            )
+            embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')
+
+        elif category == 'icon':
+            embed = discord.Embed(
+                colour=discord.Colour.from_rgb(255, 158, 253),
+                title="server icon command",
+                description='sends the server icon url Required arguments: ``.icon``',
                 timestamp=ctx.message.created_at
             )
             embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')

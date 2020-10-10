@@ -10,7 +10,7 @@ class Commands(commands.Cog):
     
     def __init__(self, client):
         self.client = client
-    
+
     @commands.command()
     async def nuke(self, ctx, *, destination):
         embed = discord.Embed(
