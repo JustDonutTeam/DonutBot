@@ -278,7 +278,7 @@ class Help(commands.Cog):
             )
             embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')
 
-        elif category == 'icon':
+        elif category == 'icon':  
             embed = discord.Embed(
                 colour=discord.Colour.from_rgb(255, 158, 253),
                 title="server icon command",
