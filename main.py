@@ -12,7 +12,7 @@ def get_prefix(client, message):
     return prefixes[str(message.guild.id)]
 
 client = commands.Bot(command_prefix = '.') 
-
+token = open("token.txt", "r")
 client.remove_command('help')
 
 #status = cycle(['status1, status2'])
@@ -110,4 +110,4 @@ async def botstats(ctx):
 
     await ctx.send(embed=embed)
 
-client.run('NzM4Nzg4MzU2NTA2Mzg2NDYy.XyRARg.GaBbvmB3XhvzEDDhG8tWgfpJHFg')
+client.run(token.read())
