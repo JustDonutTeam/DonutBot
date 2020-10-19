@@ -112,4 +112,5 @@ async def botstats(ctx):
     #zoo
     #panda
     #giraffe
+    #monkey
 client.run(token.read())
