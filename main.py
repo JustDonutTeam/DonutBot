@@ -110,5 +110,4 @@ async def botstats(ctx):
 
     await ctx.send(embed=embed)
     #comment
-    #comment
 client.run(token.read())
