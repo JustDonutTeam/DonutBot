@@ -109,8 +109,4 @@ async def botstats(ctx):
     embed.add_field(name='ping:', value=f'{round(client.latency * 1000)}ms')
 
     await ctx.send(embed=embed)
-    #zoo
-    #panda
-    #giraffe
-    #monkey
 client.run(token.read())
