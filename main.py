@@ -15,7 +15,7 @@ client = commands.Bot(command_prefix = '.')
 token = open("token.txt", "r")
 client.remove_command('help')
 
-#status = cycle(['status1, status2'])
+#status = cycle(['status1, status2']) 
 
 @client.event
 async def on_command_error(ctx, error):
