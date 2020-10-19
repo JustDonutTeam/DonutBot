@@ -111,4 +111,5 @@ async def botstats(ctx):
     await ctx.send(embed=embed)
     #zoo
     #panda
+    #giraffe
 client.run(token.read())
