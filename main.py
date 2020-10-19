@@ -80,7 +80,7 @@ for filename in os.listdir('./cogs'):
         client.load_extension(f'cogs.{filename[:-3]}')
 
 @client.command(aliases=['echo', 'repeat'])
-@commands.check(is_it_me)
+@commands.check(is_it_me) 
 async def talk(ctx, *, message):
     await ctx.channel.purge(limit=1)
     await ctx.send(message)
