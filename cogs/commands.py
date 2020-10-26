@@ -1,5 +1,6 @@
 import discord
 import random
+import requests
 import json
 from discord.ext import commands
 

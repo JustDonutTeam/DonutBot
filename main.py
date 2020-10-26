@@ -1,6 +1,7 @@
 import discord
 import json
 import os
+import requests
 import asyncio
 from discord.ext import commands, tasks
 from itertools import cycle
@@ -48,6 +49,18 @@ async def on_ready():
 async def change_status():
     await client.change_presence(activity=discord.Game(next(status)))
 '''
+
+@client.command()
+async def fact( ctx):
+    async with ctx.typing():
+        api = requests.get('https://uselessfacts.jsph.pl/random.json?language=en').json()
+    embed = discord.Embed(
+        colour=discord.Colour.from_rgb(255, 158, 253),
+         title='Random Fact!', 
+         description=api["text"],
+         timestamp=ctx.message.created_at
+        )
+    await ctx.send(embed=embed)
 
 @client.command()
 async def ping(ctx):
