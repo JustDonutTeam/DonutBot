@@ -12,7 +12,7 @@ def get_prefix(client, message):
 
     return prefixes[str(message.guild.id)]
 
-client = commands.Bot(command_prefix = 'a.') 
+client = commands.Bot(command_prefix = '.') 
 token = open("token.txt", "r")
 client.remove_command('help')
 
