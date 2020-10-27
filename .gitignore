@@ -1,1 +1,5 @@
 token.txt
+*.png
+*.svg
+/cogs/__pycache__/*
+/__pycache__/*
