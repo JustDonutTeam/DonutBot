@@ -1,6 +1,6 @@
+#svg_turtle.py by https://github.com/donkirkby
 import re
 from turtle import TNavigator, TPen
-
 
 ANCHOR_NAMES = dict(left='start',
                     center='middle',
