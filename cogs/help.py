@@ -20,6 +20,7 @@ class Help(commands.Cog):
             embed.add_field(name=':hammer: moderation', value='Moderation related commands (ban, kick etc.)')
             embed.add_field(name=':tools: tools', value='some epic tools')
             embed.add_field(name=':video_game: fun', value='some *funny* commands')
+            embed.add_field(name=':camera: image', value='wanna see some cat pics? of course we have even more cool stuff!')
 
         elif category == 'moderation':
             embed = discord.Embed(
@@ -44,6 +45,15 @@ class Help(commands.Cog):
                 colour=discord.Colour.from_rgb(255, 158, 253),
                 title=":tools: tools",
                 description="This is the list of all commands from this category, use ``.help <command>`` to get some more detailed help on a command!\n\n``changeprefix``, ``icon``, ``support``, ``credits``, ``avatar``, ``userinfo``, ``poll``, ``keyboard``, ``announcement``",
+                timestamp=ctx.message.created_at
+                )
+            embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')
+
+        elif category == 'image':
+            embed = discord.Embed(
+                colour=discord.Colour.from_rgb(255, 158, 253),
+                title=":camera: image",
+                description="This is the list of all commands from this category, use ``.help <command>`` to get some more detailed help on a command!\n\n``hug``, ``cat``, ``panda``, ``wasted``, ``gay``, ``invert``, ``threshold``, ``triggered``",
                 timestamp=ctx.message.created_at
                 )
             embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')
@@ -292,6 +302,78 @@ class Help(commands.Cog):
                 colour=discord.Colour.from_rgb(255, 158, 253),
                 title="random facts",
                 description='sends a random fact using an API Required arguments: ``.fact``',
+                timestamp=ctx.message.created_at
+            )
+            embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')
+
+        elif category == 'hug':  
+            embed = discord.Embed(
+                colour=discord.Colour.from_rgb(255, 158, 253),
+                title="random anime hugging gif",
+                description='sends a random anime hugging gif. Required arguments: ``.hug``',
+                timestamp=ctx.message.created_at
+            )
+            embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')
+
+        elif category == 'cat':  
+            embed = discord.Embed(
+                colour=discord.Colour.from_rgb(255, 158, 253),
+                title="random cat pic",
+                description='sends a random cat pic. Required arguments: ``.cat``',
+                timestamp=ctx.message.created_at
+            )
+            embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')
+
+        elif category == 'panda':  
+            embed = discord.Embed(
+                colour=discord.Colour.from_rgb(255, 158, 253),
+                title="random panda pic",
+                description='sends a random panda pic. Required arguments: ``.panda``',
+                timestamp=ctx.message.created_at
+            )
+            embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')
+
+        elif category == 'wasted':  
+            embed = discord.Embed(
+                colour=discord.Colour.from_rgb(255, 158, 253),
+                title="edits your pfp",
+                description='sends an edited version of your pfp! Required arguments: ``.wasted``',
+                timestamp=ctx.message.created_at
+            )
+            embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')
+
+        elif category == 'gay':  
+            embed = discord.Embed(
+                colour=discord.Colour.from_rgb(255, 158, 253),
+                title="edits your pfp",
+                description='sends an edited version of your pfp! Required arguments: ``.gay``',
+                timestamp=ctx.message.created_at
+            )
+            embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')
+
+        elif category == 'triggered':  
+            embed = discord.Embed(
+                colour=discord.Colour.from_rgb(255, 158, 253),
+                title="edits your pfp",
+                description='sends an edited version of your pfp! Required arguments: ``.triggered``',
+                timestamp=ctx.message.created_at
+            )
+            embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')
+
+        elif category == 'invert':  
+            embed = discord.Embed(
+                colour=discord.Colour.from_rgb(255, 158, 253),
+                title="edits your pfp",
+                description='sends an edited version of your pfp! Required arguments: ``.invert``',
+                timestamp=ctx.message.created_at
+            )
+            embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')
+
+        elif category == 'threshold':  
+            embed = discord.Embed(
+                colour=discord.Colour.from_rgb(255, 158, 253),
+                title="edits your pfp",
+                description='sends an edited version of your pfp! Required arguments: ``.threshold``',
                 timestamp=ctx.message.created_at
             )
             embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')

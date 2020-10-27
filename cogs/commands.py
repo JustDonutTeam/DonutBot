@@ -3,7 +3,6 @@ import random
 import requests
 import json
 from discord.ext import commands
-
 numbers = ("1️⃣", "2⃣", "3⃣", "4⃣", "5⃣",
 		   "6⃣", "7⃣", "8⃣", "9⃣", "🔟")
 
@@ -11,6 +10,119 @@ class Commands(commands.Cog):
     
     def __init__(self, client):
         self.client = client
+
+    @commands.command()
+    async def triggered(self, ctx, member : discord.Member = None):
+        member = ctx.author if not member else member
+        avatarURL = member.avatar_url
+        api = (f'https://some-random-api.ml/canvas/triggered?avatar={avatarURL}').replace('.webp', '.png')
+        embed = discord.Embed(
+            colour=discord.Colour.from_rgb(255, 158, 253),
+            timestamp=ctx.message.created_at
+            )
+        async with ctx.typing():
+            embed.set_image(url=api)
+        await ctx.send(embed=embed)
+
+    @commands.command()
+    async def invert(self, ctx, member : discord.Member = None):
+        member = ctx.author if not member else member
+        avatarURL = member.avatar_url
+        api = (f'https://some-random-api.ml/canvas/invert?avatar={avatarURL}').replace('.webp', '.png')
+        embed = discord.Embed(
+            colour=discord.Colour.from_rgb(255, 158, 253),
+            timestamp=ctx.message.created_at
+            )
+        async with ctx.typing():
+            embed.set_image(url=api)
+        await ctx.send(embed=embed)
+
+    @commands.command()
+    async def threshold(self, ctx, member : discord.Member = None):
+        member = ctx.author if not member else member
+        avatarURL = member.avatar_url
+        api = (f'https://some-random-api.ml/canvas/threshold?avatar={avatarURL}').replace('.webp', '.png')
+        embed = discord.Embed(
+            colour=discord.Colour.from_rgb(255, 158, 253),
+            timestamp=ctx.message.created_at
+            )
+        async with ctx.typing():
+            embed.set_image(url=api)
+        await ctx.send(embed=embed)
+
+    @commands.command()
+    async def gay(self, ctx, member : discord.Member = None):
+        member = ctx.author if not member else member
+        avatarURL = member.avatar_url
+        api = (f'https://some-random-api.ml/canvas/gay?avatar={avatarURL}').replace('.webp', '.png')
+        embed = discord.Embed(
+            colour=discord.Colour.from_rgb(255, 158, 253),
+            timestamp=ctx.message.created_at
+            )
+        async with ctx.typing():
+            embed.set_image(url=api)
+        await ctx.send(embed=embed)
+
+    @commands.command()
+    async def wasted(self, ctx, member : discord.Member = None):
+        member = ctx.author if not member else member
+        avatarURL = member.avatar_url
+        api = (f'https://some-random-api.ml/canvas/wasted?avatar={avatarURL}').replace('.webp', '.png')
+        embed = discord.Embed(
+            colour=discord.Colour.from_rgb(255, 158, 253),
+            timestamp=ctx.message.created_at
+            )
+        async with ctx.typing():
+            embed.set_image(url=api)
+        await ctx.send(embed=embed)
+
+    @commands.command()
+    async def hug(self, ctx):
+        async with ctx.typing():
+            api = requests.get('https://some-random-api.ml/animu/hug').json()
+        embed = discord.Embed(
+            colour=discord.Colour.from_rgb(255, 158, 253),
+            title=f"Donut hugged {ctx.author.display_name}!", 
+            timestamp=ctx.message.created_at
+            )
+        embed.set_image(url=api["link"])
+        await ctx.send(embed=embed)
+
+    @commands.command()
+    async def panda(self, ctx):
+        async with ctx.typing():
+            api = requests.get('https://some-random-api.ml/img/panda').json()
+        embed = discord.Embed(
+            colour=discord.Colour.from_rgb(255, 158, 253),
+            title="Here's a panda pic!", 
+            timestamp=ctx.message.created_at
+            )
+        embed.set_image(url=api["link"])
+        await ctx.send(embed=embed)
+
+    @commands.command()
+    async def cat(self, ctx):
+        async with ctx.typing():
+            api = requests.get('https://some-random-api.ml/img/cat').json()
+        embed = discord.Embed(
+            colour=discord.Colour.from_rgb(255, 158, 253),
+            title="Here's a cat pic!", 
+            timestamp=ctx.message.created_at
+            )
+        embed.set_image(url=api["link"])
+        await ctx.send(embed=embed)
+
+    @commands.command()
+    async def fact(self, ctx):
+        async with ctx.typing():
+            api = requests.get('https://uselessfacts.jsph.pl/random.json?language=en').json()
+        embed = discord.Embed(
+            colour=discord.Colour.from_rgb(255, 158, 253),
+            title='Random Fact!', 
+            description=api["text"],
+            timestamp=ctx.message.created_at
+            )
+        await ctx.send(embed=embed)
 
     @commands.command()
     async def nuke(self, ctx, *, destination):
