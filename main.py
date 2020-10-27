@@ -12,7 +12,7 @@ def get_prefix(client, message):
 
     return prefixes[str(message.guild.id)]
 
-client = commands.Bot(command_prefix = '.') 
+client = commands.Bot(command_prefix = 'beta ') 
 token = open("token.txt", "r")
 client.remove_command('help')
 
@@ -31,16 +31,16 @@ async def on_command_error(ctx, error):
 
 @client.event
 async def on_guild_join(guild):
-    await client.change_presence(status=discord.Status.idle, activity=discord.Game(f'Alpha Boiii | Testing unstable features in {len(client.guilds)} guilds.'))
+    await client.change_presence(status=discord.Status.idle, activity=discord.Game(f'.help | Being a bot in {len(client.guilds)} guilds.'))
 
 @client.event
 async def on_guild_remove(guild):
-    await client.change_presence(status=discord.Status.idle, activity=discord.Game(f'Alpha Boiii | Testing unstable features in {len(client.guilds)} guilds.'))
+    await client.change_presence(status=discord.Status.idle, activity=discord.Game(f'.help | Being a bot in {len(client.guilds)} guilds.'))
 
 @client.event
 async def on_ready():
     #change_status.start()
-    await client.change_presence(status=discord.Status.idle, activity=discord.Game(f'Alpha Boiii | Testing unstable features in {len(client.guilds)} guilds.'))
+    await client.change_presence(status=discord.Status.idle, activity=discord.Game(f'.help | Being a bot in {len(client.guilds)} guilds.'))
     print('Bot is ready')
 
 
@@ -49,18 +49,6 @@ async def on_ready():
 async def change_status():
     await client.change_presence(activity=discord.Game(next(status)))
 '''
-
-@client.command()
-async def fact( ctx):
-    async with ctx.typing():
-        api = requests.get('https://uselessfacts.jsph.pl/random.json?language=en').json()
-    embed = discord.Embed(
-        colour=discord.Colour.from_rgb(255, 158, 253),
-         title='Random Fact!', 
-         description=api["text"],
-         timestamp=ctx.message.created_at
-        )
-    await ctx.send(embed=embed)
 
 @client.command()
 async def ping(ctx):
