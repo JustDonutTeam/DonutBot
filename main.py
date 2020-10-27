@@ -12,7 +12,7 @@ def get_prefix(client, message):
 
     return prefixes[str(message.guild.id)]
 
-client = commands.Bot(command_prefix = '.') 
+client = commands.Bot(command_prefix = 'a.') 
 token = open("token.txt", "r")
 client.remove_command('help')
 
@@ -31,16 +31,16 @@ async def on_command_error(ctx, error):
 
 @client.event
 async def on_guild_join(guild):
-    await client.change_presence(status=discord.Status.idle, activity=discord.Game(f'.help | Being a bot in {len(client.guilds)} guilds.'))
+    await client.change_presence(status=discord.Status.idle, activity=discord.Game(f'Alpha Boiii | Testing unstable features in {len(client.guilds)} guilds.'))
 
 @client.event
 async def on_guild_remove(guild):
-    await client.change_presence(status=discord.Status.idle, activity=discord.Game(f'.help | Being a bot in {len(client.guilds)} guilds.'))
+    await client.change_presence(status=discord.Status.idle, activity=discord.Game(f'Alpha Boiii | Testing unstable features in {len(client.guilds)} guilds.'))
 
 @client.event
 async def on_ready():
     #change_status.start()
-    await client.change_presence(status=discord.Status.idle, activity=discord.Game(f'.help | Being a bot in {len(client.guilds)} guilds.'))
+    await client.change_presence(status=discord.Status.idle, activity=discord.Game(f'Alpha Boiii | Testing unstable features in {len(client.guilds)} guilds.'))
     print('Bot is ready')
 
 
@@ -67,7 +67,7 @@ async def ping(ctx):
     await ctx.send(f'Pong! {round(client.latency * 1000)}ms')
 
 def is_it_me(ctx):
-    return ctx.author.id == 585115156757872653
+    return ctx.author.id == 476335730470289429
 
 @client.command()
 @commands.check(is_it_me)
