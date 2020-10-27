@@ -67,7 +67,7 @@ async def ping(ctx):
     await ctx.send(f'Pong! {round(client.latency * 1000)}ms')
 
 def is_it_me(ctx):
-    return ctx.author.id == 476335730470289429
+    return ctx.author.id == 585115156757872653
 
 @client.command()
 @commands.check(is_it_me)
