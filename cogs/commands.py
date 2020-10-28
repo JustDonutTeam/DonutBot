@@ -1,4 +1,5 @@
 import discord
+import asyncio
 import random
 import requests
 import json
@@ -10,6 +11,22 @@ class Commands(commands.Cog):
     
     def __init__(self, client):
         self.client = client
+
+    @commands.command()
+    async def yt(self, ctx, *, comment):
+        avatar = ctx.author.avatar_url
+        username = ctx.author.display_name
+        api = (f"https://some-random-api.ml/canvas/youtube-comment?username={username}&avatar={avatar}&comment={comment.replace(' ', '%20')}")
+        embed = discord.Embed(colour=discord.Colour.from_rgb(255, 158, 253), timestamp=ctx.message.created_at)
+        async with ctx.typing():
+            embed.set_image(url=api)
+        await ctx.send(embed=embed)
+
+    @commands.command()
+    async def chat(self, ctx, message):
+        async with ctx.typing():
+            api = requests.get(f'https://some-random-api.ml/chatbot?message={message}').json()
+        await ctx.send(api["response"])
 
     @commands.command()
     async def triggered(self, ctx, member : discord.Member = None):

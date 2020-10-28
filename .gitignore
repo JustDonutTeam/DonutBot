@@ -3,3 +3,4 @@ token.txt
 *.svg
 /cogs/__pycache__/*
 /__pycache__/*
+prefix.txt

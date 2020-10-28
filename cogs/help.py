@@ -53,7 +53,7 @@ class Help(commands.Cog):
             embed = discord.Embed(
                 colour=discord.Colour.from_rgb(255, 158, 253),
                 title=":camera: image",
-                description="This is the list of all commands from this category, use ``.help <command>`` to get some more detailed help on a command!\n\n``hug``, ``cat``, ``panda``, ``wasted``, ``gay``, ``invert``, ``threshold``, ``triggered``",
+                description="This is the list of all commands from this category, use ``.help <command>`` to get some more detailed help on a command!\n\n``hug``, ``cat``, ``panda``, ``wasted``, ``gay``, ``invert``, ``threshold``, ``triggered``, ``yt``",
                 timestamp=ctx.message.created_at
                 )
             embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')
@@ -62,7 +62,7 @@ class Help(commands.Cog):
             embed = discord.Embed(
                 colour=discord.Colour.from_rgb(255, 158, 253),
                 title=":video_game: fun",
-                description="This is the list of all commands from this category, use ``.help <command>`` to get some more detailed help on a command!\n\n``8ball``, ``robux``, ``tf``, ``nuke``, ``fact``",
+                description="This is the list of all commands from this category, use ``.help <command>`` to get some more detailed help on a command!\n\n``8ball``, ``robux``, ``tf``, ``nuke``, ``fact``, ``chat``",
                 timestamp=ctx.message.created_at
                 )
             embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')
