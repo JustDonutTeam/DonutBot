@@ -14,6 +14,7 @@ def get_prefix(client, message):
 
 client = commands.Bot(command_prefix = open("prefix.txt", "r").read()) 
 token = open("token.txt", "r")
+status = open("status.txt","r").read()
 client.remove_command('help')
 
 #status = cycle(['status1, status2']) 
@@ -31,16 +32,16 @@ async def on_command_error(ctx, error):
 
 @client.event
 async def on_guild_join(guild):
-    await client.change_presence(status=discord.Status.idle, activity=discord.Game(f'.help | Being a bot in {len(client.guilds)} guilds.'))
+    await client.change_presence(status=discord.Status.idle, activity=discord.Game(status.replace("gnum",str(len(client.guilds)))))
 
 @client.event
 async def on_guild_remove(guild):
-    await client.change_presence(status=discord.Status.idle, activity=discord.Game(f'.help | Being a bot in {len(client.guilds)} guilds.'))
+    await client.change_presence(status=discord.Status.idle, activity=discord.Game(status.replace("gnum",str(len(client.guilds)))))
 
 @client.event
 async def on_ready():
     #change_status.start()
-    await client.change_presence(status=discord.Status.idle, activity=discord.Game(f'.help | Being a bot in {len(client.guilds)} guilds.'))
+    await client.change_presence(status=discord.Status.idle, activity=discord.Game(status.replace("gnum",str(len(client.guilds)))))
     print('Bot is ready')
 
 
