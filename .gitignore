@@ -1,5 +1,6 @@
-token.txt
 *.png
 *.svg
-/cogs/__pycache__/*
-/__pycache__/*
+cogs/__pycache__/
+__pycache__/
+.vscode/
+prefix.txt 
