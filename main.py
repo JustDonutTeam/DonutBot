@@ -12,7 +12,7 @@ def get_prefix(client, message):
 
     return prefixes[str(message.guild.id)]
 
-client = commands.Bot(command_prefix = '.') 
+client = commands.Bot(command_prefix = open("prefix.txt", "r").read()) 
 token = open("token.txt", "r")
 client.remove_command('help')
 
@@ -20,14 +20,14 @@ client.remove_command('help')
 
 @client.event
 async def on_command_error(ctx, error):
-        if isinstance(error, commands.errors.MissingRequiredArgument):
-            await ctx.send(':warning: Please pass in all required arguments.')
-        #if isinstance(error, commands.errors.CommandNotFound):
-            #await ctx.send(':warning: Please use a valid command.')
-        if isinstance(error, commands.errors.MissingPermissions):
-            await ctx.send(":warning: You don't have enough permissions to run this command.")
-        if isinstance(error, commands.errors.BotMissingPermissions):
-            await ctx.send(":warning: I don't have enough permissions to execute this command.")
+    if isinstance(error, commands.errors.MissingRequiredArgument):
+        await ctx.send(':warning: Please pass in all required arguments.')
+    #if isinstance(error, commands.errors.CommandNotFound):
+        #await ctx.send(':warning: Please use a valid command.')
+    if isinstance(error, commands.errors.MissingPermissions):
+        await ctx.send(":warning: You don't have enough permissions to run this command.")
+    if isinstance(error, commands.errors.BotMissingPermissions):
+        await ctx.send(":warning: I don't have enough permissions to execute this command.")
 
 @client.event
 async def on_guild_join(guild):
