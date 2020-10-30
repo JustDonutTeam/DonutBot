@@ -28,10 +28,10 @@ def picture(inpu):
                 color('#f7d263')
         else:
             color('#b0fbff')
-        pu();goto(40,-55);pd()
-        write(tempe + "\u00B0C", move=False, align="center", font=("Arial", 30, "bold"))
-        pu(); goto(0,15); pd();
-        write(inpu, move=False, align="center", font=("Arial", 34, "normal"))
+        turtle.pu();turtle.goto(40,-55);turtle.pd()
+        turtle.write(tempe + "\u00B0C", move=False, align="center", font=("Arial", 30, "bold"))
+        turtle.pu(); turtle.goto(0,15); turtle.pd()
+        turtle.write(inpu, move=False, align="center", font=("Arial", 34, "normal"))
 def write_file(draw_func, filename, size, inpuu):
     global response
     drawing = svgwrite.Drawing(filename, size=size)
@@ -58,7 +58,6 @@ def mainpog(inpuuu):
         background.save("weether.png")
 
 class Weather(commands.Cog):
-    
     def __init__(self, client):
         self.client = client
     @commands.command()
