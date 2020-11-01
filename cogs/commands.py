@@ -4,6 +4,9 @@ import random
 import requests
 import json
 from discord.ext import commands
+from requests import Request, Session
+from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
+
 numbers = ("1️⃣", "2⃣", "3⃣", "4⃣", "5⃣",
 		   "6⃣", "7⃣", "8⃣", "9⃣", "🔟")
 
@@ -13,10 +16,59 @@ class Commands(commands.Cog):
         self.client = client
 
     @commands.command()
-    async def yt(self, ctx, *, comment):
-        avatar = ctx.author.avatar_url
-        username = ctx.author.display_name
-        api = (f"https://some-random-api.ml/canvas/youtube-comment?username={username}&avatar={avatar}&comment={comment.replace(' ', '%20')}")
+    async def meme(self, ctx):
+        async with ctx.typing():
+            api = requests.get('https://some-random-api.ml/meme').json()
+            embed = discord.Embed(
+                colour=discord.Colour.from_rgb(255, 158, 253),
+                title=api['caption'], 
+                timestamp=ctx.message.created_at
+                )
+            embed.set_image(url=api['image'])
+        await ctx.send(embed=embed)
+
+    @commands.command()
+    async def invertgrayscale(self, ctx, member : discord.Member = None):
+        member = ctx.author if not member else member
+        avatarURL = member.avatar_url
+        api = (f'https://some-random-api.ml/canvas/invertgreyscale?avatar={avatarURL}').replace('.webp', '.png')
+        embed = discord.Embed(
+            colour=discord.Colour.from_rgb(255, 158, 253),
+            timestamp=ctx.message.created_at
+            )
+        async with ctx.typing():
+            embed.set_image(url=api)
+        await ctx.send(embed=embed)
+
+    @commands.command()
+    async def insult(self, ctx):
+        async with ctx.typing():
+            api = requests.get('https://evilinsult.com/generate_insult.php?lang=en&type=json').json()
+        embed = discord.Embed(
+            colour=discord.Colour.from_rgb(255, 158, 253),
+            title="Here's your insult!", 
+            timestamp=ctx.message.created_at
+        )
+        embed.add_field(name=api['insult'], value=f'views: {api["shown"]}')
+        await ctx.send(embed=embed)
+
+    @commands.command()
+    async def dog(self, ctx):
+        async with ctx.typing():
+            api = requests.get('https://some-random-api.ml/img/dog').json()
+        embed = discord.Embed(
+            colour=discord.Colour.from_rgb(255, 158, 253),
+            title="Here's a dog pic!", 
+            timestamp=ctx.message.created_at
+            )
+        embed.set_image(url=api["link"])
+        await ctx.send(embed=embed)
+
+    @commands.command()
+    async def yt(self, ctx, member : discord.Member, *, comment):
+        avatar = member.avatar_url
+        username = member.display_name
+        api = (f"https://some-random-api.ml/canvas/youtube-comment?username={username.replace(' ', '%20')}&avatar={avatar}&comment={comment.replace(' ', '%20')}")
         embed = discord.Embed(colour=discord.Colour.from_rgb(255, 158, 253), timestamp=ctx.message.created_at)
         async with ctx.typing():
             embed.set_image(url=api)

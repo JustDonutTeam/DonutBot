@@ -12,7 +12,7 @@ def get_prefix(client, message):
 
     return prefixes[str(message.guild.id)]
 
-client = commands.Bot(command_prefix = open("prefix.txt", "r").readline().strip())
+client = commands.Bot(command_prefix = open("prefix.txt", "r").read())
 client.owner_ids = {585115156757872653,476335730470289429}
 token = open("token.txt", "r")
 status = open("status.txt","r").read()
