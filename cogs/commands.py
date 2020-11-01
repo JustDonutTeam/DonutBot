@@ -10,6 +10,10 @@ from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
 numbers = ("1️⃣", "2⃣", "3⃣", "4⃣", "5⃣",
 		   "6⃣", "7⃣", "8⃣", "9⃣", "🔟")
 
+chal_file=open("challenge.json","r")
+challenges=json.load(chal_file)
+chal_file.close()
+
 class Commands(commands.Cog):
     
     def __init__(self, client):
@@ -276,8 +280,8 @@ class Commands(commands.Cog):
             timestamp=ctx.message.created_at
         )
         embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')
-        embed.add_field(name='Developer:', value='Feeeeddmmmeee#7784')
-        embed.add_field(name='Awesome helpers:', value='Luwuke#2795\nPrzebot#2448')
+        embed.add_field(name='Developers:', value='Feeeeddmmmeee#7784\nPrzebot#2448')
+        embed.add_field(name='Awesome helper:', value='Luwuke#6969')
         await ctx.send(embed=embed)
 
     @commands.command(aliases=['uwu', 'owo', 'owofy', 'uwuify', 'owoify'])
@@ -581,6 +585,48 @@ class Commands(commands.Cog):
     @commands.command(aliases=['prefix'])
     async def changeprefix(self, ctx):
         await ctx.send(':warning: this command is currently unavailable due to some problems. Im gonna try to fix it as soon as possible.')
+
+    @commands.command()
+    async def gif(self, ctx, tag):
+        async with ctx.typing():
+            embed = discord.Embed(colour=discord.Colour.from_rgb(255, 158, 253), timestamp=ctx.message.created_at)
+            gif = requests.get("https://api.giphy.com/v1/gifs/random?api_key=4rpOAERp9nE5uS6uyldrgzrADXwy4CDt&rating=g&tag="+tag).json()["data"]["id"]
+            embed.set_image(url="https://media.giphy.com/media/"+gif+"/giphy.gif")
+        await ctx.send(embed=embed)
+
+    @commands.command()
+    async def challenge(self, ctx):
+        num=random.randint(0,len(challenges)-1)
+        embed = discord.Embed(
+            colour=discord.Colour.from_rgb(255, 158, 253),
+            title='Challenge number '+str(num+1),
+            description=challenges[num],
+            timestamp=ctx.message.created_at
+        )
+        await ctx.send(embed=embed)
+
+    @commands.command()
+    async def waifuai(self, ctx):
+        embed = discord.Embed(
+            colour=discord.Colour.from_rgb(255, 158, 253),
+            title="AI generated waifu:",
+            timestamp=ctx.message.created_at
+        )
+        embed.set_footer(text="thiswaifudoesnotexist.com")
+        embed.set_image(url="https://www.thiswaifudoesnotexist.net/example-"+str(random.randint(1,100000))+".jpg")
+        await ctx.send(embed=embed)
+
+    @commands.command(aliases=["birb"])
+    async def bird(self, ctx):
+        async with ctx.typing():
+            api = requests.get('https://some-random-api.ml/img/birb').json()
+        embed = discord.Embed(
+            colour=discord.Colour.from_rgb(255, 158, 253),
+            title="Here's a bird pic!", 
+            timestamp=ctx.message.created_at
+            )
+        embed.set_image(url=api["link"])
+        await ctx.send(embed=embed)
 
     '''@commands.command(aliases=['prefix'])
     async def changeprefix(self, ctx, prefix):

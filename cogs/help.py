@@ -53,7 +53,7 @@ class Help(commands.Cog):
             embed = discord.Embed(
                 colour=discord.Colour.from_rgb(255, 158, 253),
                 title=":camera: image",
-                description="This is the list of all commands from this category, use ``.help <command>`` to get some more detailed help on a command!\n\n``hug``, ``cat``, ``panda``, ``wasted``, ``gay``, ``invert``, ``threshold``, ``triggered``, ``yt``, ``dog``",
+                description="This is the list of all commands from this category, use ``.help <command>`` to get some more detailed help on a command!\n\n``hug``, ``cat``, ``panda``, ``wasted``, ``gay``, ``invert``, ``threshold``, ``triggered``, ``yt``,``gif``,``dog``",
                 timestamp=ctx.message.created_at
                 )
             embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')
@@ -377,7 +377,22 @@ class Help(commands.Cog):
                 timestamp=ctx.message.created_at
             )
             embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')
-
+        elif category == 'gif':  
+            embed = discord.Embed(
+                colour=discord.Colour.from_rgb(255, 158, 253),
+                title="sends random gif",
+                description='sends a random gif with specified tag! Required arguments: ``.gif <tag>``',
+                timestamp=ctx.message.created_at
+            )
+            embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')
+        elif category == 'chat':  
+            embed = discord.Embed(
+                colour=discord.Colour.from_rgb(255, 158, 253),
+                title="answers you",
+                description='answers your sentence/question! ``.chat <sentence>``',
+                timestamp=ctx.message.created_at
+            )
+            embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')
         elif category == 'yt':  
             embed = discord.Embed(
                 colour=discord.Colour.from_rgb(255, 158, 253),
@@ -386,9 +401,7 @@ class Help(commands.Cog):
                 timestamp=ctx.message.created_at
             )
             embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/646009680241623070/740564170964992130/donut-pfp.png')
-
         await ctx.send(embed=embed)
-
 
 def setup(client):
     client.add_cog(Help(client))
