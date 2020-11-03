@@ -641,6 +641,54 @@ class Commands(commands.Cog):
         embed.set_image(url=api["link"])
         await ctx.send(embed=embed)
 
+    @commands.command(aliases=["pokemon"])
+    async def pokedex(self, ctx, pokemon):
+        async with ctx.typing():
+            types="`"
+            evolutions="`"
+            pokedata=requests.get("https://some-random-api.ml/pokedex?pokemon="+pokemon).json()
+            embed = discord.Embed(colour=discord.Colour.from_rgb(255, 158, 253), timestamp=ctx.message.created_at,title=pokemon.title())
+            try:
+                if requests.get(pokedata["sprites"]["animated"]).json()["error"]=="404 page not found":
+                    embed.set_thumbnail(url=pokedata["sprites"]["normal"])
+            except:
+                embed.set_thumbnail(url=pokedata["sprites"]["animated"])
+            a=0
+            for i in pokedata["type"]:
+                if len(pokedata["type"])>1 and a!=0:
+                    types=types+", "+i
+                else:
+                    types=types+i
+                a=a+1
+            types=types+"`"
+            embed.add_field(name="TYPES",value=types)
+            embed.add_field(name="WEIGHT",value="`"+pokedata["weight"]+"`")
+            embed.add_field(name="HEIGHT",value="`"+pokedata["height"]+"`")
+            a=0
+            for i in pokedata["family"]["evolutionLine"]:
+                if len(pokedata["family"]["evolutionLine"])>1 and a!=0:
+                    evolutions=evolutions+", "+i
+                else:
+                    evolutions=evolutions+i
+                a=a+1
+            evolutions=evolutions+"`"
+            embed.add_field(name="FAMILY",value=evolutions)
+            emb=discord.Embed(colour=discord.Colour.from_rgb(255, 158, 253), timestamp=ctx.message.created_at,title=pokemon.title()+" Stats")
+            for i in list(pokedata["stats"].items()):
+                emb.add_field(name=i[0].upper(),value="`"+i[1]+"`")
+            emb.set_thumbnail(url="https://img.rankedboost.com/wp-content/uploads/2016/07/Pokemon-Go-Pok%C3%A9dex-300x229.png")
+        await ctx.send(embed=embed)
+        await ctx.send(embed=emb)
+
+    @commands.command()
+    async def advice(self, ctx):
+        async with ctx.typing():
+            advice=requests.get("https://api.adviceslip.com/advice").json()["slip"]
+            embed = discord.Embed(colour=discord.Colour.from_rgb(255, 158, 253), timestamp=ctx.message.created_at,title="Random Advice #"+str(advice["id"]),
+            description=advice["advice"])
+        await ctx.send(embed=embed)
+
+
     '''@commands.command(aliases=['prefix'])
     async def changeprefix(self, ctx, prefix):
         with open('prefixes.json', 'r') as f:
