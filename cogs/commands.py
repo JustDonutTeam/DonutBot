@@ -20,6 +20,19 @@ class Commands(commands.Cog):
         self.client = client
 
     @commands.command()
+    async def lyrics(self, ctx, *, song):
+        async with ctx.typing():
+            api = requests.get(f"https://some-random-api.ml/lyrics?title=%7B{song.replace(' ', '%20')}").json()
+        author = api["author"]
+        Song = api["title"]
+        lyrics = api["lyrics"].replace("'", "\'")
+        pic = api["thumbnail"]["genius"]
+        embed = discord.Embed(title=f'Title: \'{Song}\' By: \'{author}\'', description=lyrics, color=discord.Colour.from_rgb(255, 158, 253))
+        embed.set_thumbnail(url=f"{pic}")
+
+        await ctx.send(embed=embed)
+
+    @commands.command()
     async def meme(self, ctx):
         async with ctx.typing():
             api = requests.get('https://some-random-api.ml/meme').json()
