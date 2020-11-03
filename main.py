@@ -12,7 +12,7 @@ def get_prefix(client, message):
 
     return prefixes[str(message.guild.id)]
 
-client = commands.Bot(command_prefix = open("prefix.txt", "r").read())
+client = commands.Bot(command_prefix = open("prefix.txt", "r").readline())
 client.owner_ids = {585115156757872653,476335730470289429}
 token = open("token.txt", "r")
 status = open("status.txt","r").read()
@@ -106,8 +106,6 @@ async def botstats(ctx):
         
     embed.add_field(name='Servers:', value=len(client.guilds))
     embed.add_field(name='Library:', value='discord.py 1.5.0')
-    embed.add_field(name='ping:', value=f'{round(client.latency * 1000)}ms')
-
+    embed.add_field(name='Ping:', value=f'{round(client.latency * 1000)}ms')
     await ctx.send(embed=embed)
-    #somethinggg
 client.run(token.read())
