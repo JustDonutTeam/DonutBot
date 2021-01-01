@@ -20,6 +20,46 @@ class Commands(commands.Cog):
         self.client = client
 
     @commands.command()
+    async def distracted(self, ctx, woman : discord.Member, bf : discord.Member, gf : discord.Member):
+        bfPFP = bf.avatar_url
+        gfPFP = gf.avatar_url
+        womanPFP = woman.avatar_url
+
+        embed = discord.Embed(
+            colour=discord.Colour.from_rgb(255, 158, 253),
+                )
+        embed.set_image(url=f'https://vacefron.nl/api/distractedbf?boyfriend={bfPFP}&woman={womanPFP}&girlfriend={gfPFP}')
+
+        await ctx.send(embed=embed)
+
+    @commands.command(aliases = ['eject'])
+    async def ejected(self, ctx, impostor, color, member : discord.Member = None):
+        member = ctx.author if not member else member
+        username = member.display_name.replace(' ', '%20')
+
+        colors = ['black','blue','brown','cyan','darkgreen','lime','orange','pink','purple','red','white','yellow']
+
+        if color in colors:
+            if impostor.lower() == 'impostor':
+                    embed = discord.Embed(
+                        colour=discord.Colour.from_rgb(255, 158, 253),
+                        )
+                    embed.set_image(url=f'https://vacefron.nl/api/ejected?name={username}&impostor=true&crewmate={color}')
+
+            elif impostor.lower() == 'crewmate':
+                    embed = discord.Embed(
+                        colour=discord.Colour.from_rgb(255, 158, 253),
+                        )
+                    embed.set_image(url=f'https://vacefron.nl/api/ejected?name={username}&impostor=false&crewmate={color}')
+
+            else:
+                await ctx.send(":warning: You must specify if the user is an impostor!")
+        else:
+            await ctx.send(":warning: You must specify the color!")
+        
+        await ctx.send(embed=embed)
+
+    @commands.command()
     async def lyrics(self, ctx, *, song):
         async with ctx.typing():
             api = requests.get(f"https://some-random-api.ml/lyrics?title=%7B{song.replace(' ', '%20')}").json()
@@ -82,7 +122,8 @@ class Commands(commands.Cog):
         await ctx.send(embed=embed)
 
     @commands.command()
-    async def yt(self, ctx, member : discord.Member, *, comment):
+    async def yt(self, ctx, member : discord.Member = None, *, comment):
+        member = ctx.author if not member else member
         avatar = member.avatar_url
         username = member.display_name
         api = (f"https://some-random-api.ml/canvas/youtube-comment?username={username.replace(' ', '%20')}&avatar={avatar}&comment={comment.replace(' ', '%20')}")
@@ -642,11 +683,11 @@ class Commands(commands.Cog):
         await ctx.send(embed=embed)
 
     @commands.command(aliases=["pokemon"])
-    async def pokedex(self, ctx, pokemon):
+    async def pokedex(self, ctx, *, pokemon):
         async with ctx.typing():
             types="`"
             evolutions="`"
-            pokedata=requests.get("https://some-random-api.ml/pokedex?pokemon="+pokemon).json()
+            pokedata=requests.get("https://some-random-api.ml/pokedex?pokemon="+pokemon.replace(' ', '%20')).json()
             embed = discord.Embed(colour=discord.Colour.from_rgb(255, 158, 253), timestamp=ctx.message.created_at,title=pokemon.title())
             try:
                 if requests.get(pokedata["sprites"]["animated"]).json()["error"]=="404 page not found":

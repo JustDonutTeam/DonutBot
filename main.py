@@ -107,6 +107,6 @@ async def botstats(ctx):
     embed.add_field(name='Servers:', value=len(client.guilds))
     embed.add_field(name='Library:', value='discord.py 1.5.0')
     embed.add_field(name='Ping:', value=f'{round(client.latency * 1000)}ms')
-    embed.set_image(url='https://top.gg/api/widget/738788356506386462.svg')
+    embed.set_image(url='https://top.gg/api/widget/738788356506386462.png')
     await ctx.send(embed=embed)
 client.run(token.read())
