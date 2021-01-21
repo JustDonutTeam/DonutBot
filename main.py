@@ -17,8 +17,8 @@ client.owner_ids = {585115156757872653,476335730470289429}
 token = open("token.txt", "r")
 status = open("status.txt","r").read()
 client.remove_command('help')
-
-#status = cycle(['status1, status2']) 
+ 
+#status = cycle(['status1, status2']) g sfa
 
 @client.event
 async def on_command_error(ctx, error):
