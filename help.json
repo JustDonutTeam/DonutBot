@@ -1,0 +1,63 @@
+{
+    "image": {
+        "name": ":camera: Image Category",
+        "desc": "A command category consisting of image manipulation commands. You can type `.help <command>` to get some more detailed info on a command!",
+        "nsfw": null,
+        "commands": ["hug", "eject", "tweet", "triggered"]
+    },
+    "moderation": {
+        "name": ":hammer: Moderation Category",
+        "desc": "A command category consisting of moderation related commands. You can type `.help <command>` to get some more detailed info on a command!",
+        "nsfw": null,
+        "commands": ["lockdown"]
+    },
+    "lockdown": {
+        "name": "Lockdown",
+        "desc": "A command used to lock a channel (make people unable to type).",
+        "nsfw": false,
+        "aliases": ["lock"]
+    },
+    "ping": {
+        "name": "Ping",
+        "desc": "Checks the bot's latency!",
+        "nsfw": false,
+        "aliases": ["pong", "latency", "ms"]
+    },
+    "help": {
+        "name": "Help",
+        "desc": "Sends you info on a given command.",
+        "nsfw": false,
+        "aliases": ["helpme", "whatis"]
+    },
+    "eject": {
+        "name": "Eject",
+        "desc": "Generates an Among Us like ejected screen.",
+        "nsfw": false,
+        "aliases": ["amongus", "amogus", "sus", "impostor", "ejected"]
+    },
+    "hug": {
+        "name": "Hug",
+        "desc": "A command that lets you hug someone!",
+        "nsfw": false,
+        "aliases": ["anime", "weeb"]
+    },
+    "triggered": {
+        "name": "Triggered",
+        "desc": "Sends a triggered version of your profile picture.",
+        "nsfw": false,
+        "aliases": ["angry", "rage"]
+    },
+    "tweet": {
+        "name": "Tweet",
+        "desc": "Generates a fake Tweeter comment.",
+        "nsfw": false,
+        "aliases": ["tcomment", "faketweeter", "tweeter"]
+    },
+    "8ball": {
+        "name": "8ball",
+        "desc": "Answers your question.",
+        "nsfw": false,
+        "aliases": ["8ball", "answer"]
+    }
+
+}
