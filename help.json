@@ -1,15 +1,63 @@
 {
+    "other": {
+        "name": ":question: Other Category",
+        "desc": "A category with commands that don't belong in other categories. You can type `.help <command>` to get some more detailed info on a command!",
+        "nsfw": null,
+        "commands": ["8ball", "ironic", "ping", "help"]
+    },
     "image": {
         "name": ":camera: Image Category",
         "desc": "A command category consisting of image manipulation commands. You can type `.help <command>` to get some more detailed info on a command!",
         "nsfw": null,
-        "commands": ["hug", "eject", "tweet", "triggered"]
+        "commands": ["hug", "eject", "tweet", "youtube", "triggered", "simpcard", "wasted", "pixelate", "missionpassed"]
     },
     "moderation": {
         "name": ":hammer: Moderation Category",
         "desc": "A command category consisting of moderation related commands. You can type `.help <command>` to get some more detailed info on a command!",
         "nsfw": null,
-        "commands": ["lockdown"]
+        "commands": ["lockdown", "clear"]
+    },
+    "missionpassed": {
+        "name": "Mission Passed",
+        "desc": "Adds a mission passed overlay to your profile picture",
+        "nsfw": false,
+        "aliases": ["gtamissionpassed", "respect", "gtarespect"]
+    },
+    "pixelate": {
+        "name": "Pixelate",
+        "desc": "Pixelates your profile picture!",
+        "nsfw": false,
+        "aliases": ["pixel"]
+    },
+    "wasted": {
+        "name": "Wasted",
+        "desc": "Adds a wasted text to a mentioned user's profile picture.",
+        "nsfw": false,
+        "aliases": ["gtawasted"]
+    },
+    "simpcard": {
+        "name": "Simpcard",
+        "desc": "Creates a simpcard for the given user.",
+        "nsfw": false,
+        "aliases": ["simp"]
+    },
+    "ironic": {
+        "name": "Ironic",
+        "desc": "Sends your message but with randomly generated capital letters.",
+        "nsfw": false,
+        "aliases": ["yell"]
+    },
+    "clear": {
+        "name": "Clear",
+        "desc": "Deletes a given amount of messages!",
+        "nsfw": false,
+        "aliases": ["purge"]
+    },
+    "youtube": {
+        "name": "Youtube",
+        "desc": "Generates a fake Youtube comment.",
+        "nsfw": false,
+        "aliases": ["yt", "fakeyt", "fakeyoutube", "ytcomment"]
     },
     "lockdown": {
         "name": "Lockdown",

@@ -32,10 +32,12 @@ class Help(commands.Cog):
                 description = "This is the list of all the command categories this bot has. You can use `.help <category>` to see all the commands.",
                 timestamp = ctx.message.created_at
             )
-            embed.add_field(name=":camera: Image:", value="Category with image related commands.")
+            embed.add_field(name=":question: Other", value="A category with commands that don't belong in other categories.")
+            embed.add_field(name=":camera: Image", value="Category with image related commands.")
+            embed.add_field(name=":hammer: Moderation", value="A command category with commands for admins.")
             embed.set_footer(text="Donut", icon_url=self.client.get_user(738788356506386462).avatar_url)
 
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
 
 
         

@@ -9,8 +9,11 @@ class Hug(commands.Cog):
         self.client = client
 
     @commands.command(aliases = json.load(open("help.json", "r"))["hug"]["aliases"])
-    async def hug(self, ctx, member : discord.Member):
+    async def hug(self, ctx, member : discord.Member = None):
         
+        await ctx.trigger_typing()
+        if member == None: member = ctx.author
+
         if ctx.author.id == member.id: desc = f"**{ctx.author.display_name}** hugged **himself**!" 
         else: desc = f"**{ctx.author.display_name}** hugged **{member.display_name}**!"
 
