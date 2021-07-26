@@ -11,7 +11,7 @@ with open("config.json", "r") as config:
 client = commands.Bot(command_prefix = prefix, intents = discord.Intents.all(), allowed_mentions=discord.AllowedMentions(everyone=False))
 
 client.remove_command("help")
-client.owner_ids = {585115156757872653,476335730470289429}
+client.owner_ids = {585115156757872653, 476335730470289429}
 
 @client.event
 async def on_ready():
@@ -50,7 +50,7 @@ async def on_command_error(ctx, error):
         description = str(error)
     )
     embed.add_field(name="Please contact the developer!", value="DM Feeeeddmmmeee#7784 or join the [support server](https://discord.gg/GAPYQa9).")
-    embed.set_footer(text="Donut", icon_url=client.get_user(738788356506386462).avatar_url)
+    embed.set_footer(text="Donut encountered an error!", icon_url=client.get_user(738788356506386462).avatar_url)
 
     await ctx.send(embed=embed)
 

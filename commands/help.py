@@ -37,7 +37,7 @@ class Help(commands.Cog):
             embed.add_field(name=":hammer: Moderation", value="A command category with commands for admins.")
             embed.set_footer(text="Donut", icon_url=self.client.get_user(738788356506386462).avatar_url)
 
-            await ctx.reply(embed=embed)
+            await ctx.send(embed=embed)
 
 
         

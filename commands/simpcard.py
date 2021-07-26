@@ -9,7 +9,7 @@ class Simpcard(commands.Cog):
     def __init__(self, client):
         self.client = client
 
-    @commands.command()
+    @commands.command(aliases = json.load(open("help.json", "r"))["simpcard"]["aliases"])
     async def simpcard(self, ctx, member : discord.Member = None):
         await ctx.trigger_typing()
         if not member: member = ctx.author

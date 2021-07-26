@@ -3,19 +3,61 @@
         "name": ":question: Other Category",
         "desc": "A category with commands that don't belong in other categories. You can type `.help <command>` to get some more detailed info on a command!",
         "nsfw": null,
-        "commands": ["8ball", "ironic", "ping", "help"]
+        "commands": ["8ball", "ironic", "ping", "help", "avatar", "invite", "uwufy"]
     },
     "image": {
         "name": ":camera: Image Category",
         "desc": "A command category consisting of image manipulation commands. You can type `.help <command>` to get some more detailed info on a command!",
         "nsfw": null,
-        "commands": ["hug", "eject", "tweet", "youtube", "triggered", "simpcard", "wasted", "pixelate", "missionpassed"]
+        "commands": ["hug", "eject", "tweet", "youtube", "triggered", "simpcard", "wasted", "pixelate", "missionpassed", "car", "water", "mind", "iamspeed"]
     },
     "moderation": {
         "name": ":hammer: Moderation Category",
         "desc": "A command category consisting of moderation related commands. You can type `.help <command>` to get some more detailed info on a command!",
         "nsfw": null,
         "commands": ["lockdown", "clear"]
+    },
+    "iamspeed": {
+        "name": "I Am Speed",
+        "desc": "Generates an I am speed meme with your profile picture!",
+        "nsfw": false,
+        "aliases": ["speed", "fast"]
+    },
+    "water": {
+        "name": "Water",
+        "desc": "Generates a water meme with your text!",
+        "nsfw": false,
+        "aliases": ["thirsty"]
+    },
+    "mind": {
+        "name": "Change My Mind",
+        "desc": "Generates a change my mind meme with your text!",
+        "nsfw": false,
+        "aliases": ["changemymind", "change"]
+    },
+    "uwufy": {
+        "name": "Uwufy",
+        "desc": "Sends an uwufied version of your message.",
+        "nsfw": false,
+        "aliases": ["uwu"]
+    },
+    "invite": {
+        "name": "Invite",
+        "desc": "Sends a link allowing you to invite Donut to your own server!",
+        "nsfw": false,
+        "aliases": ["donut"]
+    },
+    "avatar": {
+        "name": "Avatar",
+        "desc": "Sends the avatar of the mentioned user!",
+        "nsfw": false,
+        "aliases": ["av", "pfp"]
+    },
+    "car": {
+        "name": "Car",
+        "desc": "Generates a car meme with your text!",
+        "nsfw": false,
+        "aliases": ["carreverse"]
     },
     "missionpassed": {
         "name": "Mission Passed",
@@ -105,7 +147,7 @@
         "name": "8ball",
         "desc": "Answers your question.",
         "nsfw": false,
-        "aliases": ["8ball", "answer"]
+        "aliases": ["8ball", "answer", "predict"]
     }
 
 }
