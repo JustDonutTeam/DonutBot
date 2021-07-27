@@ -3,7 +3,7 @@
         "name": ":question: Other Category",
         "desc": "A category with commands that don't belong in other categories. You can type `.help <command>` to get some more detailed info on a command!",
         "nsfw": null,
-        "commands": ["8ball", "ironic", "ping", "help", "avatar", "invite", "uwufy"]
+        "commands": ["8ball", "ironic", "ping", "help", "avatar", "invite", "uwufy", "nitro", "yomomma", "yoda", "support", "fact", "nuke"]
     },
     "image": {
         "name": ":camera: Image Category",
@@ -15,7 +15,49 @@
         "name": ":hammer: Moderation Category",
         "desc": "A command category consisting of moderation related commands. You can type `.help <command>` to get some more detailed info on a command!",
         "nsfw": null,
-        "commands": ["lockdown", "clear"]
+        "commands": ["lockdown", "clear", "kick"]
+    },
+    "nuke": {
+        "name": "Nuke",
+        "desc": "Nukes a given destination.",
+        "nsfw": false,
+        "aliases": ["bomb"]
+    },
+    "kick": {
+        "name": "Kick",
+        "desc": "Kicks a mentioned user.",
+        "nsfw": false,
+        "aliases": ["delete"]
+    },
+    "fact": {
+        "name": "Fact",
+        "desc": "Sends a random fact.",
+        "nsfw": false,
+        "aliases": ["randomfact"]
+    },
+    "support": {
+        "name": "Support",
+        "desc": "Invites you to the support server.",
+        "nsfw": false,
+        "aliases": ["server"]
+    },
+    "yoda": {
+        "name": "Yoda",
+        "desc": "Translates your message to Yoda's language.",
+        "nsfw": false,
+        "aliases": ["yodish", "toyodish"]
+    },
+    "yomomma": {
+        "name": "Yo Momma",
+        "desc": "Sends a random yo momma joke.",
+        "nsfw": false,
+        "aliases": ["urmom"]
+    },
+    "nitro": {
+        "name": "Nitro",
+        "desc": "Sends you a link to claim your free Discord Nitro!",
+        "nsfw": false,
+        "aliases": ["discord", "discordnitro"]
     },
     "iamspeed": {
         "name": "I Am Speed",
