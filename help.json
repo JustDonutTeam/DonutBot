@@ -181,9 +181,9 @@
     },
     "tweet": {
         "name": "Tweet",
-        "desc": "Generates a fake Tweeter comment.",
+        "desc": "Generates a fake Twitter comment.",
         "nsfw": false,
-        "aliases": ["tcomment", "faketweeter", "tweeter"]
+        "aliases": ["tcomment", "faketwitter", "twitter"]
     },
     "8ball": {
         "name": "8ball",

@@ -2,6 +2,13 @@ import discord
 import os
 import json
 from discord.ext import commands, tasks
+from dotenv import load_dotenv
+from pathlib import Path
+
+dotenv_path = Path('C:/Users/HP/Desktop/vs-code/DonutBot Rewrite/token.env')
+
+load_dotenv(dotenv_path = dotenv_path)
+TOKEN = os.getenv('TOKEN')
 
 with open("config.json", "r") as config:
     config = json.load(config)
@@ -54,4 +61,4 @@ async def on_command_error(ctx, error):
 
     await ctx.reply(embed=embed)
 
-client.run("NzY1NjM0MTQwNjg2Nzc4Mzk5.X4XqWw.ERREeKD3-QoiY2TMt1PdaTqeY5s")
+client.run(TOKEN)
