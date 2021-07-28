@@ -20,7 +20,7 @@ class Iamspeed(commands.Cog):
         embed.set_footer(text="Donut x Vacefron API", icon_url=self.client.get_user(738788356506386462).avatar_url)
         
 
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
 def setup(client):
     client.add_cog(Iamspeed(client))

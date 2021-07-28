@@ -2,7 +2,7 @@ import discord
 import json
 from discord.ext import commands
 
-class Fact(commands.Cog):
+class Kick(commands.Cog):
 
     def __init__(self, client):
         self.client = client
@@ -16,9 +16,10 @@ class Fact(commands.Cog):
             title=f'{member} has been kicked!',
             timestamp=ctx.message.created_at
         )
-        embed.set_footer(text=f"Donut • Kicked by {ctx.author}", icon_url=self.client.get_user(738788356506386462).avatar_url)
+        embed.set_author(name=self.client.get_user(738788356506386462), url=self.client.get_user(738788356506386462).avatar_url)
+        embed.set_footer(text=f"Donut", icon_url=self.client.get_user(738788356506386462).avatar_url)
         
         await ctx.send(embed=embed)
 
 def setup(client):
-    client.add_cog(Fact(client))
+    client.add_cog(Kick(client))

@@ -3,7 +3,7 @@
         "name": ":question: Other Category",
         "desc": "A category with commands that don't belong in other categories. You can type `.help <command>` to get some more detailed info on a command!",
         "nsfw": null,
-        "commands": ["8ball", "ironic", "ping", "help", "avatar", "invite", "uwufy", "nitro", "yomomma", "yoda", "support", "fact", "nuke"]
+        "commands": ["8ball", "ironic", "ping", "help", "avatar", "invite", "uwufy", "nitro", "yomomma", "yoda", "support", "fact", "nuke", "botstats", "userinfo", "announcement"]
     },
     "image": {
         "name": ":camera: Image Category",
@@ -16,6 +16,24 @@
         "desc": "A command category consisting of moderation related commands. You can type `.help <command>` to get some more detailed info on a command!",
         "nsfw": null,
         "commands": ["lockdown", "clear", "kick"]
+    },
+    "announcement": {
+        "name": "Announcement",
+        "desc": "Sends a cool looking announcement!",
+        "nsfw": false,
+        "aliases": ["announce"]
+    },
+    "userinfo": {
+        "name": "User Info",
+        "desc": "Sends some information about the mentioned user!",
+        "nsfw": false,
+        "aliases": ["userstats", "user"]
+    },
+    "botstats": {
+        "name": "Bot Stats",
+        "desc": "Sends some information about Donut!",
+        "nsfw": false,
+        "aliases": ["botinfo", "stats", "info"]
     },
     "nuke": {
         "name": "Nuke",

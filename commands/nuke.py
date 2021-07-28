@@ -8,7 +8,6 @@ class Nuke(commands.Cog):
         self.client = client
 
     @commands.command(aliases = json.load(open("help.json", "r"))["nuke"]["aliases"])
-    @commands.has_permissions(kick_members=True)
     async def nuke(self, ctx, *, destination):
 
         embed = discord.Embed(

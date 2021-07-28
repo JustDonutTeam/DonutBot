@@ -8,7 +8,7 @@ class Lockdown(commands.Cog):
         self.client = client
 
     @commands.command(aliases = json.load(open("help.json", "r"))["lockdown"]["aliases"])
-    @commands.has_permissions(kick_members=True)
+    @commands.has_permissions(manage_messages=True)
     async def lockdown(self, ctx, channel : discord.TextChannel=None):
         channel = channel or ctx.channel
 
