@@ -12,7 +12,7 @@ class Support(commands.Cog):
         embed = discord.Embed(
             colour=discord.Colour.from_rgb(255, 158, 253),
             title="Join Donut's support server!",
-            description="Click [**[this]**](https://discord.gg/GAPYQa9) link to join!",
+            description="Click [[this]](https://discord.gg/GAPYQa9) link to join!",
             timestamp=ctx.message.created_at
         )
         embed.set_footer(text="Donut", icon_url=self.client.get_user(738788356506386462).avatar_url)
