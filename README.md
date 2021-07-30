@@ -13,6 +13,6 @@ Donut is a newly rewritten bot with currently over 40 different commands which i
 
 If you encountered any problems with the bot, please join our [Discord server](https://discord.gg/GAPYQa9)
 
-# Authors
+## Authors
 
 Donut was created by [Feeeeddmmmeee](https://github.com/Feeeeddmmmeee) and [Przbor](https://github.com/przebor)
