@@ -3,7 +3,7 @@
         "name": ":question: Other Category",
         "desc": "A category with commands that don't belong in other categories. You can type `.help <command>` to get some more detailed info on a command!",
         "nsfw": null,
-        "commands": ["8ball", "ironic", "ping", "help", "invite", "uwufy", "nitro", "yomomma", "yoda", "support", "fact", "nuke", "botstats", "userinfo", "announcement", "dog", "cat", "tobinary", "frombinary", "tohex", "fromhex"]
+        "commands": ["8ball", "ironic", "ping", "help", "invite", "uwufy", "nitro", "yomomma", "yoda", "support", "fact", "nuke", "botstats", "userinfo", "announcement", "dog", "cat", "tobinary", "frombinary", "tohex", "fromhex", "vote"]
     },
     "image": {
         "name": ":camera: Image Category",

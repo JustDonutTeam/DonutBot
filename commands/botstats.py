@@ -30,7 +30,7 @@ class Botstats(commands.Cog):
             config = json.load(config)
             embed.add_field(name=":clock1: Version:", value= f"v{config['version']}!")
         
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
 def setup(client):
     client.add_cog(Botstats(client))

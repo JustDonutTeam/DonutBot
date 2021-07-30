@@ -24,7 +24,7 @@ class Help(commands.Cog):
             if file[name]["nsfw"] == None: embed.add_field(name=":clipboard: Commands:", value=str(file[name]["commands"]).replace("'", "`").replace("[", "").replace("]", ""))
             embed.set_footer(text="Donut", icon_url=self.client.get_user(738788356506386462).avatar_url)
 
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
         else:
             embed = discord.Embed(
                 color = discord.Color.from_rgb(255, 158, 253),
@@ -37,7 +37,7 @@ class Help(commands.Cog):
             embed.add_field(name=":hammer: Moderation", value="A command category with commands for admins.")
             embed.set_footer(text="Donut", icon_url=self.client.get_user(738788356506386462).avatar_url)
 
-            await ctx.send(embed=embed)
+            await ctx.reply(embed=embed)
 
 
         

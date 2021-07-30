@@ -19,7 +19,7 @@ class Kick(commands.Cog):
         embed.set_author(name=self.client.get_user(738788356506386462), url=self.client.get_user(738788356506386462).avatar_url)
         embed.set_footer(text=f"Donut", icon_url=self.client.get_user(738788356506386462).avatar_url)
         
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
 def setup(client):
     client.add_cog(Kick(client))

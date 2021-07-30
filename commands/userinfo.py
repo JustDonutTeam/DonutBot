@@ -45,7 +45,7 @@ class Userinfo(commands.Cog):
             embed.add_field(name=f"{rpc} Activity:", value="None")
         
         
-        await ctx.send(embed=embed)
+        await ctx.reply(embed=embed)
 
 def setup(client):
     client.add_cog(Userinfo(client))
