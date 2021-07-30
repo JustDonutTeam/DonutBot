@@ -3,19 +3,79 @@
         "name": ":question: Other Category",
         "desc": "A category with commands that don't belong in other categories. You can type `.help <command>` to get some more detailed info on a command!",
         "nsfw": null,
-        "commands": ["8ball", "ironic", "ping", "help", "avatar", "invite", "uwufy", "nitro", "yomomma", "yoda", "support", "fact", "nuke", "botstats", "userinfo", "announcement"]
+        "commands": ["8ball", "ironic", "ping", "help", "invite", "uwufy", "nitro", "yomomma", "yoda", "support", "fact", "nuke", "botstats", "userinfo", "announcement", "dog", "cat", "tobinary", "frombinary", "tohex", "fromhex"]
     },
     "image": {
         "name": ":camera: Image Category",
         "desc": "A command category consisting of image manipulation commands. You can type `.help <command>` to get some more detailed info on a command!",
         "nsfw": null,
-        "commands": ["hug", "eject", "tweet", "youtube", "triggered", "simpcard", "wasted", "pixelate", "missionpassed", "car", "water", "mind", "iamspeed"]
+        "commands": ["hug", "eject", "tweet", "youtube", "triggered", "simpcard", "wasted", "pixelate", "missionpassed", "car", "water", "mind", "iamspeed", "avatar", "waifuai", "blur", "comrade"]
     },
     "moderation": {
         "name": ":hammer: Moderation Category",
         "desc": "A command category consisting of moderation related commands. You can type `.help <command>` to get some more detailed info on a command!",
         "nsfw": null,
         "commands": ["lockdown", "clear", "kick"]
+    },
+    "vote": {
+        "name": "Vote",
+        "desc": "Sends a link to vote for the bot!",
+        "nsfw": false,
+        "aliases": ["topgg"]
+    },
+    "fromhex": {
+        "name": "To Hex",
+        "desc": "Converts hexadecimal code to ascii characters.",
+        "nsfw": false,
+        "aliases": ["hextotext"]
+    },
+    "tohex": {
+        "name": "To Hex",
+        "desc": "Converts your text to hexadecimal.",
+        "nsfw": false,
+        "aliases": ["texttohex"]
+    },
+    "frombinary": {
+        "name": "From Binary",
+        "desc": "Converts binary code to ascii characters.",
+        "nsfw": false,
+        "aliases": ["binarytotext"]
+    },
+    "tobinary": {
+        "name": "To Binary",
+        "desc": "Converts your text to binary.",
+        "nsfw": false,
+        "aliases": ["texttobinary"]
+    },
+    "cat": {
+        "name": "Cat",
+        "desc": "Sends a random picture of a cat.",
+        "nsfw": false,
+        "aliases": ["kitten"]
+    },
+    "dog": {
+        "name": "Dog",
+        "desc": "Sends a random picture of a dog.",
+        "nsfw": false,
+        "aliases": ["woof"]
+    },
+    "comrade": {
+        "name": "Comrade",
+        "desc": "Adds a soviet overlay to your profile picture.",
+        "nsfw": false,
+        "aliases": ["communism", "ussr", "soviet"]
+    },
+    "blur": {
+        "name": "Blur",
+        "desc": "Sends a blurred version of your profile picture.",
+        "nsfw": false,
+        "aliases": ["censore"]
+    },
+    "waifuai": {
+        "name": "Waifu AI",
+        "desc": "Sends an AI generated anime girl.",
+        "nsfw": false,
+        "aliases": ["waifu", "weeb", "aianime"]
     },
     "announcement": {
         "name": "Announcement",
@@ -27,13 +87,13 @@
         "name": "User Info",
         "desc": "Sends some information about the mentioned user!",
         "nsfw": false,
-        "aliases": ["userstats", "user"]
+        "aliases": ["userstats", "user", "info"]
     },
     "botstats": {
         "name": "Bot Stats",
         "desc": "Sends some information about Donut!",
         "nsfw": false,
-        "aliases": ["botinfo", "stats", "info"]
+        "aliases": ["botinfo", "stats"]
     },
     "nuke": {
         "name": "Nuke",
@@ -189,7 +249,7 @@
         "name": "Hug",
         "desc": "A command that lets you hug someone!",
         "nsfw": false,
-        "aliases": ["anime", "weeb"]
+        "aliases": ["anime"]
     },
     "triggered": {
         "name": "Triggered",

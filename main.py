@@ -5,7 +5,7 @@ from discord.ext import commands, tasks
 from dotenv import load_dotenv
 from pathlib import Path
 
-dotenv_path = Path('C:/Users/HP/Desktop/vs-code/DonutBot Rewrite/token.env')
+dotenv_path = Path(__file__.replace("main.py", "token.env"))
 
 load_dotenv(dotenv_path = dotenv_path)
 TOKEN = os.getenv('TOKEN')
