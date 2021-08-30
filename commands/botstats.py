@@ -13,7 +13,7 @@ class Botstats(commands.Cog):
         discordpy = self.client.get_emoji(868868411806056558)
         embed = discord.Embed(
             colour=discord.Colour.from_rgb(255, 158, 253),
-            description=f'**Type .help to see the commands!**',
+            description=f'**Type .help to see the commands!**\n\nBecause of Discords limitaions for unverified bots I am unable to join more than 100 servers (remaining places: **{100-len(self.client.guilds)}**).',
             timestamp=ctx.message.created_at
         )
         embed.set_author(name=self.client.get_user(585115156757872653), icon_url=self.client.get_user(585115156757872653).avatar_url)

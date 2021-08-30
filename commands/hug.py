@@ -14,7 +14,7 @@ class Hug(commands.Cog):
         await ctx.trigger_typing()
         if member == None: member = ctx.author
 
-        if ctx.author.id == member.id: desc = f"**{ctx.author.display_name}** hugged **himself**!" 
+        if ctx.author.id == member.id: desc = f"**{ctx.author.display_name}** hugged **themself**!" 
         else: desc = f"**{ctx.author.display_name}** hugged **{member.display_name}**!"
 
         embed = discord.Embed(
