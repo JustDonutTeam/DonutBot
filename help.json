@@ -2,271 +2,307 @@
     "other": {
         "name": ":question: Other Category",
         "desc": "A category with commands that don't belong in other categories. You can type `.help <command>` to get some more detailed info on a command!",
-        "nsfw": null,
-        "commands": ["8ball", "ironic", "ping", "help", "invite", "uwufy", "nitro", "yomomma", "yoda", "support", "fact", "nuke", "botstats", "userinfo", "announcement", "dog", "cat", "tobinary", "frombinary", "tohex", "fromhex", "vote"]
+        "command": false,
+        "commands": ["8ball", "ironic", "ping", "help", "invite", "uwufy", "nitro", "yomomma", "yoda", "support", "fact", "nuke", "botstats", "userinfo", "announcement", "dog", "cat", "tobinary", "frombinary", "tohex", "fromhex", "vote", "dice", "serverinfo"]
     },
     "image": {
         "name": ":camera: Image Category",
         "desc": "A command category consisting of image manipulation commands. You can type `.help <command>` to get some more detailed info on a command!",
-        "nsfw": null,
+        "command": false,
         "commands": ["hug", "eject", "tweet", "youtube", "triggered", "simpcard", "wasted", "pixelate", "missionpassed", "car", "water", "mind", "iamspeed", "avatar", "waifuai", "blur", "comrade"]
     },
     "moderation": {
         "name": ":hammer: Moderation Category",
         "desc": "A command category consisting of moderation related commands. You can type `.help <command>` to get some more detailed info on a command!",
-        "nsfw": null,
-        "commands": ["lockdown", "clear", "kick"]
+        "command": false,
+        "commands": ["lockdown", "clear", "kick", "ban", "unban", "mute", "unmute"]
+    },
+    "serverinfo": {
+        "name": "Server info",
+        "desc": "Sends some information about the server!",
+        "command": true,
+        "aliases": ["serverstats", "si", "ss"]
+    },
+    "unmute": {
+        "name": "Unmute",
+        "desc": "Unmutes a user!",
+        "command": true,
+        "aliases": ["cantype"]
+    },
+    "mute": {
+        "name": "Mute",
+        "desc": "Mutes a user!",
+        "command": true,
+        "aliases": ["canttype"]
+    },
+    "unban": {
+        "name": "Unban",
+        "desc": "Unbans a user!",
+        "command": true,
+        "aliases": ["unyeet"]
+    },
+    "ban": {
+        "name": "Ban",
+        "desc": "Bans a user!",
+        "command": true,
+        "aliases": ["delete", "yeet"]
+    },
+    "dice": {
+        "name": "Dice",
+        "desc": "Rolls a d6 dice!",
+        "command": true,
+        "aliases": ["random", "die", "d6"]
     },
     "vote": {
         "name": "Vote",
         "desc": "Sends a link to vote for the bot!",
-        "nsfw": false,
+        "command": true,
         "aliases": ["topgg"]
     },
     "fromhex": {
-        "name": "To Hex",
+        "name": "From Hex",
         "desc": "Converts hexadecimal code to ascii characters.",
-        "nsfw": false,
+        "command": true,
         "aliases": ["hextotext"]
     },
     "tohex": {
         "name": "To Hex",
         "desc": "Converts your text to hexadecimal.",
-        "nsfw": false,
+        "command": true,
         "aliases": ["texttohex"]
     },
     "frombinary": {
         "name": "From Binary",
         "desc": "Converts binary code to ascii characters.",
-        "nsfw": false,
+        "command": true,
         "aliases": ["binarytotext"]
     },
     "tobinary": {
         "name": "To Binary",
         "desc": "Converts your text to binary.",
-        "nsfw": false,
+        "command": true,
         "aliases": ["texttobinary"]
     },
     "cat": {
         "name": "Cat",
         "desc": "Sends a random picture of a cat.",
-        "nsfw": false,
+        "command": true,
         "aliases": ["kitten"]
     },
     "dog": {
         "name": "Dog",
         "desc": "Sends a random picture of a dog.",
-        "nsfw": false,
+        "command": true,
         "aliases": ["woof"]
     },
     "comrade": {
         "name": "Comrade",
         "desc": "Adds a soviet overlay to your profile picture.",
-        "nsfw": false,
+        "command": true,
         "aliases": ["communism", "ussr", "soviet"]
     },
     "blur": {
         "name": "Blur",
         "desc": "Sends a blurred version of your profile picture.",
-        "nsfw": false,
+        "command": true,
         "aliases": ["censore"]
     },
     "waifuai": {
         "name": "Waifu AI",
         "desc": "Sends an AI generated anime girl.",
-        "nsfw": false,
+        "command": true,
         "aliases": ["waifu", "weeb", "aianime"]
     },
     "announcement": {
         "name": "Announcement",
         "desc": "Sends a cool looking announcement!",
-        "nsfw": false,
+        "command": true,
         "aliases": ["announce"]
     },
     "userinfo": {
         "name": "User Info",
         "desc": "Sends some information about the mentioned user!",
-        "nsfw": false,
-        "aliases": ["userstats", "user", "info"]
+        "command": true,
+        "aliases": ["userstats", "user", "info", "ui"]
     },
     "botstats": {
         "name": "Bot Stats",
         "desc": "Sends some information about Donut!",
-        "nsfw": false,
-        "aliases": ["botinfo", "stats"]
+        "command": true,
+        "aliases": ["botinfo", "stats", "bs"]
     },
     "nuke": {
         "name": "Nuke",
         "desc": "Nukes a given destination.",
-        "nsfw": false,
+        "command": true,
         "aliases": ["bomb"]
     },
     "kick": {
         "name": "Kick",
         "desc": "Kicks a mentioned user.",
-        "nsfw": false,
-        "aliases": ["delete"]
+        "command": true,
+        "aliases": ["remove"]
     },
     "fact": {
         "name": "Fact",
         "desc": "Sends a random fact.",
-        "nsfw": false,
+        "command": true,
         "aliases": ["randomfact"]
     },
     "support": {
         "name": "Support",
         "desc": "Invites you to the support server.",
-        "nsfw": false,
+        "command": true,
         "aliases": ["server"]
     },
     "yoda": {
         "name": "Yoda",
         "desc": "Translates your message to Yoda's language.",
-        "nsfw": false,
+        "command": true,
         "aliases": ["yodish", "toyodish"]
     },
     "yomomma": {
         "name": "Yo Momma",
         "desc": "Sends a random yo momma joke.",
-        "nsfw": false,
+        "command": true,
         "aliases": ["urmom"]
     },
     "nitro": {
         "name": "Nitro",
         "desc": "Sends you a link to claim your free Discord Nitro!",
-        "nsfw": false,
+        "command": true,
         "aliases": ["discord", "discordnitro"]
     },
     "iamspeed": {
         "name": "I Am Speed",
         "desc": "Generates an I am speed meme with your profile picture!",
-        "nsfw": false,
+        "command": true,
         "aliases": ["speed", "fast"]
     },
     "water": {
         "name": "Water",
         "desc": "Generates a water meme with your text!",
-        "nsfw": false,
+        "command": true,
         "aliases": ["thirsty"]
     },
     "mind": {
         "name": "Change My Mind",
         "desc": "Generates a change my mind meme with your text!",
-        "nsfw": false,
+        "command": true,
         "aliases": ["changemymind", "change"]
     },
     "uwufy": {
         "name": "Uwufy",
         "desc": "Sends an uwufied version of your message.",
-        "nsfw": false,
+        "command": true,
         "aliases": ["uwu"]
     },
     "invite": {
         "name": "Invite",
         "desc": "Sends a link allowing you to invite Donut to your own server!",
-        "nsfw": false,
+        "command": true,
         "aliases": ["donut"]
     },
     "avatar": {
         "name": "Avatar",
         "desc": "Sends the avatar of the mentioned user!",
-        "nsfw": false,
+        "command": true,
         "aliases": ["av", "pfp"]
     },
     "car": {
         "name": "Car",
         "desc": "Generates a car meme with your text!",
-        "nsfw": false,
+        "command": true,
         "aliases": ["carreverse"]
     },
     "missionpassed": {
         "name": "Mission Passed",
         "desc": "Adds a mission passed overlay to your profile picture",
-        "nsfw": false,
+        "command": true,
         "aliases": ["gtamissionpassed", "respect", "gtarespect"]
     },
     "pixelate": {
         "name": "Pixelate",
         "desc": "Pixelates your profile picture!",
-        "nsfw": false,
+        "command": true,
         "aliases": ["pixel"]
     },
     "wasted": {
         "name": "Wasted",
         "desc": "Adds a wasted text to a mentioned user's profile picture.",
-        "nsfw": false,
+        "command": true,
         "aliases": ["gtawasted"]
     },
     "simpcard": {
         "name": "Simpcard",
         "desc": "Creates a simpcard for the given user.",
-        "nsfw": false,
+        "command": true,
         "aliases": ["simp"]
     },
     "ironic": {
         "name": "Ironic",
         "desc": "Sends your message but with randomly generated capital letters.",
-        "nsfw": false,
+        "command": true,
         "aliases": ["yell"]
     },
     "clear": {
         "name": "Clear",
         "desc": "Deletes a given amount of messages!",
-        "nsfw": false,
+        "command": true,
         "aliases": ["purge"]
     },
     "youtube": {
         "name": "Youtube",
         "desc": "Generates a fake Youtube comment.",
-        "nsfw": false,
+        "command": true,
         "aliases": ["yt", "fakeyt", "fakeyoutube", "ytcomment"]
     },
     "lockdown": {
         "name": "Lockdown",
         "desc": "A command used to lock a channel (make people unable to type).",
-        "nsfw": false,
+        "command": true,
         "aliases": ["lock"]
     },
     "ping": {
         "name": "Ping",
         "desc": "Checks the bot's latency!",
-        "nsfw": false,
+        "command": true,
         "aliases": ["pong", "latency", "ms"]
     },
     "help": {
         "name": "Help",
         "desc": "Sends you info on a given command.",
-        "nsfw": false,
+        "command": true,
         "aliases": ["helpme", "whatis"]
     },
     "eject": {
         "name": "Eject",
         "desc": "Generates an Among Us like ejected screen.",
-        "nsfw": false,
+        "command": true,
         "aliases": ["amongus", "amogus", "sus", "impostor", "ejected"]
     },
     "hug": {
         "name": "Hug",
         "desc": "A command that lets you hug someone!",
-        "nsfw": false,
+        "command": true,
         "aliases": ["anime"]
     },
     "triggered": {
         "name": "Triggered",
         "desc": "Sends a triggered version of your profile picture.",
-        "nsfw": false,
+        "command": true,
         "aliases": ["angry", "rage"]
     },
     "tweet": {
         "name": "Tweet",
         "desc": "Generates a fake Twitter comment.",
-        "nsfw": false,
+        "command": true,
         "aliases": ["tcomment", "faketwitter", "twitter"]
     },
     "8ball": {
         "name": "8ball",
         "desc": "Answers your question.",
-        "nsfw": false,
+        "command": true,
         "aliases": ["8ball", "answer", "predict"]
     }
 

@@ -27,7 +27,7 @@ class Simpcard(commands.Cog):
                 )
                 embed.set_image(url="attachment://simpcard.png")
                 embed.set_footer(text="Donut x Some Random API", icon_url=self.client.get_user(738788356506386462).avatar_url)
-                await ctx.reply(embed=embed, file=file)
+                await ctx.reply(embed=embed, file=file, mention_author=False)
 
         await session.close() 
 

@@ -17,7 +17,7 @@ class Fromhex(commands.Cog):
         output = bytes.fromhex(output)
         output = output.decode("ASCII")
 
-        await ctx.reply(output)
+        await ctx.reply(output, mention_author=False)
         
 
 def setup(client):

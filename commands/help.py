@@ -19,12 +19,11 @@ class Help(commands.Cog):
                 description = file[name]["desc"],
                 timestamp = ctx.message.created_at
             )
-            #if not file[name]["nsfw"] == None: embed.add_field(name=":underage: NSFW only:", value=file[name]["nsfw"])
-            if not file[name]["nsfw"] == None: embed.add_field(name=":clipboard: Aliases:", value=str(file[name]["aliases"]).replace("'", "`").replace("[", "").replace("]", ""))
-            if file[name]["nsfw"] == None: embed.add_field(name=":clipboard: Commands:", value=str(file[name]["commands"]).replace("'", "`").replace("[", "").replace("]", ""))
+            if file[name]["command"]: embed.add_field(name=":clipboard: Aliases:", value=str(file[name]["aliases"]).replace("'", "`").replace("[", "").replace("]", ""))
+            else: embed.add_field(name=":clipboard: Commands:", value=str(file[name]["commands"]).replace("'", "`").replace("[", "").replace("]", ""))
             embed.set_footer(text="Donut", icon_url=self.client.get_user(738788356506386462).avatar_url)
 
-            await ctx.reply(embed=embed)
+            await ctx.reply(embed=embed, mention_author=False)
         else:
             embed = discord.Embed(
                 color = discord.Color.from_rgb(255, 158, 253),
@@ -37,7 +36,7 @@ class Help(commands.Cog):
             embed.add_field(name=":hammer: Moderation", value="A command category with commands for admins.")
             embed.set_footer(text="Donut", icon_url=self.client.get_user(738788356506386462).avatar_url)
 
-            await ctx.reply(embed=embed)
+            await ctx.reply(embed=embed, mention_author=False)
 
 
         

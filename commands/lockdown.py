@@ -17,17 +17,17 @@ class Lockdown(commands.Cog):
                 ctx.guild.default_role: discord.PermissionOverwrite(send_messages=False)
             }
             await channel.edit(overwrites=overwrites)
-            await ctx.send(f'I have put `{channel.name}` on lockdown.')
+            await ctx.send(f'🔒 I have put `{channel.name}` on lockdown.')
         elif channel.overwrites[ctx.guild.default_role].send_messages == True or channel.overwrites[ctx.guild.default_role].send_messages == None:
             overwrites = channel.overwrites[ctx.guild.default_role]
             overwrites.send_messages = False
             await channel.set_permissions(ctx.guild.default_role, overwrite=overwrites)
-            await ctx.send(f'I have put `{channel.name}` on lockdown.')
+            await ctx.reply(f'🔒 I have put `{channel.name}` on lockdown.', mention_author=False)
         else:
             overwrites = channel.overwrites[ctx.guild.default_role]
             overwrites.send_messages = True
             await channel.set_permissions(ctx.guild.default_role, overwrite=overwrites)
-            await ctx.send(f'I have removed `{channel.name}` from lockdown.')
+            await ctx.reply(f'🔓 I have removed `{channel.name}` from lockdown.', mention_author=False)
 
 def setup(client):
     client.add_cog(Lockdown(client))

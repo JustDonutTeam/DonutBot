@@ -2,19 +2,19 @@ import discord
 import json
 from discord.ext import commands
 
-class Kick(commands.Cog):
+class Ban(commands.Cog):
 
     def __init__(self, client):
         self.client = client
 
-    @commands.command(aliases = json.load(open("help.json", "r"))["kick"]["aliases"])
-    @commands.has_permissions(kick_members=True)
-    async def kick(self, ctx, member : discord.Member, *, reason=None):
-        await member.kick(reason=reason)
+    @commands.command(aliases = json.load(open("help.json", "r"))["ban"]["aliases"])
+    @commands.has_permissions(ban_members=True)
+    async def ban(self, ctx, member : discord.Member, *, reason=None):
+        await member.ban(reason=reason)
         leave = self.client.get_emoji(881870169918562345)
         embed = discord.Embed(
             colour=discord.Colour.from_rgb(255, 158, 253),
-            description=f'{leave} **{member}** has been kicked!',
+            description=f'{leave} **{member}** has been banned!',
             timestamp=ctx.message.created_at
         )
         embed.set_footer(text=f"Donut", icon_url=self.client.get_user(738788356506386462).avatar_url)
@@ -22,4 +22,4 @@ class Kick(commands.Cog):
         await ctx.reply(embed=embed, mention_author=False)
 
 def setup(client):
-    client.add_cog(Kick(client))
+    client.add_cog(Ban(client))

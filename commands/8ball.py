@@ -21,7 +21,6 @@ class _8ball(commands.Cog):
             'Outlook good.',
             'Yes.',
             'Signs point to yes.',
-            'No idea lmaooo',
             'Reply hazy, try again.',
             'Ask again later.',
             'Better not tell you now.',
@@ -42,7 +41,7 @@ class _8ball(commands.Cog):
         )
         embed.set_footer(text="Donut", icon_url=self.client.get_user(738788356506386462).avatar_url)
         
-        await ctx.reply(embed=embed)
+        await ctx.reply(embed=embed, mention_author=False)
 
 def setup(client):
     client.add_cog(_8ball(client))

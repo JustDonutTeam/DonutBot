@@ -19,7 +19,7 @@ class Nuke(commands.Cog):
         embed.set_image(url='https://i.pinimg.com/originals/6c/48/5e/6c485efad8b910e5289fc7968ea1d22f.gif')
         embed.set_footer(text=f"Donut x North Korea", icon_url=self.client.get_user(738788356506386462).avatar_url)
 
-        await ctx.reply(embed=embed)
+        await ctx.reply(embed=embed, mention_author=False)
 
 def setup(client):
     client.add_cog(Nuke(client))

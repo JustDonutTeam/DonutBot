@@ -15,7 +15,7 @@ class Tobinary(commands.Cog):
         api = requests.get(f"https://some-random-api.ml/binary?encode={input}")
         api = api.json()
         output = ' '.join([api["binary"][i:i+8] for i in range(0, len(api["binary"]), 8)])
-        await ctx.reply(output)
+        await ctx.reply(output, mention_author=False)
 
 def setup(client):
     client.add_cog(Tobinary(client))

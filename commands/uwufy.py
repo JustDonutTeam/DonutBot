@@ -10,7 +10,7 @@ class Uwufy(commands.Cog):
     @commands.command(aliases = json.load(open("help.json", "r"))["uwufy"]["aliases"])
     async def uwufy(self, ctx, *, phrase):
         uwufied = phrase.replace('rl', 'w').replace('RL', 'W').replace('ove', 'uv').replace('the', 'dee').replace('r', 'w')
-        await ctx.reply(uwufied)
+        await ctx.reply(uwufied, mention_author=False)
 
 def setup(client):
     client.add_cog(Uwufy(client))

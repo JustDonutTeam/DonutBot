@@ -20,7 +20,7 @@ class Waifuai(commands.Cog):
         embed.set_image(url="https://www.thiswaifudoesnotexist.net/example-"+str(random.randint(1,100000))+".jpg")
         embed.set_footer(text=f"Donut x ThisWaifuDoesNotExist.net", icon_url=self.client.get_user(738788356506386462).avatar_url)
 
-        await ctx.reply(embed=embed)
+        await ctx.reply(embed=embed, mention_author=False)
 
 def setup(client):
     client.add_cog(Waifuai(client))

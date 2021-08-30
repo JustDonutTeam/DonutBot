@@ -19,7 +19,7 @@ class Car(commands.Cog):
         embed.set_image(url=f'https://vacefron.nl/api/carreverse?text={text.replace(" ", "%20")}')
         embed.set_footer(text="Donut x Vacefron API", icon_url=self.client.get_user(738788356506386462).avatar_url)
 
-        await ctx.reply(embed=embed)
+        await ctx.reply(embed=embed, mention_author=False)
 
 def setup(client):
     client.add_cog(Car(client))

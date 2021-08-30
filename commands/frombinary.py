@@ -14,7 +14,7 @@ class Frombinary(commands.Cog):
 
         api = requests.get(f"https://some-random-api.ml/binary?decode={input.replace(' ', '')}")
         api = api.json()
-        await ctx.reply(api["text"])
+        await ctx.reply(api["text"], mention_author=False)
 
 def setup(client):
     client.add_cog(Frombinary(client))

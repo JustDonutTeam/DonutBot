@@ -13,7 +13,7 @@ TOKEN = os.getenv('TOKEN')
 with open("config.json", "r") as config:
     config = json.load(config)
     prefix = config["prefix"]
-    status = prefix + "help | Donut v" + config["version"] + " (Rewrite)"
+    status = prefix + "help | Donut " + config["version"] + " (Rewrite)"
 
 client = commands.Bot(command_prefix = prefix, intents = discord.Intents.all(), allowed_mentions=discord.AllowedMentions(everyone=False))
 
@@ -50,15 +50,18 @@ async def reload(ctx, command):
 
 @client.event
 async def on_command_error(ctx, error):
-    embed = discord.Embed(
-        color = discord.Color.from_rgb(255, 13, 0),
-        title = ":x: Command raised an exception!",
-        timestamp = ctx.message.created_at,
-        description = str(error)
-    )
-    embed.add_field(name="Please contact the developer!", value="DM Feeeeddmmmeee#7784 or join the [support server](https://discord.gg/GAPYQa9).")
-    embed.set_footer(text="Donut encountered an error!", icon_url=client.get_user(738788356506386462).avatar_url)
+    if isinstance(error, commands.CommandNotFound):
+        await ctx.message.add_reaction('❓')
+    else:
+        embed = discord.Embed(
+            color = discord.Color.from_rgb(255, 13, 0),
+            title = ":x: Command raised an exception!",
+            timestamp = ctx.message.created_at,
+            description = str(error)
+        )
+        embed.add_field(name="Please contact the developer!", value="DM Feeeeddmmmeee#7784 or join the [support server](https://discord.gg/GAPYQa9).")
+        embed.set_footer(text="Donut encountered an error!", icon_url=client.get_user(738788356506386462).avatar_url)
 
-    await ctx.reply(embed=embed)
+        await ctx.reply(embed=embed, mention_author=False)
 
 client.run(TOKEN)

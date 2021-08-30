@@ -23,14 +23,14 @@ class Botstats(commands.Cog):
         embed.add_field(name=":globe_with_meridians: Servers:", value=f"{len(self.client.guilds)} servers!")
         embed.add_field(name=":ping_pong: Ping:", value=f"{round(self.client.latency * 1000)} ms!")
         embed.add_field(name=":busts_in_silhouette: Users:", value=f"{len(self.client.users)} users!")
-        embed.add_field(name=f"{discordpy} Library:", value="Discord.py v1.7.3")
+        embed.add_field(name=f"{discordpy} Library:", value="Discord.py v1.7.3!")
         embed.add_field(name=":desktop: Commands:", value=f"{len(json.load(open('help.json', 'r'))) - 3} commands!")
 
         with open("config.json", "r") as config:
             config = json.load(config)
             embed.add_field(name=":clock1: Version:", value= f"v{config['version']}!")
         
-        await ctx.reply(embed=embed)
+        await ctx.reply(embed=embed, mention_author=False)
 
 def setup(client):
     client.add_cog(Botstats(client))

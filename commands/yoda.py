@@ -14,7 +14,7 @@ class Yoda(commands.Cog):
 
         api = requests.get(f"http://yoda-api.appspot.com/api/v1/yodish?text={phrase}")
         api = api.json()
-        await ctx.reply(api["yodish"])
+        await ctx.reply(api["yodish"], mention_author=False)
 
 def setup(client):
     client.add_cog(Yoda(client))

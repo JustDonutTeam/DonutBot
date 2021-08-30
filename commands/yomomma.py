@@ -12,7 +12,7 @@ class Yomomma(commands.Cog):
     async def yomomma(self, ctx):
         api = requests.get("https://api.yomomma.info/")
         api = api.json()
-        await ctx.reply(api["joke"])
+        await ctx.reply(api["joke"], mention_author=False)
 
 def setup(client):
     client.add_cog(Yomomma(client))

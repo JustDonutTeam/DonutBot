@@ -13,7 +13,7 @@ class Tohex(commands.Cog):
 
         output = input.encode('utf-8').hex()
         output = ' '.join([output[i:i+2] for i in range(0, len(output), 2)])
-        await ctx.reply(output)
+        await ctx.reply(output, mention_author=False)
 
 def setup(client):
     client.add_cog(Tohex(client))

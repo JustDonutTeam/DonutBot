@@ -21,7 +21,7 @@ class Announcement(commands.Cog):
         )
         embed.set_footer(text=f"Donut", icon_url=self.client.get_user(738788356506386462).avatar_url)
 
-        await channel.send(embed=embed)
+        await channel.send(embed=embed, mention_author=False)
 
 def setup(client):
     client.add_cog(Announcement(client))

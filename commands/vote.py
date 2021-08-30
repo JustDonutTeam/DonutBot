@@ -18,7 +18,7 @@ class Vote(commands.Cog):
         )
         embed.set_footer(text="Donut", icon_url=self.client.get_user(738788356506386462).avatar_url)
 
-        await ctx.reply(embed=embed)
+        await ctx.reply(embed=embed, mention_author=False)
 
 def setup(client):
     client.add_cog(Vote(client))

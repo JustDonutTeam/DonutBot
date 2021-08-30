@@ -20,7 +20,7 @@ class Comrade(commands.Cog):
         embed.set_image(url=f'https://some-random-api.ml/canvas/comrade?avatar={member.avatar_url_as(format="png")}')
         embed.set_footer(text="Donut x Some Random API", icon_url=self.client.get_user(738788356506386462).avatar_url)
 
-        await ctx.reply(embed=embed)
+        await ctx.reply(embed=embed, mention_author=False)
 
 def setup(client):
     client.add_cog(Comrade(client))
