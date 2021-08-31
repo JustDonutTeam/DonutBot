@@ -8,7 +8,7 @@ class Avatar(commands.Cog):
         self.client = client
 
     @commands.command(aliases = json.load(open("help.json", "r"))["avatar"]["aliases"])
-    async def avatar(self, ctx, member : discord.Member = None):
+    async def avatar(self, ctx, *, member : discord.Member = None):
 
         await ctx.trigger_typing()
         if not member: member = ctx.author

@@ -22,7 +22,7 @@ class Serverinfo(commands.Cog):
         embed.add_field(name=":busts_in_silhouette: Members", value=len(ctx.guild.members))
         embed.add_field(name=f"{owner} Server Owner:", value=ctx.guild.owner)
         embed.add_field(name=f"{channels} Text Channels:", value=len(ctx.guild.text_channels))
-        embed.add_field(name=":flag_white: Region:", value=ctx.guild.region)
+        embed.add_field(name=":earth_africa: Region:", value=ctx.guild.region)
 
         if ctx.guild.premium_subscription_count > 0:
             boostrole = self.client.get_emoji(881901503097499659)

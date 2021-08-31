@@ -3,7 +3,7 @@
         "name": ":question: Other Category",
         "desc": "A category with commands that don't belong in other categories. You can type `.help <command>` to get some more detailed info on a command!",
         "command": false,
-        "commands": ["8ball", "ironic", "ping", "help", "invite", "uwufy", "nitro", "yomomma", "yoda", "support", "fact", "nuke", "botstats", "userinfo", "announcement", "dog", "cat", "tobinary", "frombinary", "tohex", "fromhex", "vote", "dice", "serverinfo"]
+        "commands": ["8ball", "ironic", "ping", "help", "invite", "uwufy", "nitro", "yomomma", "yoda", "support", "fact", "nuke", "botstats", "userinfo", "announcement", "dog", "cat", "tobinary", "frombinary", "tohex", "fromhex", "vote", "dice", "serverinfo", "weather"]
     },
     "image": {
         "name": ":camera: Image Category",
@@ -16,6 +16,18 @@
         "desc": "A command category consisting of moderation related commands. You can type `.help <command>` to get some more detailed info on a command!",
         "command": false,
         "commands": ["lockdown", "clear", "kick", "ban", "unban", "mute", "unmute"]
+    },
+    "coinflip": {
+        "name": "Coinflip",
+        "desc": "Flips a coin for you.",
+        "command": true,
+        "aliases": ["thisorthat", "choose"]
+    },
+    "weather": {
+        "name": "Weather",
+        "desc": "Sends you some weather related information about a city!",
+        "command": true,
+        "aliases": ["whatstheweather", "temprature", "openweather"]
     },
     "serverinfo": {
         "name": "Server info",
