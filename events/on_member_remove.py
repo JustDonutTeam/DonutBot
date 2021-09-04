@@ -11,7 +11,7 @@ class On_member_remove(commands.Cog):
     @commands.Cog.listener()
     async def on_member_remove(self, member):
         leave = self.client.get_emoji(881878844871684096)
-        message = ["**{user}** left the party.", "**{user}** has just left the server.", "**{user}** has just buggered off.", "Goodbye **{user}**! Next time, bring more cookies.", "Goodbye **{user}**! Next time, bring more cookies.", "Smell ya later, **{user}**!", "Don’t forget to send a letter, **{user}**.", "Come back soon, **{user}**.", "See ya, **{user}**!", "See you in another life, **{user}**.""Goodbye **{user}**! Next time, bring more donuts.",]
+        message = ["**{user}** left the party.", "**{user}** has just left the server.", "**{user}** has just buggered off.", "Goodbye **{user}**! Next time, bring more cookies.", "Goodbye **{user}**! Next time, bring more cookies.", "Smell ya later, **{user}**!", "Don’t forget to send a letter, **{user}**.", "Come back soon, **{user}**.", "See ya, **{user}**!", "See you in another life, **{user}**.", "Goodbye **{user}**! Next time, bring more donuts."]
 
         database = sqlite3.connect("database.sqlite")
         cursor = database.cursor()
