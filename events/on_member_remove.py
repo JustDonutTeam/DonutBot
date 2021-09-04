@@ -1,5 +1,6 @@
 import discord
 import sqlite3
+import random
 from discord.ext import commands
 
 class On_member_remove(commands.Cog):
@@ -10,6 +11,7 @@ class On_member_remove(commands.Cog):
     @commands.Cog.listener()
     async def on_member_remove(self, member):
         leave = self.client.get_emoji(881878844871684096)
+        message = ["**{user}** left the party.", "**{user}** has just left the server.", "**{user}** has just buggered off.", "Goodbye **{user}**! Next time, bring more cookies.", "Goodbye **{user}**! Next time, bring more cookies.", "Smell ya later, **{user}**!", "Don’t forget to send a letter, **{user}**.", "Come back soon, **{user}**.", "See ya, **{user}**!", "See you in another life, **{user}**.""Goodbye **{user}**! Next time, bring more donuts.",]
 
         database = sqlite3.connect("database.sqlite")
         cursor = database.cursor()
@@ -27,12 +29,12 @@ class On_member_remove(commands.Cog):
             if str(custom_bye[0]) == "0":
                 embed = discord.Embed(
                     colour=discord.Colour.from_rgb(54, 57, 63),
-                    description=str(leave) + " **{user}** has just left the server.".replace("{user}", member.name)
+                    description=str(leave) + " " + random.choice(message).replace('{user}', member.name)
                 )
             else:
                 embed = discord.Embed(
                     colour=discord.Colour.from_rgb(54, 57, 63),
-                    description=str(leave) + " " + str(custom_bye[0]).replace("{user.name}", f" **{member.name}**").replace("{user.mention}", member.mention).replace("{guild.members}", f"**{len(member.guild.members)}**").replace("{guild.name}", f"**{member.guild.name}**")
+                    description=str(leave) + " " + str(custom_bye[0]).replace("{user.name}", f"**{member.name}**").replace("{user.mention}", member.mention).replace("{guild.members}", f"**{len(member.guild.members)}**").replace("{guild.name}", f"**{member.guild.name}**")
                 )
         
             await channel.send(embed=embed)

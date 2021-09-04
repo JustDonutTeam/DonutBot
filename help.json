@@ -3,22 +3,43 @@
         "name": ":question: Other Category",
         "desc": "A category with commands that don't belong in other categories. You can type `.help <command>` to get some more detailed info on a command!",
         "command": false,
-        "commands": ["8ball", "ironic", "ping", "help", "invite", "uwufy", "nitro", "yomomma", "yoda", "support", "fact", "nuke", "botstats", "userinfo", "announcement", "dog", "cat", "tobinary", "frombinary", "tohex", "fromhex", "vote", "dice", "serverinfo", "weather", "coinflip", "enable", "disable"]
+        "commands": ["8ball", "ironic", "ping", "help", "invite", "uwufy", "nitro", "yomomma", "yoda", "support", "fact", "nuke", "botstats", "userinfo", "announcement", "dog", "cat", "tobinary", "frombinary", "tohex", "fromhex", "vote", "dice", "serverinfo", "weather", "coinflip", "enable", "disable", "data", "notify", "lyrics"]
     },
     "image": {
         "name": ":camera: Image Category",
         "desc": "A command category consisting of image manipulation commands. You can type `.help <command>` to get some more detailed info on a command!",
         "command": false,
-        "commands": ["hug", "eject", "tweet", "youtube", "triggered", "simpcard", "wasted", "pixelate", "missionpassed", "car", "water", "mind", "iamspeed", "avatar", "waifuai", "blur", "comrade"]
+        "commands": ["hug", "wink", "eject", "tweet", "youtube", "triggered", "simpcard", "wasted", "pixelate", "missionpassed", "car", "water", "mind", "iamspeed", "avatar", "waifuai", "blur", "comrade"]
     },
     "moderation": {
         "name": ":hammer: Moderation Category",
         "desc": "A command category consisting of moderation related commands. You can type `.help <command>` to get some more detailed info on a command!",
         "command": false,
-        "commands": ["lockdown", "clear", "kick", "ban", "unban", "mute", "unmute", "serverlockdown"]
+        "commands": ["lockdown", "clear", "kick", "ban", "unban", "mute", "unmute", "serverlockdown", "slowmode"]
+    },
+    "slowmode": {
+        "name": "Slowmode",
+        "desc": "Sets the slowmode in a channel.",
+        "command": true,
+        "aliases": ["setslowmode"],
+        "usage": "`.slowmode [seconds] <channel>`\n\n`[]` - required, `<>` - optional"
+    },
+    "wink": {
+        "name": "Wink",
+        "desc": "A command that lets you wink at someone!",
+        "command": true,
+        "aliases": ["animewink"],
+        "usage": "`.wink <user>`\n\n`[]` - required, `<>` - optional"
+    },
+    "lyrics": {
+        "name": "Lyrics",
+        "desc": "Sends the lyrics of a song!",
+        "command": true,
+        "aliases": ["song"],
+        "usage": "`.lyrics [song]`\n\n`[]` - required, `<>` - optional"
     },
     "notify": {
-        "name": "notify",
+        "name": "Notify",
         "desc": "Tells me to DM you when there's a server avilable.\n\nStores your Discord user ID. If you want it to be removed from the database use `.notify` again.",
         "command": true,
         "aliases": ["cantinvite"],
@@ -33,7 +54,7 @@
     },
     "enable": {
         "name": "Enable/Update",
-        "desc": "Enables or updates welcome-bye messages.\n\nLeave `<welcome message>` and `<bye message>` blank to disable them.\n\nVariables which can be used in the messages: `{user.name}` = the user's name, `{user.mention}` = mention of the user, `{guild.members}` = the amount of members, `{guild.name}` = the guild's name.\n\nRemeber to put `<welcome message>` and `<bye message>` in \"\"!",
+        "desc": "Enables or updates welcome-bye messages.\n\nLeave `<welcome message>` and `<bye message>` blank to disable custom messages.\n\nVariables which can be used in the messages: `{user.name}` = the user's name, `{user.mention}` = mention of the user, `{guild.members}` = the amount of members, `{guild.name}` = the guild's name.\n\nRemeber to put `<welcome message>` and `<bye message>` in \"\"!",
         "command": true,
         "aliases": ["enablewelcome", "update", "updatewelcome"],
         "usage": "`.enable <channel> <welcome message> <bye message>`\n\n`[]` - required, `<>` - optional"
