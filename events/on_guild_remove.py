@@ -17,9 +17,9 @@ class On_guild_remove(commands.Cog):
 
         hello = ["Yo {user}, what's up? ", "Hey {user}, ", "Hello {user}. ", "Hi! "]
 
-        #if len(self.client.guilds) == 99:
-        for user_id in data:
-            await self.client.get_user(int(user_id[0])).send(random.choice(hello).replace("{user}", self.client.get_user(int(user_id[0])).name) + "I have just a left a server and you're now able to invite me!")
+        if len(self.client.guilds) == 99:
+            for user_id in data:
+                await self.client.get_user(int(user_id[0])).send(random.choice(hello).replace("{user}", self.client.get_user(int(user_id[0])).name) + "I have just a left a server and you're now able to invite me!")
 
         database.commit()
         cursor.close()

@@ -17,9 +17,9 @@ class On_guild_join(commands.Cog):
 
         hello = ["Yo {user}, what's up? ", "Hey {user}, ", "Hello {user}. ", "Hi!"]
 
-        #if len(self.client.guilds) == 100:
-        for user_id in data:
-            await self.client.get_user(int(user_id[0])).send(random.choice(hello).replace("{user}", self.client.get_user(int(user_id[0])).name) + "I have joined 100 servers and can't join any more now.")
+        if len(self.client.guilds) == 100:
+            for user_id in data:
+                await self.client.get_user(int(user_id[0])).send(random.choice(hello).replace("{user}", self.client.get_user(int(user_id[0])).name) + "I have joined 100 servers and can't join any more now.")
 
         database.commit()
         cursor.close()
