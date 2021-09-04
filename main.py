@@ -1,6 +1,7 @@
 import discord
 import os
 import json
+import sqlite3
 from discord.ext import commands, tasks
 from dotenv import load_dotenv
 from pathlib import Path
@@ -15,19 +16,28 @@ with open("config.json", "r") as config:
     prefix = config["prefix"]
     status = prefix + "help | Donut " + config["version"] + " (Rewrite)"
 
-client = commands.Bot(command_prefix = prefix, intents = discord.Intents.all(), allowed_mentions=discord.AllowedMentions(everyone=False))
+intents = discord.Intents.all()
+discord.member = True
+discord.guild = True
+
+client = commands.Bot(command_prefix = prefix, intents = intents, allowed_mentions=discord.AllowedMentions(everyone=False))
 
 client.remove_command("help")
 client.owner_ids = {585115156757872653, 476335730470289429}
 
 @client.event
 async def on_ready():
+
     await client.change_presence(status=discord.Status.idle, activity=discord.Game(status))
     print(f'Bot is ready. Logged in as {client.user}')
 
 for filename in os.listdir('./commands'):
     if filename.endswith('.py'):
         client.load_extension(f'commands.{filename[:-3]}')
+
+for filename in os.listdir('./events'):
+    if filename.endswith('.py'):
+        client.load_extension(f'events.{filename[:-3]}')
 
 @commands.is_owner()
 @client.command()

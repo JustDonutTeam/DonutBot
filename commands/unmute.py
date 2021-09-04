@@ -24,7 +24,7 @@ class Unmute(commands.Cog):
                     await ctx.reply(embed=embed, mention_author=False)
                     return
                 else:
-                    raise KeyError("This user is not muted.")
+                    raise TypeError("This user is not muted.")
         
 def setup(client):
     client.add_cog(Unmute(client))

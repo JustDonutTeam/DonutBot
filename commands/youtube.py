@@ -10,7 +10,7 @@ class Youtube(commands.Cog):
         self.client = client
 
     @commands.command(aliases = json.load(open("help.json", "r"))["youtube"]["aliases"])
-    async def youtube(self, ctx, comment, member : discord.Member = None):
+    async def youtube(self, ctx, member : discord.Member = None, *, comment):
         
         await ctx.trigger_typing()
         if not member: member = ctx.author

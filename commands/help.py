@@ -19,7 +19,9 @@ class Help(commands.Cog):
                 description = file[name]["desc"],
                 timestamp = ctx.message.created_at
             )
-            if file[name]["command"]: embed.add_field(name=":clipboard: Aliases:", value=str(file[name]["aliases"]).replace("'", "`").replace("[", "").replace("]", ""))
+            if file[name]["command"]: 
+                embed.add_field(name=":mouse_three_button: Usage:", value=file[name]["usage"])
+                embed.add_field(name=":clipboard: Aliases:", value=str(file[name]["aliases"]).replace("'", "`").replace("[", "").replace("]", ""))
             else: embed.add_field(name=":clipboard: Commands:", value=str(file[name]["commands"]).replace("'", "`").replace("[", "").replace("]", ""))
             embed.set_footer(text="Donut", icon_url=self.client.get_user(738788356506386462).avatar_url)
 

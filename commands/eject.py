@@ -14,8 +14,8 @@ class Eject(commands.Cog):
 
         colors = ['black','blue','brown','cyan','darkgreen','lime','orange','pink','purple','red','white','yellow']
 
-        if impostor == "yes": impostor = True
-        if impostor == "no": impostor = False
+        if impostor.lower() == "yes" or impostor == "1" or impostor.lower() == "true": impostor = True
+        if impostor.lower() == "no" or impostor == "0" or impostor.lower() == "false": impostor = False
 
         if color.lower() in colors:
             embed = discord.Embed(
