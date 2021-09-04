@@ -26,7 +26,7 @@
     },
     "enable": {
         "name": "Enable/Update",
-        "desc": "Enables or updates welcome-bye messages.\n\nSet `<welcome message>` and `<bye message>` to `0` to disable them.\n\nVariables which can be used in the messages: `{user}` = the user's name, `{mention}` = mention of the user, `{members}` = the amount of members.\n\nRemeber to put `<welcome message>` and `<bye message>` in \"\"!",
+        "desc": "Enables or updates welcome-bye messages.\n\nLeave `<welcome message>` and `<bye message>` blank to disable them.\n\nVariables which can be used in the messages: `{user}` = the user's name, `{mention}` = mention of the user, `{members}` = the amount of members.\n\nRemeber to put `<welcome message>` and `<bye message>` in \"\"!",
         "command": true,
         "aliases": ["enablewelcome", "update", "updatewelcome"],
         "usage": "`.enable <channel> <welcome message> <bye message>`\n\n`[]` - required, `<>` - optional"
