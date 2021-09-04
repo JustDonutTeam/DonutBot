@@ -11,16 +11,17 @@ class Disable(commands.Cog):
     @commands.command(aliases = json.load(open("help.json", "r"))["disable"]["aliases"])
     @commands.has_permissions(administrator=True)
     async def disable(self, ctx):
-        database = sqlite3.connect("welcome.sqlite")
+        database = sqlite3.connect("database.sqlite")
         cursor = database.cursor()
         cursor.execute(f"SELECT enabled FROM welcome WHERE guild_id = {ctx.guild.id}")
         data = cursor.fetchone()
 
         if str(data[0]) == "1":
+            success = self.client.get_emoji(883738376866516992)
             cursor.execute("UPDATE welcome SET enabled = ? WHERE guild_id = ?", (0, ctx.guild.id))
             embed = discord.Embed(
                     colour=discord.Colour.from_rgb(255, 158, 253),
-                    title=f"Success!",
+                    title=f"{success} Success!",
                     description=f"Successfully disabled welcome-bye messages!\n\nRemember that using `.enable` will overwrite previous settings!",
                     timestamp = ctx.message.created_at
                 )

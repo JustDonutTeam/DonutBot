@@ -12,7 +12,7 @@ class Data(commands.Cog):
     @commands.command(aliases = json.load(open("help.json", "r"))["data"]["aliases"])
     @commands.has_permissions(administrator=True)
     async def data(self, ctx):
-        database = sqlite3.connect("welcome.sqlite")
+        database = sqlite3.connect("database.sqlite")
         cursor = database.cursor()
         try:
             cursor.execute(f"SELECT * FROM welcome WHERE guild_id = {ctx.guild.id}")

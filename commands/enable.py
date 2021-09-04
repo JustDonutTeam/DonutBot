@@ -12,8 +12,9 @@ class Enable(commands.Cog):
     @commands.has_permissions(administrator=True)
     async def enable(self, ctx, channel : discord.TextChannel = None, custom_welcome = "0", custom_bye = "0"):
         if not channel: channel = ctx.channel
+        success = self.client.get_emoji(883738376866516992)
         
-        database = sqlite3.connect("welcome.sqlite")
+        database = sqlite3.connect("database.sqlite")
         cursor = database.cursor()
         cursor.execute("CREATE TABLE IF NOT EXISTS welcome (enabled	TEXT, guild_id TEXT, channel_id TEXT, custom_welcome TEXT, custom_bye TEXT)")
         cursor.execute(f"SELECT channel_id FROM welcome WHERE guild_id = {ctx.guild.id}")
@@ -25,7 +26,7 @@ class Enable(commands.Cog):
             if custom_bye == "0": custom_bye = "No custom message"
             embed = discord.Embed(
                     colour=discord.Colour.from_rgb(255, 158, 253),
-                    title=f"Success!",
+                    title=f"{success} Success!",
                     description=f"Successfully enabled welcome-bye messages!\nChannel: {channel.mention}\nWelcome message: `{custom_welcome}`\nBye message: `{custom_bye}`",
                     timestamp = ctx.message.created_at
                 )
@@ -37,12 +38,12 @@ class Enable(commands.Cog):
             cursor.execute("UPDATE welcome SET channel_id = ? WHERE guild_id = ?", (channel.id, ctx.guild.id))
             cursor.execute("UPDATE welcome SET custom_welcome = ? WHERE guild_id = ?", (custom_welcome, ctx.guild.id))
             cursor.execute("UPDATE welcome SET custom_bye = ? WHERE guild_id = ?", (custom_bye, ctx.guild.id))
-            if custom_welcome == "0": custom_welcome = "No custom message"
-            if custom_bye == "0": custom_bye = "No custom message"
+            if custom_welcome == "0": custom_welcome = "Default"
+            if custom_bye == "0": custom_bye = "Default"
             embed = discord.Embed(
                     colour=discord.Colour.from_rgb(255, 158, 253),
-                    title=f"Success!",
-                    description=f"Successfully enabled welcome-bye messages!\n\nChannel: {channel.mention}\nWelcome message: `{custom_welcome}`\nBye message: `{custom_bye}`",
+                    title=f"{success} Success!",
+                    description=f"Successfully enabled welcome-bye messages!\n\n```Channel: #{channel}\nWelcome message: {custom_welcome}\nBye message: {custom_bye}```",
                     timestamp = ctx.message.created_at
                 )
             embed.set_footer(text=f"Donut x SQLite3", icon_url=self.client.get_user(738788356506386462).avatar_url)

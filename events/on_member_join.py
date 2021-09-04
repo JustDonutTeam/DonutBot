@@ -3,7 +3,7 @@ import sqlite3
 import random
 from discord.ext import commands
 
-class Member_join(commands.Cog):
+class On_member_join(commands.Cog):
 
     def __init__(self, client):
         self.client = client
@@ -13,7 +13,7 @@ class Member_join(commands.Cog):
         join = self.client.get_emoji(881582462038323232)
         messages = ["Good to see you, **{user}**.", "Yay you made it, **{user}**!", "**{user}** just landed.", "Welcome, **{user}**. We hope you brought pizza.", "Glad you're here, **{user}**.", "Welcome **{user}**. Say hi!", "Everyone welcome **{user}**!", "**{user}** just slid into the server.", "**{user}** joined the party.", "**{user}** hopped into the server.", "**{user}** just showed up!", "Good to see you, **{user}**.", "A wild **{user}** appeared.", "**{user}** is here."]
 
-        database = sqlite3.connect("welcome.sqlite")
+        database = sqlite3.connect("database.sqlite")
         cursor = database.cursor()
         cursor.execute(f"SELECT enabled FROM welcome WHERE guild_id = {member.guild.id}")
         data = cursor.fetchone()
@@ -34,7 +34,7 @@ class Member_join(commands.Cog):
             else:
                 embed = discord.Embed(
                     colour=discord.Colour.from_rgb(54, 57, 63),
-                    description=str(join) + str(custom_welcome[0]).replace("{user}", f" **{member.name}**").replace("{mention}", member.mention).replace("{members}", f"**{len(member.guild.members)}**")
+                    description=str(join) + " " + str(custom_welcome[0]).replace("{user.name}", f" **{member.name}**").replace("{user.mention}", member.mention).replace("{guild.members}", f"**{len(member.guild.members)}**").replace("{guild.name}", f"**{member.guild.name}**")
                 )
         
             await channel.send(embed=embed)
@@ -44,4 +44,4 @@ class Member_join(commands.Cog):
         database.close()
 
 def setup(client):
-    client.add_cog(Member_join(client))
+    client.add_cog(On_member_join(client))
