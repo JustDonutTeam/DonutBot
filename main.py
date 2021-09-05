@@ -1,7 +1,7 @@
 import discord
 import os
 import json
-from discord.ext import commands, tasks
+from discord.ext import commands
 from dotenv import load_dotenv
 from pathlib import Path
 
@@ -67,7 +67,7 @@ async def on_command_error(ctx, error):
             color = discord.Color.from_rgb(255, 13, 0),
             title = ":x: Command raised an exception!",
             timestamp = ctx.message.created_at,
-            description = str(error)
+            description = f"```{error}```"
         )
         embed.add_field(name="Please contact the developer!", value="DM Feeeeddmmmeee#7784 or join the [support server](https://discord.gg/GAPYQa9).")
         embed.set_footer(text="Donut encountered an error!", icon_url=client.get_user(738788356506386462).avatar_url)
