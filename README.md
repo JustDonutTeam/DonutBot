@@ -3,7 +3,7 @@
 
 ## About
 
-Donut is a newly rewritten bot with currently over 50 different commands which include:
+Donut is a newly rewritten bot with currently over 60 different commands which include:
 - Custom Twitter and YouTube comment generator
 - Custom Among Us ejected screen generator
 - A Yoda language translator

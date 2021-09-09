@@ -12,7 +12,7 @@ class Meme(commands.Cog):
     @commands.command(aliases = json.load(open("help.json", "r"))["meme"]["aliases"])
     async def meme(self, ctx):
         api = requests.get("https://www.reddit.com/r/memes/hot.json").json()
-        if not api["message"]:
+        if not "message" in api.keys():
             meme = api["data"]["children"][random.randint(0, len(api["data"]["children"]) - 1)]
 
             embed = discord.Embed(
