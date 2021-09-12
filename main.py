@@ -42,20 +42,20 @@ for filename in os.listdir('./events'):
 @client.command()
 async def load(ctx, command):
     client.load_extension(f'commands.{command}')
-    await ctx.send('Successfully loaded a command.')
+    await ctx.reply('Successfully loaded a command.', mention_author = False)
 
 @commands.is_owner()
 @client.command()
 async def unload(ctx, command):
     client.unload_extension(f'commands.{command}')
-    await ctx.send('Successfully unloaded a command.')
+    await ctx.reply('Successfully unloaded a command.', mention_author = False)
 
 @commands.is_owner()
 @client.command()
 async def reload(ctx, command):
     client.unload_extension(f'commands.{command}')
     client.load_extension(f'commands.{command}')
-    await ctx.send('Successfully reloaded a command.')
+    await ctx.reply('Successfully reloaded a command.', mention_author = False)
 
 
 @client.event
