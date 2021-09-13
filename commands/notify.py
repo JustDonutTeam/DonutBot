@@ -9,7 +9,6 @@ class Notify(commands.Cog):
         self.client = client
 
     @commands.command(aliases = json.load(open("help.json", "r"))["notify"]["aliases"])
-    @commands.has_permissions(administrator=True)
     async def notify(self, ctx):
         success = self.client.get_emoji(883738376866516992)
         
