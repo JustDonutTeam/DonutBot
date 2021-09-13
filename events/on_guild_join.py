@@ -12,6 +12,7 @@ class On_guild_join(commands.Cog):
     async def on_guild_join(self, guild):
         database = sqlite3.connect("database.sqlite")
         cursor = database.cursor()
+        cursor.execute("CREATE TABLE IF NOT EXISTS notify (user_id TEXT)")
         cursor.execute(f"SELECT * FROM notify")
         data = cursor.fetchall()
 

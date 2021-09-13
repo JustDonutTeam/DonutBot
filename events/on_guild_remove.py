@@ -12,6 +12,7 @@ class On_guild_remove(commands.Cog):
     async def on_guild_remove(self, guild):
         database = sqlite3.connect("database.sqlite")
         cursor = database.cursor()
+        cursor.execute("CREATE TABLE IF NOT EXISTS notify (user_id TEXT)")
         cursor.execute(f"SELECT * FROM notify")
         data = cursor.fetchall()
 
