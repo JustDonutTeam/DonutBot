@@ -14,13 +14,32 @@ class Data(commands.Cog):
     async def data(self, ctx):
         database = sqlite3.connect("database.sqlite")
         cursor = database.cursor()
+        errors = 0
+        wb_data = ""
+        rr_data = ""
+        data = []
+
         try:
             cursor.execute(f"SELECT * FROM welcome WHERE guild_id = {ctx.guild.id}")
-            data = cursor.fetchone()
+            wb_data = cursor.fetchone()
+            data.append(dict(zip(["enabled", "guild_id", "channel_id", "custom_welcome", "custom_bye"], wb_data)))
         except OperationalError:
-            raise KeyError("I have no data about your server!")
+            errors += 1
+            pass
 
-        data = dict(zip(["enabled", "guild_id", "channel_id", "custom_welcome", "custom_bye"], data))
+        try:
+            cursor.execute(f"SELECT * FROM reactionroles WHERE guild_id = {ctx.guild.id}")
+            rr_data = cursor.fetchall()
+
+            for item in rr_data:
+                data.append(dict(zip(["emoji", "role_id", "message_id", "channel_id", "guild_id"], item)))
+
+        except OperationalError:
+            errors += 1
+            pass
+
+        if errors >= 2:
+            raise ValueError
 
         if data:
             embed = discord.Embed(

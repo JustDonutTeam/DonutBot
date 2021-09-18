@@ -18,6 +18,7 @@ with open("config.json", "r") as config:
 intents = discord.Intents.all()
 discord.member = True
 discord.guild = True
+discord.reaction = True
 
 client = commands.Bot(command_prefix = prefix, intents = intents, allowed_mentions=discord.AllowedMentions(everyone=False))
 
@@ -56,7 +57,6 @@ async def reload(ctx, command):
     client.unload_extension(f'commands.{command}')
     client.load_extension(f'commands.{command}')
     await ctx.reply('Successfully reloaded a command.', mention_author = False)
-
 
 @client.event
 async def on_command_error(ctx, error):

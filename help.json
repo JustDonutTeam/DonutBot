@@ -3,7 +3,7 @@
         "name": ":question: Other Category",
         "desc": "A category with commands that don't belong in other categories. You can type `.help <command>` to get some more detailed info on a command!",
         "command": false,
-        "commands": ["8ball", "ironic", "ping", "help", "invite", "uwufy", "nitro", "yomomma", "yoda", "support", "fact", "nuke", "botstats", "userinfo", "announcement", "tobinary", "frombinary", "tohex", "fromhex", "vote", "dice", "serverinfo", "weather", "coinflip", "enable", "disable", "data", "notify", "lyrics", "qr"]
+        "commands": ["8ball", "ironic", "ping", "help", "invite", "uwufy", "nitro", "yomomma", "yoda", "support", "fact", "nuke", "botstats", "userinfo", "announcement", "tobinary", "frombinary", "tohex", "fromhex", "vote", "dice", "serverinfo", "weather", "coinflip", "enable", "disable", "data", "notify", "lyrics", "qr", "giveaway", "reroll"]
     },
     "image": {
         "name": ":camera: Image Category",
@@ -16,6 +16,20 @@
         "desc": "A command category consisting of moderation related commands. You can type `.help <command>` to get some more detailed info on a command!",
         "command": false,
         "commands": ["lockdown", "clear", "kick", "ban", "unban", "mute", "unmute", "serverlockdown", "slowmode"]
+    },
+    "reroll": {
+        "name": "Reroll",
+        "desc": "Rerolls a giveaway.\n\n`[message id]` - message id of the original giveaway message (the embed). \n`<winners>` - amount of winners (default = 1).",
+        "command": true,
+        "aliases": ["regive"],
+        "usage": ".reroll [message id] <winners>\n\n`[]` - required, `<>` - optional"
+    },
+    "giveaway": {
+        "name": "Giveaway",
+        "desc": "Starts a giveaway.\n\nThe `[date]` argument has to be written in a form of `5s`, `30m`, `1h` or `3d`. \n`[winners]` - amount of winners.",
+        "command": true,
+        "aliases": ["give"],
+        "usage": ".giveaway [date] [winners] [prize]\n\n`[]` - required, `<>` - optional"
     },
     "meme": {
         "name": "Meme",
@@ -75,17 +89,17 @@
     },
     "enable": {
         "name": "Enable/Update",
-        "desc": "Enables or updates welcome-bye messages.\n\nLeave `<welcome message>` and `<bye message>` blank to disable custom messages.\n\nVariables which can be used in the messages: `{user.name}` = the user's name, `{user.mention}` = mention of the user, `{guild.members}` = the amount of members, `{guild.name}` = the guild's name.\n\nRemeber to put `<welcome message>` and `<bye message>` in \"\"!",
+        "desc": "Enables or updates a module.\n\n**Welcome-Bye Module**\n`.enable welcomebye <channel> <welcome message> <bye message>`\nLeave `<welcome message>` and `<bye message>` blank to disable custom messages.\n\nVariables which can be used in the messages: `{user.name}` = the user's name, `{user.mention}` = mention of the user, `{guild.members}` = the amount of members, `{guild.name}` = the guild's name.\n\nRemeber to put `<welcome message>` and `<bye message>` in \"\"!\n\n**Reaction Roles Module**\n`.enable reactionroles [emoji] [role] [message id] <channel>`\nTo be able to get the ID of a message make sure to go into `Settings > Advanced > Developer Mode` and enable it!",
         "command": true,
-        "aliases": ["enablewelcome", "update", "updatewelcome"],
-        "usage": "`.enable <channel> <welcome message> <bye message>`\n\n`[]` - required, `<>` - optional"
+        "aliases": ["enablemodule", "update", "updatemodule"],
+        "usage": "`.enable [module]`\n\n`[]` - required, `<>` - optional"
     },
     "disable": {
         "name": "Disable",
-        "desc": "Disables welcome-bye messages.",
+        "desc": "Disables a module.",
         "command": true,
-        "aliases": ["disablewelcome"],
-        "usage": "`.disable`\n\n`[]` - required, `<>` - optional"
+        "aliases": ["disablemodule"],
+        "usage": "`.disable [module]`\n\n`[]` - required, `<>` - optional"
     },
     "serverlockdown": {
         "name": "Server lockdown",

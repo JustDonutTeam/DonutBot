@@ -8,6 +8,8 @@ Donut is a newly rewritten bot with currently over 60 different commands which i
 - Custom Among Us ejected screen generator
 - A Yoda language translator
 - A fully customizable welcome-bye message logger
+- An easy to use giveaway system
+- A simple reaction role module
 - Much more completely random commands
 
 ## Support
