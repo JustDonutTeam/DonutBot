@@ -9,27 +9,97 @@
         "name": ":camera: Image Category",
         "desc": "A command category consisting of image manipulation commands. You can type `.help <command>` to get some more detailed info on a command!",
         "command": false,
-        "commands": ["hug", "wink", "eject", "tweet", "youtube", "triggered", "simpcard", "wasted", "pixelate", "missionpassed", "car", "water", "mind", "iamspeed", "avatar", "waifuai", "blur", "comrade", "dog", "cat", "rover", "meme"]
+        "commands": ["hug", "wink", "eject", "tweet", "youtube", "triggered", "simpcard", "wasted", "pixelate", "missionpassed", "car", "water", "mind", "iamspeed", "avatar", "waifuai", "blur", "comrade", "dog", "cat", "rover", "meme", "pooh", "draw25", "yeet", "drake", "presentation", "worthless", "bernie", "location"]
     },
     "moderation": {
         "name": ":hammer: Moderation Category",
         "desc": "A command category consisting of moderation related commands. You can type `.help <command>` to get some more detailed info on a command!",
         "command": false,
-        "commands": ["lockdown", "clear", "kick", "ban", "unban", "mute", "unmute", "serverlockdown", "slowmode"]
+        "commands": ["lockdown", "clear", "kick", "ban", "unban", "mute", "unmute", "serverlockdown", "slowmode", "tempmute", "tempban"]
+    },
+    "location": {
+        "name": "Location",
+        "desc": "Generates an x wants to know your location meme.",
+        "command": true,
+        "aliases": ["wantsto", "yourlocation", "knowyourlocation"],
+        "usage": "`.location <user>`\n\n`[]` - required, `<>` - optional"
+    },
+    "bernie": {
+        "name": "Bernie Sanders",
+        "desc": "Generates an \"I am once again asking...\" meme.",
+        "command": true,
+        "aliases": ["berniesanders", "sanders", "iamonceagainasking", "iamonceagain"],
+        "usage": "`.bernie [text]`\n\n`[]` - required, `<>` - optional"
+    },
+    "worthless": {
+        "name": "worthless",
+        "desc": "Generates a worthless meme.",
+        "command": true,
+        "aliases": ["gravityfalls"],
+        "usage": "`.worthless [text]`\n\n`[]` - required, `<>` - optional"
+    },
+    "presentation": {
+        "name": "Presentation",
+        "desc": "Generates a spiderman presentation meme.",
+        "command": true,
+        "aliases": ["spiderman"],
+        "usage": "`.presentation [text]`\n\n`[]` - required, `<>` - optional"
+    },
+    "drake": {
+        "name": "Drake",
+        "desc": "Generates a drake meme.",
+        "command": true,
+        "aliases": ["yesno"],
+        "usage": "`.drake [user 1] [user 2]`\n\n`[]` - required, `<>` - optional"
+    },
+    "yeet": {
+        "name": "Yeet",
+        "desc": "Generates a yeet the child meme.",
+        "command": true,
+        "aliases": ["yeetthechild"],
+        "usage": "`.yeet [text]`\n\n`[]` - required, `<>` - optional"
+    },
+    "draw25": {
+        "name": "Draw 25",
+        "desc": "Generates a do x or draw 25 meme.",
+        "command": true,
+        "aliases": ["uno"],
+        "usage": "`.draw25 [user 1] [text]`\n\n`[]` - required, `<>` - optional"
+    },
+    "pooh": {
+        "name": "Pooh",
+        "desc": "Generates a Winnie the Pooh meme.",
+        "command": true,
+        "aliases": ["winniethepooh"],
+        "usage": "`.pooh [user 1] [user2]`\n\n`[]` - required, `<>` - optional"
     },
     "reroll": {
         "name": "Reroll",
         "desc": "Rerolls a giveaway.\n\n`[message id]` - message id of the original giveaway message (the embed). \n`<winners>` - amount of winners (default = 1).",
         "command": true,
         "aliases": ["regive"],
-        "usage": ".reroll [message id] <winners>\n\n`[]` - required, `<>` - optional"
+        "usage": "`.reroll [message id] <winners>`\n\n`[]` - required, `<>` - optional"
+    },
+    "tempban": {
+        "name": "Tempban",
+        "desc": "Temporarily bans a user.\n\nThe `[duration]` argument has to be written in a form of `5s`, `30m`, `1h`, `3d` or `2w`. Use `/` to include more than 1 value (1m/30s).",
+        "command": true,
+        "aliases": ["temporaryban"],
+        "usage": "`.tempban [user] [duration] <reason>`\n\n`[]` - required, `<>` - optional"
+    },
+    "tempmute": {
+        "name": "Tempmute",
+        "desc": "Temporarily mutes a user.\n\nThe `[duration]` argument has to be written in a form of `5s`, `30m`, `1h`, `3d` or `2w`. Use `/` to include more than 1 value (1m/30s).",
+        "command": true,
+        "aliases": ["temporarymute"],
+        "usage": "`.tempmute [user] [duration]`\n\n`[]` - required, `<>` - optional"
     },
     "giveaway": {
         "name": "Giveaway",
-        "desc": "Starts a giveaway.\n\nThe `[date]` argument has to be written in a form of `5s`, `30m`, `1h` or `3d`. \n`[winners]` - amount of winners.",
+        "desc": "Starts a giveaway.\n\nThe `[date]` argument has to be written in a form of `5s`, `30m`, `1h`, `3d` or `2w`. Use `/` to include more than 1 value (1m/30s).\n`[winners]` - amount of winners.",
         "command": true,
         "aliases": ["give"],
-        "usage": ".giveaway [date] [winners] [prize]\n\n`[]` - required, `<>` - optional"
+        "usage": "`.giveaway [date] [winners] [prize]`\n\n`[]` - required, `<>` - optional"
     },
     "meme": {
         "name": "Meme",
@@ -154,7 +224,7 @@
         "name": "Ban",
         "desc": "Bans a user!",
         "command": true,
-        "aliases": ["delete", "yeet"],
+        "aliases": ["delete"],
         "usage": "`.ban [user]`\n\n`[]` - required, `<>` - optional"
     },
     "dice": {
