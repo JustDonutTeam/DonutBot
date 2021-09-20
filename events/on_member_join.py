@@ -20,7 +20,12 @@ class On_member_join(commands.Cog):
 
         cursor.execute(f"SELECT channel_id FROM welcome WHERE guild_id = {member.guild.id}")
         channel_id = cursor.fetchone()
+
+        if not isinstance(channel_id[0], str):
+            return
+            
         channel = self.client.get_channel(int(channel_id[0]))
+            
 
         cursor.execute(f"SELECT custom_welcome FROM welcome WHERE guild_id = {member.guild.id}")
         custom_welcome = cursor.fetchone()
