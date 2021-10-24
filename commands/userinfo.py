@@ -23,7 +23,7 @@ class Userinfo(commands.Cog):
             timestamp=ctx.message.created_at
         )
         embed.set_author(name="Info about " + str(member), icon_url=member.avatar_url)
-        embed.set_footer(text=f"Donut", icon_url=self.client.get_user(738788356506386462).avatar_url)
+        embed.set_footer(text=f"Donut", icon_url=self.client.get_user(self.client.user.id).avatar_url)
 
         if member.status == discord.Status.dnd:
             status = dnd

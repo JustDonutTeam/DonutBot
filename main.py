@@ -13,7 +13,7 @@ TOKEN = os.getenv('TOKEN')
 with open("config.json", "r") as config:
     config = json.load(config)
     prefix = config["prefix"]
-    status = prefix + "help | Donut " + config["version"] + " (Rewrite)"
+    status = prefix + "help | Donut " + config["version"] + " (Pycord Rewrite)"
 
 intents = discord.Intents.all()
 discord.member = True
@@ -70,7 +70,7 @@ async def on_command_error(ctx, error):
             description = f"```{error}```"
         )
         embed.add_field(name="Please contact the developer!", value="DM Feeeeddmmmeee#7784 or join the [support server](https://discord.gg/GAPYQa9).")
-        embed.set_footer(text="Donut encountered an error!", icon_url=client.get_user(738788356506386462).avatar_url)
+        embed.set_footer(text="Donut encountered an error!", icon_url=client.get_user(client.user.id).avatar_url)
 
         await ctx.reply(embed=embed, mention_author=False)
 

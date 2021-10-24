@@ -19,7 +19,7 @@ class Announcement(commands.Cog):
             description=f"{text}",
             timestamp=ctx.message.created_at
         )
-        embed.set_footer(text=f"Donut", icon_url=self.client.get_user(738788356506386462).avatar_url)
+        embed.set_footer(text=f"Donut", icon_url=self.client.get_user(self.client.user.id).avatar_url)
 
         await channel.send(embed=embed, mention_author=False)
 

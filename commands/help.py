@@ -23,7 +23,7 @@ class Help(commands.Cog):
                 embed.add_field(name=":mouse_three_button: Usage:", value=file[name]["usage"])
                 embed.add_field(name=":clipboard: Aliases:", value=str(file[name]["aliases"]).replace("'", "`").replace("[", "").replace("]", ""))
             else: embed.add_field(name=":clipboard: Commands:", value=str(file[name]["commands"]).replace("'", "`").replace("[", "").replace("]", ""))
-            embed.set_footer(text="Donut", icon_url=self.client.get_user(738788356506386462).avatar_url)
+            embed.set_footer(text="Donut", icon_url=self.client.get_user(self.client.user.id).avatar_url)
 
             await ctx.reply(embed=embed, mention_author=False)
         else:
@@ -36,7 +36,7 @@ class Help(commands.Cog):
             embed.add_field(name=":question: Other", value="A category with commands that don't belong in other categories.")
             embed.add_field(name=":camera: Image", value="Category with image related commands.")
             embed.add_field(name=":hammer: Moderation", value="A command category with commands for admins.")
-            embed.set_footer(text="Donut", icon_url=self.client.get_user(738788356506386462).avatar_url)
+            embed.set_footer(text="Donut", icon_url=self.client.get_user(self.client.user.id).avatar_url)
 
             await ctx.reply(embed=embed, mention_author=False)
 

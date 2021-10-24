@@ -26,7 +26,7 @@ class Lyrics(commands.Cog):
             color=discord.Colour.from_rgb(255, 158, 253)
         )
         embed.set_thumbnail(url=f"{pic}")
-        embed.set_footer(text="Donut x Some Random API", icon_url=self.client.get_user(738788356506386462).avatar_url)
+        embed.set_footer(text="Donut x Some Random API", icon_url=self.client.get_user(self.client.user.id).avatar_url)
 
         await ctx.reply(embed = embed, mention_author=False)
 

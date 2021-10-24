@@ -23,7 +23,7 @@ class Eject(commands.Cog):
                 timestamp = ctx.message.created_at
             )
             embed.set_image(url=f'https://vacefron.nl/api/ejected?name={username}&impostor={impostor}&crewmate={color}')
-            embed.set_footer(text="Donut x Vacefron API", icon_url=self.client.get_user(738788356506386462).avatar_url)
+            embed.set_footer(text="Donut x Vacefron API", icon_url=self.client.get_user(self.client.user.id).avatar_url)
         
 
         await ctx.reply(embed=embed, mention_author=False)

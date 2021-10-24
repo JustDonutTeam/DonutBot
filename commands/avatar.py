@@ -18,7 +18,7 @@ class Avatar(commands.Cog):
             timestamp=ctx.message.created_at
         )
         embed.set_image(url=member.avatar_url)
-        embed.set_footer(text="Donut", icon_url=self.client.get_user(738788356506386462).avatar_url)
+        embed.set_footer(text="Donut", icon_url=self.client.get_user(self.client.user.id).avatar_url)
 
         await ctx.reply(embed=embed, mention_author=False)
 

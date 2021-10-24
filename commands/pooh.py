@@ -40,7 +40,7 @@ class Pooh(commands.Cog):
                 timestamp = ctx.message.created_at
             )
         embed.set_image(url="attachment://pooh.png")
-        embed.set_footer(text="Donut x PIL", icon_url=self.client.get_user(738788356506386462).avatar_url)
+        embed.set_footer(text="Donut x PIL", icon_url=self.client.get_user(self.client.user.id).avatar_url)
 
         await ctx.reply(embed=embed, file=discord.File(fp, "pooh.png"), mention_author=False)
 
