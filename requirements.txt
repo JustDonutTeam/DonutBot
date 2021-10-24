@@ -1,0 +1,4 @@
+py-cord==1.7.3
+python-dotenv==0.19.1
+requests==2.26.0
+pillow==8.4.0
