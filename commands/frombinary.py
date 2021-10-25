@@ -12,9 +12,8 @@ class Frombinary(commands.Cog):
     async def frombinary(self, ctx, *, input):
         await ctx.trigger_typing()
 
-        api = requests.get(f"https://some-random-api.ml/binary?decode={input.replace(' ', '')}")
-        api = api.json()
-        await ctx.reply(api["text"], mention_author=False)
+        output = ''.join(chr(int(x, 2)) for x in input.split(' '))
+        await ctx.reply(output, mention_author=False)
 
 def setup(client):
     client.add_cog(Frombinary(client))
