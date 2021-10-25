@@ -16,7 +16,7 @@ class Serverinfo(commands.Cog):
             timestamp=ctx.message.created_at
         )
         embed.set_author(name="Info about " + str(ctx.guild.name), icon_url=ctx.guild.icon_url)
-        embed.set_footer(text=f"Donut", icon_url=self.client.get_user(self.client.user.id).avatar_url)
+        embed.set_footer(text=f"Donut", icon_url=self.client.get_user(self.client.user.id).display_avatar.url)
         embed.add_field(name=":date: Created At:", value=ctx.guild.created_at.strftime("%a, %#d %B %Y, %I:%M %p UTC"))
         embed.add_field(name=":id: ID:", value=ctx.guild.id)
         embed.add_field(name=":busts_in_silhouette: Members", value=len(ctx.guild.members))

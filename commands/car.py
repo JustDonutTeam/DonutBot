@@ -17,7 +17,7 @@ class Car(commands.Cog):
             timestamp=ctx.message.created_at
         )
         embed.set_image(url=f'https://vacefron.nl/api/carreverse?text={text.replace(" ", "%20")}')
-        embed.set_footer(text="Donut x Vacefron API", icon_url=self.client.get_user(self.client.user.id).avatar_url)
+        embed.set_footer(text="Donut x Vacefron API", icon_url=self.client.get_user(self.client.user.id).display_avatar.url)
 
         await ctx.reply(embed=embed, mention_author=False)
 

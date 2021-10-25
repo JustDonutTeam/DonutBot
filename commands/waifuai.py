@@ -18,7 +18,7 @@ class Waifuai(commands.Cog):
             timestamp=ctx.message.created_at
         )
         embed.set_image(url="https://www.thiswaifudoesnotexist.net/example-"+str(random.randint(1,100000))+".jpg")
-        embed.set_footer(text=f"Donut x ThisWaifuDoesNotExist.net", icon_url=self.client.get_user(self.client.user.id).avatar_url)
+        embed.set_footer(text=f"Donut x ThisWaifuDoesNotExist.net", icon_url=self.client.get_user(self.client.user.id).display_avatar.url)
 
         await ctx.reply(embed=embed, mention_author=False)
 

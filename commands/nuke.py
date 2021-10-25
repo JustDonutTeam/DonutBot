@@ -17,7 +17,7 @@ class Nuke(commands.Cog):
             timestamp=ctx.message.created_at
         )
         embed.set_image(url='https://i.pinimg.com/originals/6c/48/5e/6c485efad8b910e5289fc7968ea1d22f.gif')
-        embed.set_footer(text=f"Donut x North Korea", icon_url=self.client.get_user(self.client.user.id).avatar_url)
+        embed.set_footer(text=f"Donut x North Korea", icon_url=self.client.get_user(self.client.user.id).display_avatar.url)
 
         await ctx.reply(embed=embed, mention_author=False)
 

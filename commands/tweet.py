@@ -29,7 +29,7 @@ class Tweet(commands.Cog):
                     timestamp = ctx.message.created_at
                 )
                 embed.set_image(url="attachment://tweet.png")
-                embed.set_footer(text="Donut x Some Random API", icon_url=self.client.get_user(self.client.user.id).avatar_url)
+                embed.set_footer(text="Donut x Some Random API", icon_url=self.client.get_user(self.client.user.id).display_avatar.url)
                 await ctx.reply(embed=embed, file=file, mention_author=False)
 
         await session.close() 

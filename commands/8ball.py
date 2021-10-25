@@ -39,7 +39,7 @@ class _8ball(commands.Cog):
             description=f'{random.choice(responses)}',
             timestamp=ctx.message.created_at
         )
-        embed.set_footer(text="Donut", icon_url=self.client.get_user(self.client.user.id).avatar_url)
+        embed.set_footer(text="Donut", icon_url=self.client.get_user(self.client.user.id).display_avatar.url)
         
         await ctx.reply(embed=embed, mention_author=False)
 

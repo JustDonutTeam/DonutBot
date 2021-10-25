@@ -26,7 +26,7 @@ class Notify(commands.Cog):
                     description=f"I will DM you when there's a server available!",
                     timestamp = ctx.message.created_at
                 )
-            embed.set_footer(text=f"Donut x SQLite3", icon_url=self.client.get_user(self.client.user.id).avatar_url)
+            embed.set_footer(text=f"Donut x SQLite3", icon_url=self.client.get_user(self.client.user.id).display_avatar.url)
             await ctx.reply(embed = embed, mention_author = False)
 
         else:
@@ -37,7 +37,7 @@ class Notify(commands.Cog):
                     description=f"I will no longer DM you when there's a server available!",
                     timestamp = ctx.message.created_at
                 )
-            embed.set_footer(text=f"Donut x SQLite3", icon_url=self.client.get_user(self.client.user.id).avatar_url)
+            embed.set_footer(text=f"Donut x SQLite3", icon_url=self.client.get_user(self.client.user.id).display_avatar.url)
             await ctx.reply(embed = embed, mention_author = False)
         
         database.commit()

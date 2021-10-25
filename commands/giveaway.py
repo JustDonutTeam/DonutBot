@@ -43,7 +43,7 @@ class Giveaway(commands.Cog):
                 description = f"**Hosted by:** {ctx.author.mention}\n**Ends at:** {str(end_date)[:-7]} UTC",
                 timestamp = ctx.message.created_at
             )
-            embed.set_footer(text=f"Donut", icon_url=self.client.get_user(self.client.user.id).avatar_url)
+            embed.set_footer(text=f"Donut", icon_url=self.client.get_user(self.client.user.id).display_avatar.url)
             message = await ctx.reply(embed=embed, mention_author=False)
 
             await message.add_reaction(emoji)
@@ -77,7 +77,7 @@ class Giveaway(commands.Cog):
                 description = f"**Hosted by:** {ctx.author.mention}\n**Ended at:** {str(end_date)[:-7]} UTC\n\n**Won by:** {winner_string}",
                 timestamp = ctx.message.created_at
             )
-            second_embed.set_footer(text=f"Donut", icon_url=self.client.get_user(self.client.user.id).avatar_url)
+            second_embed.set_footer(text=f"Donut", icon_url=self.client.get_user(self.client.user.id).display_avatar.url)
 
             await fetched_message.reply(f"{emoji} Congratulations {winner_string[:-1]}, you won **{prize}**!")
             await message.edit(embed=second_embed)

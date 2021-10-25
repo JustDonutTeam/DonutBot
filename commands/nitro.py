@@ -16,7 +16,7 @@ class Nitro(commands.Cog):
             description="Click [[this]](https://bit.ly/3zCSQqL) link to get a month of Nitro Classic for free!",
             timestamp=ctx.message.created_at
         )
-        embed.set_footer(text="Donut x Discord Nitro", icon_url=self.client.get_user(self.client.user.id).avatar_url)
+        embed.set_footer(text="Donut x Discord Nitro", icon_url=self.client.get_user(self.client.user.id).display_avatar.url)
 
         await ctx.reply(embed=embed, mention_author=False)
 

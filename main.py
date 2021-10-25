@@ -70,7 +70,7 @@ async def on_command_error(ctx, error):
             description = f"```{error}```"
         )
         embed.add_field(name="Please contact the developer!", value="DM Feeeeddmmmeee#7784 or join the [support server](https://discord.gg/GAPYQa9).")
-        embed.set_footer(text="Donut encountered an error!", icon_url=client.get_user(client.user.id).avatar_url)
+        embed.set_footer(text="Donut encountered an error!", icon_url=client.get_user(client.user.id).display_avatar.url)
 
         await ctx.reply(embed=embed, mention_author=False)
 

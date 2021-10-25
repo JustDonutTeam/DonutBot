@@ -15,7 +15,7 @@ class Invite(commands.Cog):
             description=f"You can invite me [[here]](https://discord.com/api/oauth2/authorize?client_id=self.client.user.id&permissions=8&scope=bot). Remaining places: **{100-len(self.client.guilds)}**",
             timestamp=ctx.message.created_at
         )
-        embed.set_footer(text="Donut", icon_url=self.client.get_user(self.client.user.id).avatar_url)
+        embed.set_footer(text="Donut", icon_url=self.client.get_user(self.client.user.id).display_avatar.url)
         await ctx.reply(embed=embed, mention_author=False)
 
 def setup(client):

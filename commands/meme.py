@@ -22,7 +22,7 @@ class Meme(commands.Cog):
                 url = "https://reddit.com" + meme["data"]["permalink"]
             )
             embed.set_image(url=meme['data']['url'])
-            embed.set_footer(text=f"Upvotes: {meme['data']['score']} • {meme['data']['upvote_ratio']}% Downvoted\nDonut x Reddit • Posted on {meme['data']['subreddit_name_prefixed']}", icon_url=self.client.get_user(self.client.user.id).avatar_url)
+            embed.set_footer(text=f"Upvotes: {meme['data']['score']} • {meme['data']['upvote_ratio']}% Downvoted\nDonut x Reddit • Posted on {meme['data']['subreddit_name_prefixed']}", icon_url=self.client.get_user(self.client.user.id).display_avatar.url)
 
             await ctx.reply(embed=embed, mention_author=False)
         else:
@@ -33,7 +33,7 @@ class Meme(commands.Cog):
                 description = f"```{api}```"
             )
             embed.add_field(name="If you keep seeing this contact the developer!", value="DM Feeeeddmmmeee#7784 or join the [support server](https://discord.gg/GAPYQa9).")
-            embed.set_footer(text="Donut encountered an error!", icon_url=self.client.get_user(self.client.user.id).avatar_url)
+            embed.set_footer(text="Donut encountered an error!", icon_url=self.client.get_user(self.client.user.id).display_avatar.url)
             await ctx.reply(embed=embed, mention_author = False)
 
 def setup(client):

@@ -24,7 +24,7 @@ class Weather(commands.Cog):
             url=f"https://openweathermap.org/city/{metric['id']}",
             timestamp=ctx.message.created_at
         )
-        embed.set_footer(text=f"Donut x OpenWeatherMap.org", icon_url=self.client.get_user(self.client.user.id).avatar_url)
+        embed.set_footer(text=f"Donut x OpenWeatherMap.org", icon_url=self.client.get_user(self.client.user.id).display_avatar.url)
         embed.set_image(url=f"https://open.mapquestapi.com/staticmap/v4/getmap?key=FdslJ2xwoyLBqQreQk5OBLj5AV11wMnu&size=1024,512&zoom=8&center={metric['coord']['lat']},{metric['coord']['lon']}")
         embed.set_thumbnail(url=f"http://openweathermap.org/img/w/{metric['weather'][0]['icon']}.png")
 

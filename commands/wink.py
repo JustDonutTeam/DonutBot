@@ -26,7 +26,7 @@ class Wink(commands.Cog):
         api = requests.get("https://some-random-api.ml/animu/wink").json()
 
         embed.set_image(url=api["link"])
-        embed.set_footer(text="Donut x Some Random API", icon_url=self.client.get_user(self.client.user.id).avatar_url)
+        embed.set_footer(text="Donut x Some Random API", icon_url=self.client.get_user(self.client.user.id).display_avatar.url)
         
 
         await ctx.reply(embed=embed, mention_author=False)

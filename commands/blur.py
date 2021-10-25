@@ -18,7 +18,7 @@ class Blur(commands.Cog):
             timestamp=ctx.message.created_at
         )
         embed.set_image(url=f'https://some-random-api.ml/canvas/blur?avatar={member.avatar_url_as(format="png")}')
-        embed.set_footer(text="Donut x Some Random API", icon_url=self.client.get_user(self.client.user.id).avatar_url)
+        embed.set_footer(text="Donut x Some Random API", icon_url=self.client.get_user(self.client.user.id).display_avatar.url)
 
         await ctx.reply(embed=embed, mention_author=False)
 

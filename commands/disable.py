@@ -35,7 +35,7 @@ class Disable(commands.Cog):
                     description=f"Successfully cleared all reaction roles from {desc}!\n\nRun `.enable reactionroles` to add new ones!",
                     timestamp = ctx.message.created_at
                 )
-        embed.set_footer(text=f"Donut x SQLite3", icon_url=self.client.get_user(self.client.user.id).avatar_url)
+        embed.set_footer(text=f"Donut x SQLite3", icon_url=self.client.get_user(self.client.user.id).display_avatar.url)
         await ctx.reply(embed = embed, mention_author = False)
 
         database.commit()
@@ -59,7 +59,7 @@ class Disable(commands.Cog):
                     description=f"Successfully disabled welcome-bye messages!\n\nRemember that using `.enable welcomebye` will overwrite your previous settings!",
                     timestamp = ctx.message.created_at
                 )
-            embed.set_footer(text=f"Donut x SQLite3", icon_url=self.client.get_user(self.client.user.id).avatar_url)
+            embed.set_footer(text=f"Donut x SQLite3", icon_url=self.client.get_user(self.client.user.id).display_avatar.url)
             await ctx.reply(embed = embed, mention_author = False)
         else:
             raise TypeError("welcome-bye messages are already disabled.")

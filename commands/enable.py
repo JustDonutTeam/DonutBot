@@ -34,7 +34,7 @@ class Enable(commands.Cog):
                     description=f"Successfully enabled reaction roles!\n\n```Channel: #{channel}\nMessage ID: {message_id}\nRole: @{role}\nEmoji: {emoji}```",
                     timestamp = ctx.message.created_at
                 )
-            embed.set_footer(text=f"Donut x SQLite3", icon_url=self.client.get_user(self.client.user.id).avatar_url)
+            embed.set_footer(text=f"Donut x SQLite3", icon_url=self.client.get_user(self.client.user.id).display_avatar.url)
 
             await message.add_reaction(emoji)
             await ctx.reply(embed = embed, mention_author = False)
@@ -68,7 +68,7 @@ class Enable(commands.Cog):
                     description=f"Successfully enabled welcome-bye messages!\n\n```Channel: #{channel}\nWelcome message:`{custom_welcome}\nBye message: {custom_bye}```",
                     timestamp = ctx.message.created_at
                 )
-            embed.set_footer(text=f"Donut x SQLite3", icon_url=self.client.get_user(self.client.user.id).avatar_url)
+            embed.set_footer(text=f"Donut x SQLite3", icon_url=self.client.get_user(self.client.user.id).display_avatar.url)
             await ctx.reply(embed = embed, mention_author = False)
 
         else:
@@ -84,7 +84,7 @@ class Enable(commands.Cog):
                     description=f"Successfully enabled welcome-bye messages!\n\n```Channel: #{channel}\nWelcome message: {custom_welcome}\nBye message: {custom_bye}```",
                     timestamp = ctx.message.created_at
                 )
-            embed.set_footer(text=f"Donut x SQLite3", icon_url=self.client.get_user(self.client.user.id).avatar_url)
+            embed.set_footer(text=f"Donut x SQLite3", icon_url=self.client.get_user(self.client.user.id).display_avatar.url)
             await ctx.reply(embed = embed, mention_author = False)
         
         database.commit()

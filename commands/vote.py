@@ -16,7 +16,7 @@ class Vote(commands.Cog):
             description="Click [[this]](https://top.gg/bot/self.client.user.id/vote) link to vote!",
             timestamp=ctx.message.created_at
         )
-        embed.set_footer(text="Donut", icon_url=self.client.get_user(self.client.user.id).avatar_url)
+        embed.set_footer(text="Donut", icon_url=self.client.get_user(self.client.user.id).display_avatar.url)
 
         await ctx.reply(embed=embed, mention_author=False)
 

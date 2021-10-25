@@ -41,7 +41,7 @@ class Worthless(commands.Cog):
                 timestamp = ctx.message.created_at
             )
         embed.set_image(url="attachment://worthless.png")
-        embed.set_footer(text="Donut x PIL", icon_url=self.client.get_user(self.client.user.id).avatar_url)
+        embed.set_footer(text="Donut x PIL", icon_url=self.client.get_user(self.client.user.id).display_avatar.url)
 
         await ctx.reply(embed=embed, file=discord.File(fp, "worthless.png"), mention_author=False)
 

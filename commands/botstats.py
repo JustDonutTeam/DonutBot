@@ -18,7 +18,7 @@ class Botstats(commands.Cog):
         )
         embed.set_author(name=self.client.get_user(585115156757872653), icon_url=self.client.get_user(585115156757872653).avatar_url)
         embed.set_image(url='https://top.gg/api/widget/self.client.user.id.png')
-        embed.set_footer(text=f"Donut", icon_url=self.client.get_user(self.client.user.id).avatar_url)
+        embed.set_footer(text=f"Donut", icon_url=self.client.get_user(self.client.user.id).display_avatar.url)
 
         embed.add_field(name=":globe_with_meridians: Servers:", value=f"{len(self.client.guilds)} servers!")
         embed.add_field(name=":ping_pong: Ping:", value=f"{round(self.client.latency * 1000)} ms!")
