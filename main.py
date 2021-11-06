@@ -1,9 +1,6 @@
-import discord
-import os
-import json
+import discord, os, json
 from discord.ext import commands
 from dotenv import load_dotenv
-from pathlib import Path
 
 dotenv_path = Path(__file__.replace("main.py", "token.env"))
 
