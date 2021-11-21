@@ -16,7 +16,7 @@ class Botstats(commands.Cog):
             description=f'**Type .help to see the commands!**\n\nBecause of Discords limitaions for unverified bots I am unable to join more than 100 servers (remaining places: **{100-len(self.client.guilds)}**).',
             timestamp=ctx.message.created_at
         )
-        embed.set_author(name=self.client.get_user(585115156757872653), icon_url=self.client.get_user(585115156757872653).avatar_url)
+        embed.set_author(name=f"{self.client.get_user(585115156757872653)} & {self.client.get_user(476335730470289429)}", icon_url="https://media.discordapp.net/attachments/879324217462632478/912069602337497178/Untitled.png?width=676&height=676")
         embed.set_image(url='https://top.gg/api/widget/738788356506386462.png')
         embed.set_footer(text=f"Donut", icon_url=self.client.get_user(738788356506386462).avatar_url)
 
