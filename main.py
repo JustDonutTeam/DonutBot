@@ -2,9 +2,7 @@ import discord, os, json
 from discord.ext import commands
 from dotenv import load_dotenv
 
-dotenv_path = Path(__file__.replace("main.py", "token.env"))
-
-load_dotenv(dotenv_path = dotenv_path)
+load_dotenv(dotenv_path = "token.env")
 TOKEN = os.getenv('TOKEN')
 
 with open("config.json", "r") as config:
