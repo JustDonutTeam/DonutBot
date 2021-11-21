@@ -3,7 +3,7 @@
         "name": ":question: Other Category",
         "desc": "A category with commands that don't belong in other categories. You can type `.help <command>` to get some more detailed info on a command!",
         "command": false,
-        "commands": ["8ball", "ironic", "ping", "help", "invite", "uwufy", "nitro", "yomomma", "yoda", "support", "fact", "nuke", "botstats", "userinfo", "announcement", "tobinary", "frombinary", "tohex", "fromhex", "vote", "dice", "serverinfo", "weather", "coinflip", "enable", "disable", "data", "notify", "lyrics", "qr", "giveaway", "reroll"]
+        "commands": ["8ball", "ironic", "ping", "help", "invite", "uwufy", "nitro", "yomomma", "yoda", "support", "fact", "nuke", "botstats", "userinfo", "announcement", "tobinary", "frombinary", "tohex", "fromhex", "vote", "dice", "serverinfo", "weather", "coinflip", "enable", "disable", "data", "lyrics", "qr", "giveaway", "reroll"]
     },
     "image": {
         "name": ":camera: Image Category",
@@ -142,13 +142,6 @@
         "command": true,
         "aliases": ["song"],
         "usage": "`.lyrics [song]`\n\n`[]` - required, `<>` - optional"
-    },
-    "notify": {
-        "name": "Notify",
-        "desc": "Tells me to DM you when there's a server avilable.\n\nStores your Discord user ID. If you want it to be removed from the database use `.notify` again.",
-        "command": true,
-        "aliases": ["cantinvite"],
-        "usage": "`.notify`\n\n`[]` - required, `<>` - optional"
     },
     "data": {
         "name": "Data",
