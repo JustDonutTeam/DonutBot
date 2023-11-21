@@ -30,20 +30,20 @@ async def on_ready():
 @commands.is_owner()
 @client.command()
 async def load(ctx, command):
-    client.load_extension(f'commands.{command}')
+    await client.load_extension(f'commands.{command}')
     await ctx.reply('Successfully loaded a command.', mention_author = False)
 
 @commands.is_owner()
 @client.command()
 async def unload(ctx, command):
-    client.unload_extension(f'commands.{command}')
+    await client.unload_extension(f'commands.{command}')
     await ctx.reply('Successfully unloaded a command.', mention_author = False)
 
 @commands.is_owner()
 @client.command()
 async def reload(ctx, command):
-    client.unload_extension(f'commands.{command}')
-    client.load_extension(f'commands.{command}')
+    await client.unload_extension(f'commands.{command}')
+    await client.load_extension(f'commands.{command}')
     await ctx.reply('Successfully reloaded a command.', mention_author = False)
 
 @client.event
@@ -66,10 +66,16 @@ async def main():
     for filename in os.listdir('./commands'):
         if filename.endswith('.py'):
             await client.load_extension(f'commands.{filename[:-3]}')
+            # print(f'Loaded {filename[:-3]}')
 
     for filename in os.listdir('./events'):
         if filename.endswith('.py'):
             await client.load_extension(f'events.{filename[:-3]}')
-    await client.start(TOKEN)
+            # print(f'Loaded {filename[:-3]}')
+    await client.start("NzM4Nzg4MzU2NTA2Mzg2NDYy.GAHoT5.tFyvE5BW2_t3LX7dFWtcFaBEesskECDrSlClZI")
 
-asyncio.run(main())
+if __name__ == "__main__":
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        asyncio.run(client.close())
