@@ -72,7 +72,7 @@ async def main():
         if filename.endswith('.py'):
             await client.load_extension(f'events.{filename[:-3]}')
             # print(f'Loaded {filename[:-3]}')
-    await client.start("NzM4Nzg4MzU2NTA2Mzg2NDYy.GAHoT5.tFyvE5BW2_t3LX7dFWtcFaBEesskECDrSlClZI")
+    await client.start(TOKEN)
 
 if __name__ == "__main__":
     try:
