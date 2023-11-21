@@ -1,6 +1,7 @@
 import discord, os, json
 from discord.ext import commands
 from dotenv import load_dotenv
+import asyncio
 
 load_dotenv(dotenv_path = "token.env")
 TOKEN = os.getenv('TOKEN')
@@ -22,17 +23,9 @@ client.owner_ids = {585115156757872653, 476335730470289429}
 
 @client.event
 async def on_ready():
-
     await client.change_presence(status=discord.Status.idle, activity=discord.Game(status))
     print(f'Bot is ready. Logged in as {client.user}')
 
-for filename in os.listdir('./commands'):
-    if filename.endswith('.py'):
-        client.load_extension(f'commands.{filename[:-3]}')
-
-for filename in os.listdir('./events'):
-    if filename.endswith('.py'):
-        client.load_extension(f'events.{filename[:-3]}')
 
 @commands.is_owner()
 @client.command()
@@ -69,4 +62,14 @@ async def on_command_error(ctx, error):
 
         await ctx.reply(embed=embed, mention_author=False)
 
-client.run(TOKEN)
+async def main():
+    for filename in os.listdir('./commands'):
+        if filename.endswith('.py'):
+            await client.load_extension(f'commands.{filename[:-3]}')
+
+    for filename in os.listdir('./events'):
+        if filename.endswith('.py'):
+            await client.load_extension(f'events.{filename[:-3]}')
+    await client.start(TOKEN)
+
+asyncio.run(main())

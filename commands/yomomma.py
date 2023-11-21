@@ -14,5 +14,5 @@ class Yomomma(commands.Cog):
         api = api.json()
         await ctx.reply(api["joke"], mention_author=False)
 
-def setup(client):
-    client.add_cog(Yomomma(client))
+async def setup(client):
+    await client.add_cog(Yomomma(client))

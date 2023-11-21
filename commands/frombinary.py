@@ -16,5 +16,5 @@ class Frombinary(commands.Cog):
         api = api.json()
         await ctx.reply(api["text"], mention_author=False)
 
-def setup(client):
-    client.add_cog(Frombinary(client))
+async def setup(client):
+    await client.add_cog(Frombinary(client))

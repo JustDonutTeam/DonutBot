@@ -23,5 +23,5 @@ class Announcement(commands.Cog):
 
         await channel.send(embed=embed, mention_author=False)
 
-def setup(client):
-    client.add_cog(Announcement(client))
+async def setup(client):
+    await client.add_cog(Announcement(client))

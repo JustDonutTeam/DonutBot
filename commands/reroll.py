@@ -39,5 +39,5 @@ class Reroll(commands.Cog):
         await fetched_message.reply(f"{emoji} Congratulations {winner_string}, you won **{prize}**!")
 
 
-def setup(client):
-    client.add_cog(Reroll(client))
+async def setup(client):
+    await client.add_cog(Reroll(client))

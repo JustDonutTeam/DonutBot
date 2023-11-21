@@ -43,5 +43,5 @@ class On_member_remove(commands.Cog):
         cursor.close()
         database.close()
 
-def setup(client):
-    client.add_cog(On_member_remove(client))
+async def setup(client):
+    await client.add_cog(On_member_remove(client))

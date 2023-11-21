@@ -19,5 +19,5 @@ class Support(commands.Cog):
 
         await ctx.reply(embed=embed, mention_author=False)
 
-def setup(client):
-    client.add_cog(Support(client))
+async def setup(client):
+    await client.add_cog(Support(client))

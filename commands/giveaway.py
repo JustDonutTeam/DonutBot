@@ -86,5 +86,5 @@ class Giveaway(commands.Cog):
             await ctx.reply("Giveaways cannot be longer than 2 weeks (1,209,600 seconds)!", mention_author=False)
 
 
-def setup(client):
-    client.add_cog(Giveaway(client))
+async def setup(client):
+    await client.add_cog(Giveaway(client))

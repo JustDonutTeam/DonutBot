@@ -26,5 +26,5 @@ class Unmute(commands.Cog):
                 else:
                     raise TypeError("This user is not muted.")
         
-def setup(client):
-    client.add_cog(Unmute(client))
+async def setup(client):
+    await client.add_cog(Unmute(client))

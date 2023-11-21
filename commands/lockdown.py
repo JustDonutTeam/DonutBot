@@ -29,5 +29,5 @@ class Lockdown(commands.Cog):
             await channel.set_permissions(ctx.guild.default_role, overwrite=overwrites)
             await ctx.reply(f'🔓 I have removed `{channel.name}` from lockdown.', mention_author=False)
 
-def setup(client):
-    client.add_cog(Lockdown(client))
+async def setup(client):
+    await client.add_cog(Lockdown(client))

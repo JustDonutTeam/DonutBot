@@ -31,5 +31,5 @@ class Simpcard(commands.Cog):
 
         await session.close() 
 
-def setup(client):
-    client.add_cog(Simpcard(client))
+async def setup(client):
+    await client.add_cog(Simpcard(client))

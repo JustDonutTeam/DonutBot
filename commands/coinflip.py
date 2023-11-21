@@ -17,5 +17,5 @@ class Coinflip(commands.Cog):
 
         await ctx.reply(f":coin: Coin landed on **{result}**!", mention_author=False)
 
-def setup(client):
-    client.add_cog(Coinflip(client))
+async def setup(client):
+    await client.add_cog(Coinflip(client))

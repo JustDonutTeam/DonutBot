@@ -74,5 +74,5 @@ class Tempute(commands.Cog):
         else:
             await ctx.reply("Tempmutes cannot be longer than 2 weeks (1,209,600 seconds)!", mention_author=False)
 
-def setup(client):
-    client.add_cog(Tempute(client))
+async def setup(client):
+    await client.add_cog(Tempute(client))

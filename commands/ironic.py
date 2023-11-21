@@ -19,5 +19,5 @@ class Ironic(commands.Cog):
                 result = result + letter.lower()
         await ctx.reply(result, mention_author=False)
 
-def setup(client):
-    client.add_cog(Ironic(client))
+async def setup(client):
+    await client.add_cog(Ironic(client))

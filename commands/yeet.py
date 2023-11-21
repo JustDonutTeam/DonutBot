@@ -51,5 +51,5 @@ class Yeet(commands.Cog):
 
         await ctx.reply(embed=embed, file=discord.File(fp, "yeet.png"), mention_author=False)
 
-def setup(client):
-    client.add_cog(Yeet(client))
+async def setup(client):
+    await client.add_cog(Yeet(client))

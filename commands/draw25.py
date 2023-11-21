@@ -53,5 +53,5 @@ class Draw25(commands.Cog):
 
         await ctx.reply(embed=embed, file=discord.File(fp, "draw25.png"), mention_author=False)
 
-def setup(client):
-    client.add_cog(Draw25(client))
+async def setup(client):
+    await client.add_cog(Draw25(client))

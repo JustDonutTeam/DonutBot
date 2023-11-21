@@ -16,5 +16,5 @@ class Yoda(commands.Cog):
         api = api.json()
         await ctx.reply(api["yodish"], mention_author=False)
 
-def setup(client):
-    client.add_cog(Yoda(client))
+async def setup(client):
+    await client.add_cog(Yoda(client))

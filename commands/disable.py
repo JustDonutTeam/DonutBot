@@ -68,5 +68,5 @@ class Disable(commands.Cog):
         cursor.close()
         database.close()
 
-def setup(client):
-    client.add_cog(Disable(client))
+async def setup(client):
+    await client.add_cog(Disable(client))

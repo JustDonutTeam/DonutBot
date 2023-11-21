@@ -17,5 +17,5 @@ class Slowmode(commands.Cog):
 
         await ctx.reply(f"{emoji} Successfully set the slowmode in {channel.mention} to {seconds}s!", mention_author=False)
 
-def setup(client):
-    client.add_cog(Slowmode(client))
+async def setup(client):
+    await client.add_cog(Slowmode(client))

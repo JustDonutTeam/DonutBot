@@ -45,5 +45,5 @@ class Worthless(commands.Cog):
 
         await ctx.reply(embed=embed, file=discord.File(fp, "worthless.png"), mention_author=False)
 
-def setup(client):
-    client.add_cog(Worthless(client))
+async def setup(client):
+    await client.add_cog(Worthless(client))

@@ -30,5 +30,5 @@ class Lyrics(commands.Cog):
 
         await ctx.reply(embed = embed, mention_author=False)
 
-def setup(client):
-    client.add_cog(Lyrics(client))
+async def setup(client):
+    await client.add_cog(Lyrics(client))

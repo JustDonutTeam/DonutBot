@@ -44,5 +44,5 @@ class Pooh(commands.Cog):
 
         await ctx.reply(embed=embed, file=discord.File(fp, "pooh.png"), mention_author=False)
 
-def setup(client):
-    client.add_cog(Pooh(client))
+async def setup(client):
+    await client.add_cog(Pooh(client))

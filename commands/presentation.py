@@ -45,5 +45,5 @@ class Presentation(commands.Cog):
 
         await ctx.reply(embed=embed, file=discord.File(fp, "presentation.png"), mention_author=False)
 
-def setup(client):
-    client.add_cog(Presentation(client))
+async def setup(client):
+    await client.add_cog(Presentation(client))

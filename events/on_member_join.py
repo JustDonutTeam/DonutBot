@@ -48,5 +48,5 @@ class On_member_join(commands.Cog):
         cursor.close()
         database.close()
 
-def setup(client):
-    client.add_cog(On_member_join(client))
+async def setup(client):
+    await client.add_cog(On_member_join(client))

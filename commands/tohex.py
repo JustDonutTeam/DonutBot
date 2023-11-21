@@ -15,5 +15,5 @@ class Tohex(commands.Cog):
         output = ' '.join([output[i:i+2] for i in range(0, len(output), 2)])
         await ctx.reply(output, mention_author=False)
 
-def setup(client):
-    client.add_cog(Tohex(client))
+async def setup(client):
+    await client.add_cog(Tohex(client))

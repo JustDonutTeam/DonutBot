@@ -20,5 +20,5 @@ class Fromhex(commands.Cog):
         await ctx.reply(output, mention_author=False)
         
 
-def setup(client):
-    client.add_cog(Fromhex(client))
+async def setup(client):
+    await client.add_cog(Fromhex(client))

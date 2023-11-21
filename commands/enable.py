@@ -91,5 +91,5 @@ class Enable(commands.Cog):
         cursor.close()
         database.close()
 
-def setup(client):
-    client.add_cog(Enable(client))
+async def setup(client):
+    await client.add_cog(Enable(client))

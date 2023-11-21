@@ -11,5 +11,5 @@ class Ping(commands.Cog):
     async def ping(self, ctx):
         await ctx.reply(f'Pong! {round(self.client.latency * 1000)}ms', mention_author=False)
 
-def setup(client):
-    client.add_cog(Ping(client))
+async def setup(client):
+    await client.add_cog(Ping(client))

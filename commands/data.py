@@ -58,5 +58,5 @@ class Data(commands.Cog):
         cursor.close()
         database.close()
 
-def setup(client):
-    client.add_cog(Data(client))
+async def setup(client):
+    await client.add_cog(Data(client))

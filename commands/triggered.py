@@ -30,5 +30,5 @@ class Triggered(commands.Cog):
                 await ctx.reply(embed=embed, file=file, mention_author=False)
         await session.close()
 
-def setup(client):
-    client.add_cog(Triggered(client))
+async def setup(client):
+    await client.add_cog(Triggered(client))

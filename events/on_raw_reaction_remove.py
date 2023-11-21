@@ -31,5 +31,5 @@ class On_raw_reaction_remove(commands.Cog):
             cursor.close()
             database.close()
 
-def setup(client):
-    client.add_cog(On_raw_reaction_remove(client))
+async def setup(client):
+    await client.add_cog(On_raw_reaction_remove(client))

@@ -12,5 +12,5 @@ class Uwufy(commands.Cog):
         uwufied = phrase.replace('rl', 'w').replace('RL', 'W').replace('ove', 'uv').replace('the', 'dee').replace('r', 'w')
         await ctx.reply(uwufied, mention_author=False)
 
-def setup(client):
-    client.add_cog(Uwufy(client))
+async def setup(client):
+    await client.add_cog(Uwufy(client))
